@@ -141,7 +141,101 @@ exports.inputs3 = [
   { addr: 'E112.7', label: 'RCH' }
 ]
 // ...
-
+exports.inputs8 = [
+  { addr: 'E400.0', label: 'A' },
+  { addr: 'E400.1', label: 'B' },
+  { addr: 'E400.2', label: 'C' },
+  { addr: 'E400.3', label: 'D' },
+  { addr: 'E400.4', label: 'OK' },
+  { addr: 'E400.5', label: 'S2' },
+  { addr: 'E400.6', label: 'S2' },
+  { addr: 'E400.7', label: 'S2' },
+  { addr: 'E401.0', label: 'FE1' },
+  { addr: 'E401.1', label: 'IV1' },
+  { addr: 'E401.2', label: '' },
+  { addr: 'E401.3', label: 'K12' },
+  { addr: 'E401.4', label: 'FDBK' },
+  { addr: 'E401.5', label: 'ASBK' },
+  { addr: 'E401.6', label: 'RT12' },
+  { addr: 'E401.7', label: 'UC' },
+  { addr: 'E402.0', label: '' },
+  { addr: 'E402.1', label: '' },
+  { addr: 'E402.2', label: '' },
+  { addr: 'E402.3', label: '' },
+  { addr: 'E402.4', label: '' },
+  { addr: 'E402.5', label: '' },
+  { addr: 'E402.6', label: '' },
+  { addr: 'E402.7', label: '' },
+  { addr: 'E403.0', label: '' },
+  { addr: 'E403.1', label: '' },
+  { addr: 'E403.2', label: '' },
+  { addr: 'E403.3', label: '' },
+  { addr: 'E403.4', label: '' },
+  { addr: 'E403.5', label: '' },
+  { addr: 'E403.6', label: '' },
+  { addr: 'E403.7', label: '' }
+]
+exports.inputs9 = [
+  { addr: 'E404.0', label: '' },
+  { addr: 'E404.1', label: 'ACR' },
+  { addr: 'E404.2', label: 'FTCR' },
+  { addr: 'E404.3', label: 'FE3' },
+  { addr: 'E404.4', label: '' },
+  { addr: 'E404.5', label: '' },
+  { addr: 'E404.6', label: 'K12' },
+  { addr: 'E404.7', label: '' },
+  { addr: 'E405.0', label: '' },
+  { addr: 'E405.1', label: '' },
+  { addr: 'E405.2', label: 'AMM' },
+  { addr: 'E405.3', label: 'EOM' },
+  { addr: 'E405.4', label: 'EZM' },
+  { addr: 'E405.5', label: 'EMC' },
+  { addr: 'E405.6', label: '' },
+  { addr: 'E405.7', label: '' }
+]
+exports.inputs10 = [
+  { addr: 'E410.0', label: 'A' },
+  { addr: 'E410.1', label: 'B' },
+  { addr: 'E410.2', label: 'C' },
+  { addr: 'E410.3', label: 'D' },
+  { addr: 'E410.4', label: 'OK' },
+  { addr: 'E410.5', label: 'S2' },
+  { addr: 'E410.6', label: 'S2' },
+  { addr: 'E410.7', label: 'S2' },
+  { addr: 'E411.0', label: 'FE4' },
+  { addr: 'E411.1', label: '' },
+  { addr: 'E411.2', label: '' },
+  { addr: 'E411.3', label: 'EM' },
+  { addr: 'E411.4', label: '' },
+  { addr: 'E411.5', label: '' },
+  { addr: 'E411.6', label: 'FTXV' },
+  { addr: 'E411.7', label: 'FTXH' },
+  { addr: 'E412.0', label: 'RMV' },
+  { addr: 'E412.1', label: 'RMH' },
+  { addr: 'E412.2', label: 'RES' },
+  { addr: 'E412.3', label: 'REH' },
+  { addr: 'E412.4', label: 'RCV' },
+  { addr: 'E412.5', label: 'REAV' },
+  { addr: 'E412.6', label: 'REAH' },
+  { addr: 'E412.7', label: 'RCH' },
+  { addr: 'E413.0', label: 'IV2' },
+  { addr: 'E413.1', label: '' },
+  { addr: 'E413.2', label: '' },
+  { addr: 'E413.3', label: 'RS12' },
+  { addr: 'E413.4', label: 'DB32' },
+  { addr: 'E413.5', label: 'DBHZ' },
+  { addr: 'E413.6', label: 'FTAC' },
+  { addr: 'E413.7', label: 'UC' },
+  { addr: 'E414.0', label: 'AF7' },
+  { addr: 'E414.1', label: '' },
+  { addr: 'E414.2', label: 'FTM1' },
+  { addr: 'E414.3', label: 'FTM2' },
+  { addr: 'E414.4', label: 'FTM3' },
+  { addr: 'E414.5', label: 'FTCR' },
+  { addr: 'E414.6', label: 'AH' },
+  { addr: 'E414.7', label: 'MTC' }
+]
+// ...
 exports.outputs1 = [
   { addr: 'A0.0', label: 'LK' },
   { addr: 'A0.1', label: 'LE' },
@@ -244,9 +338,62 @@ exports.outputs3 = [
   { addr: 'A111.6', label: '' },
   { addr: 'A111.7', label: '' }
 ]
-
 // ...
-
+exports.outputs8 = [
+  { addr: 'A400.0', label: 'SBK2' },
+  { addr: 'A400.1', label: 'KBA' },
+  { addr: 'A400.2', label: '' },
+  { addr: 'A400.3', label: '' },
+  { addr: 'A400.4', label: '' },
+  { addr: 'A400.5', label: 'RFE1' },
+  { addr: 'A400.6', label: 'LA' },
+  { addr: 'A400.7', label: 'LC' },
+  { addr: 'A401.0', label: 'A' },
+  { addr: 'A401.1', label: 'B' },
+  { addr: 'A401.2', label: 'C' },
+  { addr: 'A401.3', label: 'D' },
+  { addr: 'A401.4', label: 'AD1' },
+  { addr: 'A401.5', label: 'AD2' },
+  { addr: 'A401.6', label: 'AD3' },
+  { addr: 'A401.7', label: 'STR' }
+]
+exports.outputs9 = [
+  { addr: 'A404.0', label: 'SMA' },
+  { addr: 'A404.1', label: 'SMB' },
+  { addr: 'A404.2', label: 'FTCR' },
+  { addr: 'A404.3', label: 'KSH' },
+  { addr: 'A404.4', label: '' },
+  { addr: 'A404.5', label: '' },
+  { addr: 'A404.6', label: 'LA' },
+  { addr: 'A404.7', label: '' }
+]
+exports.outputs10 = [
+  { addr: 'A410.0', label: 'A' },
+  { addr: 'A410.1', label: 'B' },
+  { addr: 'A410.2', label: 'C' },
+  { addr: 'A410.3', label: 'D' },
+  { addr: 'A410.4', label: 'AD1' },
+  { addr: 'A410.5', label: 'AD2' },
+  { addr: 'A410.6', label: 'ADR' },
+  { addr: 'A410.7', label: 'STR' },
+  { addr: 'A411.0', label: 'T101' },
+  { addr: 'A411.1', label: 'T2' },
+  { addr: 'A411.2', label: 'TRA' },
+  { addr: 'A411.3', label: 'TRB' },
+  { addr: 'A411.4', label: 'KCS' },
+  { addr: 'A411.5', label: 'KCV' },
+  { addr: 'A411.6', label: 'KCH' },
+  { addr: 'A411.7', label: 'TCR' },
+  { addr: 'A412.0', label: 'KBA2' },
+  { addr: 'A412.1', label: '' },
+  { addr: 'A412.2', label: '' },
+  { addr: 'A412.3', label: '' },
+  { addr: 'A412.4', label: 'T102' },
+  { addr: 'A412.5', label: 'T10F' },
+  { addr: 'A412.6', label: 'LA' },
+  { addr: 'A412.7', label: 'LC' }
+]
+// ...
 exports.alarms1 = [
   { class: 'EVT1', label: 'AL1', i18n: { key: 'al-sil-01', query: {} } },
   { class: 'EVT1', label: 'AL2', i18n: { key: 'al-sil-02', query: {} } },
