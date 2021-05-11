@@ -18,7 +18,7 @@ const silomat = [
 ]
 
 const info = [
-  obj.inputs.find(b => b.addr === 'E503.3'),
+  obj.inputs.find(b => b.addr === 'E501.3'),
   obj.outputs.find(b => b.addr === 'A500.7'),
   obj.outputs.find(b => b.addr === 'A500.6'),
   obj.inputs.find(b => b.addr === 'E512.3'),

@@ -1,3 +1,15 @@
+exports.PORT = 49009
+exports.HOST =
+  process.env.NODE_ENV !== 'production'
+    ? process.env.DEVELOPMENT_SERVER
+    : process.env.PRODUCTION_SERVER
+exports.PLC = {
+  ip: '192.168.200.55',
+  rack: 0,
+  slot: 1,
+  polling_time: 500
+}
+
 exports.DEVICES = ['EVT1', 'EVT2', 'EVT3', 'IVT4', 'IVT5', 'IVT6']
 
 exports.MODES = [

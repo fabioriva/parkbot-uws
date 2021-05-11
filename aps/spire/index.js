@@ -4,11 +4,12 @@ const uWS = require('uWebSockets.js')
 const def = require('./def')
 const obj = require('./obj')
 const PLC = require('../../lib/Plc')
+const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
 const plc = {
-  ip: '192.168.200.55',
+  ip: '192.168.67.2',
   rack: 0,
   slot: 1,
   polling_time: 350
@@ -39,6 +40,7 @@ const start = async () => {
     })
     const plc01 = new PLC(app, plc)
     await plc01.main(def, obj)
+    log(db, plc01, def, obj)
   } catch (err) {
     console.error(new Error(err))
     process.exit(1)
