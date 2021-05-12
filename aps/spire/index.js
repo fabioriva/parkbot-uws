@@ -34,7 +34,7 @@ const start = async () => {
       }
     })
     routes(app, db, obj, { prefix })
-    websocket(app, obj, {
+    websocket(app, {
       compression: uWS.SHARED_COMPRESSOR,
       maxPayloadLength: 16 * 1024 * 1024,
       idleTimeout: 16,
