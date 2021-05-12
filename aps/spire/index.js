@@ -17,12 +17,14 @@ const plc = {
 const port = 9001
 const prefix = '/aps/wallstreet'
 
+const client = new MongoClient(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+
 const start = async () => {
   try {
-    const client = await MongoClient.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
+    await client.connect()
     const db = client.db('wallstreet')
     const app = uWS.App().listen(port, token => {
       if (token) {
@@ -40,7 +42,7 @@ const start = async () => {
     })
     const plc01 = new PLC(app, plc)
     await plc01.main(def, obj)
-    log(db, plc01, def, obj)
+    log(db, def, obj, plc01)
   } catch (err) {
     console.error(new Error(err))
     process.exit(1)

@@ -24,6 +24,25 @@ exports.MODES = [
   { id: 8, label: 'mode-auto' }
 ]
 
+exports.OP = [
+  { id: 0, label: '---' },
+  { id: 1, label: 'op-alarm-on' },
+  { id: 2, label: 'op-alarm-off' },
+  { id: 3, label: 'op-switch-mode' },
+  { id: 4, label: 'op-change-pin' },
+  { id: 5, label: 'op-stall-in' },
+  { id: 6, label: 'op-stall-out' },
+  { id: 7, label: 'op-shuffle-in' },
+  { id: 8, label: 'op-shuffle-out' },
+  { id: 9, label: 'op-stall-rsv' },
+  { id: 10, label: 'op-req-exit' },
+  { id: 11, label: 'op-req-entry' },
+  { id: 12, label: '---' },
+  { id: 13, label: '---' },
+  { id: 14, label: '---' },
+  { id: 15, label: '---' }
+]
+
 exports.POSITIONS = [
   'LV',
   'ENR',
