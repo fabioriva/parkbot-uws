@@ -42,6 +42,10 @@ const start = async () => {
     })
     const plc01 = new PLC(app, plc)
     await plc01.main(def, obj)
+    plc01.on('pub', ({ channel, data }) =>
+      app.publish(channel, JSON.stringify(data))
+    )
+    // plc01.on('pub', data => console.log(data))
     log(db, def, obj, plc01)
   } catch (err) {
     console.error(new Error(err))
