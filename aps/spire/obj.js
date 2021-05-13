@@ -32,7 +32,7 @@ const inputs13 = generateBits('E', 510, 514, str.inputs10)
 const inputs14 = generateBits('E', 600, 603, str.inputs8)
 const inputs15 = generateBits('E', 604, 605, str.inputs9)
 const inputs16 = generateBits('E', 610, 614, str.inputs10)
-let inputs = inputs1.concat(
+const inputs = inputs1.concat(
   inputs2,
   inputs3,
   inputs4,
@@ -69,7 +69,7 @@ const outputs13 = generateBits('A', 510, 512, str.outputs10)
 const outputs14 = generateBits('A', 600, 601, str.outputs8)
 const outputs15 = generateBits('A', 604, 604, str.outputs9)
 const outputs16 = generateBits('A', 610, 612, str.outputs10)
-let outputs = outputs1.concat(
+const outputs = outputs1.concat(
   outputs2,
   outputs3,
   outputs4,
@@ -93,7 +93,7 @@ exports.ab = ab
 const racks = require('./obj/racks')
 exports.racks = racks
 
-let merkers = generateBits('M', 0, 7)
+const merkers = generateBits('M', 0, 7)
 exports.merkers = merkers
 const mb = generateBytes(merkers)
 exports.mb = mb
@@ -234,7 +234,3 @@ exports.map = {
   ],
   occupancy: { free: 0, busy: 0, locked: 0 }
 }
-
-inputs = null
-outputs = null
-merkers = null
