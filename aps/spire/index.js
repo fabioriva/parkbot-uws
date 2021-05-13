@@ -40,7 +40,7 @@ const start = async () => {
       idleTimeout: 16,
       prefix
     })
-    const plc01 = new PLC(app, plc)
+    const plc01 = new PLC(plc)
     await plc01.main(def, obj)
     plc01.on('pub', ({ channel, data }) =>
       app.publish(channel, JSON.stringify(data))
