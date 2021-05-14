@@ -37,7 +37,7 @@ const start = async () => {
     plc01.main(def, obj)
     plc01.on('pub', ({ channel, data }) => app.publish(channel, data))
     log(db, def, obj, plc01)
-    routes(app, db, obj, { prefix })
+    routes(app, db, def, obj, plc01, { prefix })
     websocket(app, {
       compression: uWS.SHARED_COMPRESSOR,
       maxPayloadLength: 16 * 1024 * 1024,

@@ -3,12 +3,12 @@ exports.HOST =
   process.env.NODE_ENV !== 'production'
     ? process.env.DEVELOPMENT_SERVER
     : process.env.PRODUCTION_SERVER
-exports.PLC = {
-  ip: '192.168.200.55',
-  rack: 0,
-  slot: 1,
-  polling_time: 500
-}
+// exports.PLC = {
+//   ip: '192.168.200.55',
+//   rack: 0,
+//   slot: 1,
+//   polling_time: 1000
+// }
 
 exports.DEVICES = ['EVT1', 'EVT2', 'EVT3', 'IVT4', 'IVT5', 'IVT6']
 
@@ -76,13 +76,6 @@ const CARDS = 266
 const CARD_LEN = 12
 exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
-exports.CARD_READ = {
-  area: 0x84,
-  dbNumber: 512,
-  start: 0,
-  amount: CARDS * CARD_LEN,
-  wordLen: 0x02
-}
 
 const DB_DATA = 506
 const DB_DATA_LEN = 508
@@ -110,10 +103,46 @@ exports.STALL_STATUS = {
   RSVD: 998,
   LOCK: 999
 }
+
+exports.CARD_READ = {
+  area: 0x84,
+  dbNumber: 512,
+  start: 0,
+  amount: CARDS * CARD_LEN,
+  wordLen: 0x02
+}
+exports.CARD_EDIT = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 524,
+  amount: 4,
+  wordLen: 0x02
+}
 exports.MAP_READ = {
   area: 0x84,
   dbNumber: 510,
   start: 0,
   amount: STALLS * STALL_LEN,
+  wordLen: 0x02
+}
+exports.MAP_EDIT = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 520,
+  amount: 4,
+  wordLen: 0x02
+}
+exports.QUEUE_DELETE = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 528,
+  amount: 4,
+  wordLen: 0x02
+}
+exports.REQ_0 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 532,
+  amount: 2,
   wordLen: 0x02
 }
