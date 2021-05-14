@@ -12,7 +12,7 @@ const plc = {
   ip: '192.168.67.2',
   rack: 0,
   slot: 1,
-  polling_time: 1000
+  polling_time: 900
 }
 const port = 9001
 const prefix = '/aps/wallstreet'
