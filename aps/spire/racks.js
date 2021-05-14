@@ -1,4 +1,4 @@
-const { ab, eb } = require('../obj')
+const { ab, eb } = require('./obj')
 const {
   S7_521_1BL00_0AB0,
   S7_521_1BH00_0AB0,
@@ -6,7 +6,7 @@ const {
   S7_522_1BL01_0AB0,
   S7_131_6BF00_0BA0,
   S7_132_6BF00_0BA0
-} = require('../../../models/modules')
+} = require('../../models/modules')
 
 const rack1 = {
   nr: 1,

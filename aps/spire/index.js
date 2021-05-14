@@ -33,6 +33,10 @@ const start = async () => {
         console.log('Failed to listen to port ' + port)
       }
     })
+    const plc01 = new PLC(plc)
+    plc01.main(def, obj)
+    plc01.on('pub', ({ channel, data }) => app.publish(channel, data))
+    log(db, def, obj, plc01)
     routes(app, db, obj, { prefix })
     websocket(app, {
       compression: uWS.SHARED_COMPRESSOR,
@@ -40,10 +44,6 @@ const start = async () => {
       idleTimeout: 16,
       prefix
     })
-    const plc01 = new PLC(plc)
-    plc01.main(def, obj)
-    plc01.on('pub', ({ channel, data }) => app.publish(channel, data))
-    log(db, def, obj, plc01)
   } catch (err) {
     console.error(new Error(err))
     process.exit(1)

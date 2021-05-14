@@ -4,8 +4,8 @@ const { Alarms, generateAlarms } = require('../../models/alarms')
 const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
 const { generateDevices } = require('../../models/devices')
-const { generatePositions } = require('../../models/positions')
 const { generateQueue } = require('../../models/queue')
+const { generatePositions } = require('../../models/positions')
 const { generateStalls } = require('../../models/stalls')
 
 const al01 = new Alarms(generateAlarms(1, 1, 64, str.alarms1), 'EVT1')
@@ -90,7 +90,7 @@ exports.outputs = outputs
 const ab = generateBytes(outputs)
 exports.ab = ab
 
-const racks = require('./obj/racks')
+const racks = require('./racks')
 exports.racks = racks
 
 const merkers = generateBits('M', 0, 7)
@@ -110,15 +110,9 @@ exports.positions = positions
 const queue = generateQueue(def)
 exports.queue = queue
 
-const evt1 = require('./obj/evt1')
-const evt2 = require('./obj/evt2')
-const evt3 = require('./obj/evt3')
-const ivt1 = require('./obj/ivt1')
-const ivt2 = require('./obj/ivt2')
-const ivt3 = require('./obj/ivt3')
 exports.overview = {
   definitions: { cards: def.CARDS, stalls: def.STALLS },
-  devices: [evt1, evt2, evt3, ivt1, ivt2, ivt3],
+  devices: require('./devices'),
   exitQueue: {
     queueList: queue,
     exitButton: { enable: merkers.find(b => b.addr === 'M3.0') }
