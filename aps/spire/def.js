@@ -93,3 +93,15 @@ exports.REQ_0 = {
   amount: 2,
   wordLen: 0x02
 }
+
+const DB_DIAG = 509
+const DB_DIAG_LEN = 24
+exports.DB_DIAG_INIT_MOT = 0
+exports.DB_DIAG_INIT_VFD = 4
+exports.DIAG_READ = {
+  area: 0x84,
+  dbNumber: DB_DIAG,
+  start: 0,
+  amount: DB_DIAG_LEN,
+  wordLen: 0x02
+}

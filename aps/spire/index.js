@@ -8,6 +8,9 @@ const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
+// const diag = require('./motors')
+// const Diag = require('../../lib/Diag')
+
 const prefix = '/aps/wallstreet'
 
 const client = new MongoClient(process.env.MONGODB_URI, {
@@ -37,6 +40,9 @@ const start = async () => {
       idleTimeout: 16,
       prefix
     })
+    // const plc02 = new Diag(def.PLC)
+    // plc02.main(def, diag)
+    // plc02.on('pub', ({ channel, data }) => app.publish(channel, data))
   } catch (err) {
     console.error(new Error(err))
     process.exit(1)
