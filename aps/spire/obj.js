@@ -101,10 +101,67 @@ exports.mb = mb
 const cards = generateCards(def)
 exports.cards = cards
 
-const devices = generateDevices(def)
+const devices = generateDevices([
+  'EVT1',
+  'EVT2',
+  'EVT3',
+  'IVT4',
+  'IVT5',
+  'IVT6'
+])
 exports.devices = devices
 
-const positions = generatePositions(def)
+exports.modes = [
+  { id: 0, label: 'mode-no-func' },
+  { id: 1, label: 'mode-data-edit' },
+  { id: 2, label: 'mode-data-read' },
+  { id: 3, label: 'mode-eme-1' },
+  { id: 4, label: 'mode-eme-2' },
+  { id: 5, label: 'mode-no-func' },
+  { id: 6, label: 'mode-step' },
+  { id: 7, label: 'mode-preset' },
+  { id: 8, label: 'mode-auto' }
+]
+
+exports.operations = [
+  { id: 0, label: '---' },
+  { id: 1, label: 'op-alarm-on' },
+  { id: 2, label: 'op-alarm-off' },
+  { id: 3, label: 'op-switch-mode' },
+  { id: 4, label: 'op-change-pin' },
+  { id: 5, label: 'op-stall-in' },
+  { id: 6, label: 'op-stall-out' },
+  { id: 7, label: 'op-shuffle-in' },
+  { id: 8, label: 'op-shuffle-out' },
+  { id: 9, label: 'op-stall-rsv' },
+  { id: 10, label: 'op-req-exit' },
+  { id: 11, label: 'op-req-entry' },
+  { id: 12, label: '---' },
+  { id: 13, label: '---' },
+  { id: 14, label: '---' },
+  { id: 15, label: '---' }
+]
+
+const positions = generatePositions([
+  'LV',
+  'ENR',
+  'LV',
+  'ENR',
+  'LV',
+  'ENR',
+  'LV1',
+  'LV2',
+  'LH1',
+  'LH2',
+  'LV1',
+  'LV2',
+  'LH1',
+  'LH2',
+  'LV1',
+  'LV2',
+  'LH1',
+  'LH2'
+])
 exports.positions = positions
 
 const queue = generateQueue(def)
@@ -115,7 +172,7 @@ exports.overview = {
   devices: require('./devices'),
   exitQueue: {
     queueList: queue,
-    exitButton: { enable: merkers.find(b => b.addr === 'M3.0') }
+    exitButton: { enable: merkers.find(b => b.addr === 'M3.0'), label: 'exit' }
   }
 }
 
@@ -226,5 +283,9 @@ exports.map = {
       ]
     }
   ],
-  occupancy: { free: 0, busy: 0, locked: 0 }
+  occupancy: [
+    { id: 'busy', value: 0 },
+    { id: 'free', value: 0 },
+    { id: 'lock', value: 0 }
+  ]
 }

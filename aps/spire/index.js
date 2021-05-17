@@ -8,13 +8,6 @@ const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
-const plc = {
-  ip: '192.168.67.2',
-  rack: 0,
-  slot: 1,
-  polling_time: 900
-}
-const port = 9001
 const prefix = '/aps/wallstreet'
 
 const client = new MongoClient(process.env.MONGODB_URI, {
@@ -26,14 +19,14 @@ const start = async () => {
   try {
     await client.connect()
     const db = client.db('wallstreet')
-    const app = uWS.App().listen(port, token => {
+    const app = uWS.App().listen(def.HTTP, token => {
       if (token) {
-        console.log('Listening to port ' + port, token)
+        console.log('Listening to port ' + def.HTTP, token)
       } else {
-        console.log('Failed to listen to port ' + port)
+        console.log('Failed to listen to port ' + def.HTTP)
       }
     })
-    const plc01 = new PLC(plc)
+    const plc01 = new PLC(def.PLC)
     plc01.main(def, obj)
     plc01.on('pub', ({ channel, data }) => app.publish(channel, data))
     log(db, def, obj, plc01)

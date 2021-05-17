@@ -37,10 +37,10 @@ class Device {
   }
 }
 
-exports.generateDevices = def => {
+exports.generateDevices = names => {
   const devices = []
-  for (let i = 0; i < def.DEVICES.length; i++) {
-    devices.push(new Device(i + 1, def.DEVICES[i]))
+  for (let i = 0; i < names.length; i++) {
+    devices.push(new Device(i + 1, names[i]))
   }
   return devices
 }

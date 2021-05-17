@@ -14,10 +14,10 @@ class Position {
   }
 }
 
-exports.generatePositions = def => {
+exports.generatePositions = names => {
   const positions = []
-  for (let i = 0; i < def.POSITIONS.length; i++) {
-    positions.push(new Position(i + 1, def.POSITIONS[i]))
+  for (let i = 0; i < names.length; i++) {
+    positions.push(new Position(i + 1, names[i]))
   }
   return positions
 }

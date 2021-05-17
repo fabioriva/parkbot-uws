@@ -3,66 +3,13 @@ exports.HOST =
   process.env.NODE_ENV !== 'production'
     ? process.env.DEVELOPMENT_SERVER
     : process.env.PRODUCTION_SERVER
-// exports.PLC = {
-//   ip: '192.168.200.55',
-//   rack: 0,
-//   slot: 1,
-//   polling_time: 1000
-// }
-
-exports.DEVICES = ['EVT1', 'EVT2', 'EVT3', 'IVT4', 'IVT5', 'IVT6']
-
-exports.MODES = [
-  { id: 0, label: 'mode-no-func' },
-  { id: 1, label: 'mode-data-edit' },
-  { id: 2, label: 'mode-data-read' },
-  { id: 3, label: 'mode-eme-1' },
-  { id: 4, label: 'mode-eme-2' },
-  { id: 5, label: 'mode-no-func' },
-  { id: 6, label: 'mode-step' },
-  { id: 7, label: 'mode-preset' },
-  { id: 8, label: 'mode-auto' }
-]
-
-exports.OP = [
-  { id: 0, label: '---' },
-  { id: 1, label: 'op-alarm-on' },
-  { id: 2, label: 'op-alarm-off' },
-  { id: 3, label: 'op-switch-mode' },
-  { id: 4, label: 'op-change-pin' },
-  { id: 5, label: 'op-stall-in' },
-  { id: 6, label: 'op-stall-out' },
-  { id: 7, label: 'op-shuffle-in' },
-  { id: 8, label: 'op-shuffle-out' },
-  { id: 9, label: 'op-stall-rsv' },
-  { id: 10, label: 'op-req-exit' },
-  { id: 11, label: 'op-req-entry' },
-  { id: 12, label: '---' },
-  { id: 13, label: '---' },
-  { id: 14, label: '---' },
-  { id: 15, label: '---' }
-]
-
-exports.POSITIONS = [
-  'LV',
-  'ENR',
-  'LV',
-  'ENR',
-  'LV',
-  'ENR',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2'
-]
+exports.HTTP = 9001
+exports.PLC = {
+  ip: '192.168.200.55',
+  rack: 0,
+  slot: 1,
+  polling_time: 600
+}
 
 exports.QUEUE_LEN = 5
 
