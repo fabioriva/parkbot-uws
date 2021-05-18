@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "spire": "nodemon aps/spire"
+    "spire": "nodemon aps/spire",
+    "start": "NODE_ENV=production pm2 start aps/spire/index.js --name spire-uws --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
   "license": "ISC",
@@ -21,8 +22,6 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "ignore": [
-      "/public"
-    ]
+    "ignore": ["/public"]
   }
 }
