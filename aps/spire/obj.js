@@ -176,6 +176,9 @@ exports.overview = {
   }
 }
 
+const motors = require('./motors')
+exports.motors = motors
+
 const stalls = generateStalls(def)
 exports.stalls = stalls
 

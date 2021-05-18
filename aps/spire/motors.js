@@ -1,56 +1,41 @@
-const obj = require('./obj')
-const { generateBits } = require('../../models/bits')
-const { Flap } = require('../../models/motors')
+const { inputs, outputs } = require('./obj')
+const { Flap, Lock } = require('../../models/motors')
 
-const merkers = generateBits('M', 0, 0)
-// console.log(merkers)
-
-const FTXV = obj.inputs.find(b => b.addr === 'E111.6')
-const FTXH = obj.inputs.find(b => b.addr === 'E111.7')
-const EM = obj.inputs.find(b => b.addr === 'E111.0')
+const FTXV = inputs.find(b => b.addr === 'E111.6')
+const FTXH = inputs.find(b => b.addr === 'E111.7')
+const EM = inputs.find(b => b.addr === 'E111.0')
 const LC = [FTXV, FTXH, EM]
 
-// const ECA = obj.inputs.find(b => b.addr === 'E110.0')
-// const ECB = obj.inputs.find(b => b.addr === 'E110.1')
-const AMC = obj.inputs.find(b => b.addr === 'E110.2')
-// const SCA = { ...obj.outputs.find(b => b.addr === 'A111.2'), i18n: 'motion-up' }
-// const SCB = obj.outputs.find(b => b.addr === 'A111.3')
-
-// console.log(SCA)
+/**
+ * Flap
+ */
+const ECA = inputs.find(b => b.addr === 'E110.0')
+const ECB = inputs.find(b => b.addr === 'E110.1')
+const AMC = inputs.find(b => b.addr === 'E110.2')
+const SCA = outputs.find(b => b.addr === 'A111.2')
+const SCB = outputs.find(b => b.addr === 'A111.3')
 
 const M1 = new Flap(
   1,
   { key: 'mot-flap', query: { nr: 1 } },
-  { ...obj.inputs.find(b => b.addr === 'E112.0') },
-  { ...obj.inputs.find(b => b.addr === 'E112.1') },
-  { ...obj.inputs.find(b => b.addr === 'E112.2') },
-  { ...obj.inputs.find(b => b.addr === 'E112.3') },
-  merkers[0],
-  merkers[1],
-  merkers[2],
-  merkers[3],
-  [...LC],
-  [AMC]
+  [ECA, ECB, AMC, ...LC],
+  [SCA, SCB]
 )
 
-console.log(M1.info)
+/**
+ * Lock
+ */
+const EOM = inputs.find(b => b.addr === 'E110.3')
+const EZM = inputs.find(b => b.addr === 'E110.4')
+const AMM = inputs.find(b => b.addr === 'E110.5')
+const SMA = outputs.find(b => b.addr === 'A111.0')
+const SMB = outputs.find(b => b.addr === 'A111.1')
 
-const M2 = new Flap(
+const M2 = new Lock(
   2,
-  { key: 'mot-flap', query: { nr: 2 } },
-  { ...obj.inputs.find(b => b.addr === 'E112.0') },
-  { ...obj.inputs.find(b => b.addr === 'E112.1') },
-  { ...obj.inputs.find(b => b.addr === 'E112.2') },
-  { ...obj.inputs.find(b => b.addr === 'E112.3') },
-  merkers[4],
-  merkers[5],
-  merkers[6],
-  merkers[7],
-  [
-    obj.inputs.find(b => b.addr === 'E111.0'),
-    obj.inputs.find(b => b.addr === 'E111.1')
-  ],
-  [obj.inputs.find(b => b.addr === 'E111.2')]
+  { key: 'mot-lock', query: { nr: 1 } },
+  [EOM, EZM, AMM, ...LC],
+  [SMA, SMB]
 )
 
 module.exports = [M1, M2]

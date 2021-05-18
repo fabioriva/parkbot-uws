@@ -2,65 +2,52 @@ const util = require('util')
 const { generateBits } = require('./bits')
 
 class Motor {
-  constructor (id, name, m1, m2, p1, p2, en, bwd, fwd, th, enable, thermic) {
+  constructor (id, name, inputs = [], outputs = []) {
     this.id = id
     this.name = name
-    this.motor = [m1, m2, p1, p2, en, bwd, fwd, th]
-    this.enable = enable // .map(bit => Object.assign({}, bit))
-    this.thermic = thermic // .map(bit => Object.assign({}, bit))
+    this.inputs = inputs
+    this.outputs = outputs
+    this.motor = generateBits('M', 0, 0)
+    this.flags = generateBits('M', 1, 1)
   }
 
-  get info () {
+  get json () {
     return {
       id: this.id,
       name: this.name,
-      motion: this.motion,
-      position: this.position,
-      enable: this.enable.filter(item => item.status !== false),
-      thermic: this.thermic.filter(item => item.status !== false)
+      motion: this.motion(),
+      position: this.position(),
+      inputs: this.inputs,
+      outputs: this.outputs
     }
   }
 
-  diagnostic () {
-    const en = this.motor[4]
-    // if ((!en.status && bwd.status) || (!en.status && fwd.status)) {
-    if (!en.status) {
-      this.enable.forEach((item, key) => console.log(item, key))
-    }
-    const th = this.motor[7]
-    if (!th.status) {
-      this.thermic.forEach((item, key) => console.log(item, key))
-    }
-  }
-
-  motion_ (bwd, fwd) {
+  motion () {
     const m1 = this.motor[0]
     const m2 = this.motor[1]
     if (!m1.status && !m2.status) {
-      this.motion = { id: 0, i18n: 'motion-no' }
+      return { id: 0, i18n: 'motion-no' }
     } else if (m1.status && !m2.status) {
-      this.motion = { id: 1, i18n: bwd }
+      return { id: 1, i18n: this.motion_[0] }
     } else if (m2.status && !m1.status) {
-      this.motion = { id: 2, i18n: fwd }
+      return { id: 2, i18n: this.motion_[1] }
     } else {
-      this.motion = { id: 3, i18n: 'motion-err' }
+      return { id: 3, i18n: 'motion-err' }
     }
-    // console.log(this.name, this.motion)
   }
 
-  position_ (pos1, pos2) {
+  position () {
     const p1 = this.motor[2]
     const p2 = this.motor[3]
     if (!p1.status && !p2.status) {
-      this.position = { id: 0, i18n: 'position-no' }
+      return { id: 0, i18n: 'position-no' }
     } else if (p1.status && !p2.status) {
-      this.position = { id: 1, i18n: pos1 }
+      return { id: 1, i18n: this.position_[0] }
     } else if (p2.status && !p1.status) {
-      this.position = { id: 2, i18n: pos2 }
+      return { id: 2, i18n: this.position_[1] }
     } else {
-      this.position = { id: 3, i18n: 'position-err' }
+      return { id: 3, i18n: 'position-err' }
     }
-    // console.log(this.name, this.position)
   }
 
   update (buffer) {
@@ -71,9 +58,9 @@ class Motor {
       mask *= 2
     }
     mask = 1
-    for (let i = 0; i < this.enable.length; i++) {
-      if (this.enable[i].status !== undefined) {
-        this.enable[i].status = buffer[1] & mask ? 1 : 0
+    for (let i = 0; i < this.flags.length; i++) {
+      if (this.flags[i].status !== undefined) {
+        this.flags[i].status = buffer[1] & mask ? 1 : 0
       }
       mask *= 2
     }
@@ -81,12 +68,18 @@ class Motor {
 }
 
 class Flap extends Motor {
-  motion__ () {
-    this.motion_('motion-down', 'motion-up')
+  constructor (id, name, inputs = [], outputs = []) {
+    super(id, name, inputs, outputs)
+    this.motion_ = ['motion-down', 'motion-up']
+    this.position_ = ['position-high', 'position-low']
   }
+}
 
-  position__ () {
-    this.position_('position-high', 'position-low')
+class Lock extends Motor {
+  constructor (id, name, inputs = [], outputs = []) {
+    super(id, name, inputs, outputs)
+    this.motion_ = ['motion-lock', 'motion-unlock']
+    this.position_ = ['position-locked', 'position-unlocked']
   }
 }
 
@@ -94,14 +87,11 @@ const updateMotors = util.promisify(
   (start, buffer, offset, motors, callback) => {
     let byte = start
     for (let i = 0; i < motors.length; i++) {
-      // console.log(motors[i])
       motors[i].update(buffer.slice(byte, byte + offset))
-      motors[i].motion__()
-      motors[i].position__()
       byte += offset
     }
     callback(null, motors)
   }
 )
 
-module.exports = { updateMotors, Flap }
+module.exports = { updateMotors, Flap, Lock }
