@@ -4,8 +4,7 @@ const { Inverter } = require('../../models/inverters')
 const { Door, Flap, Lock, Hoisting, Rotation } = require('../../models/motors')
 const { Position } = require('../../models/positions')
 
-const EL = new Device(1, 'EVT1')
-const device = EL
+const device = new Device(1, 'EVT1')
 
 const LV = new Position(1, 'LV')
 const ENR = new Position(2, 'ENR')
@@ -84,22 +83,6 @@ const TD = outputs.find(b => b.addr === 'A102.6')
 const M2 = new Rotation(2, { key: 'mot-rotation' }, [AKKM, ASBK2], [TD], [ENR])
 
 /**
- * Flap
- */
-const ECA = inputs.find(b => b.addr === 'E110.0')
-const ECB = inputs.find(b => b.addr === 'E110.1')
-const AMC = inputs.find(b => b.addr === 'E110.2')
-const SCA = outputs.find(b => b.addr === 'A111.2')
-const SCB = outputs.find(b => b.addr === 'A111.3')
-
-const M3 = new Flap(
-  3,
-  { key: 'mot-flap', query: { nr: 1 } },
-  [ECA, ECB, AMC, ...LC],
-  [SCA, SCB]
-)
-
-/**
  * Lock
  */
 const EOM = inputs.find(b => b.addr === 'E110.3')
@@ -108,11 +91,27 @@ const AMM = inputs.find(b => b.addr === 'E110.5')
 const SMA = outputs.find(b => b.addr === 'A111.0')
 const SMB = outputs.find(b => b.addr === 'A111.1')
 
-const M4 = new Lock(
-  4,
+const M3 = new Lock(
+  3,
   { key: 'mot-lock', query: { nr: 1 } },
   [EOM, EZM, AMM, ...LC],
   [SMA, SMB]
+)
+
+/**
+ * Flap
+ */
+const ECA = inputs.find(b => b.addr === 'E110.0')
+const ECB = inputs.find(b => b.addr === 'E110.1')
+const AMC = inputs.find(b => b.addr === 'E110.2')
+const SCA = outputs.find(b => b.addr === 'A111.2')
+const SCB = outputs.find(b => b.addr === 'A111.3')
+
+const M4 = new Flap(
+  4,
+  { key: 'mot-flap', query: { nr: 1 } },
+  [ECA, ECB, AMC, ...LC],
+  [SCA, SCB]
 )
 
 /**

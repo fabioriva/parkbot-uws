@@ -95,9 +95,9 @@ exports.REQ_0 = {
 }
 
 const DB_DIAG = 506
-const DB_DIAG_LEN = 150
+const DB_DIAG_LEN = 174
 exports.DB_DIAG_INIT_MOT = 0
-exports.DB_DIAG_INIT_VFD = 30
+exports.DB_DIAG_INIT_VFD = 54
 exports.DIAG_READ = {
   area: 0x84,
   dbNumber: DB_DIAG,
