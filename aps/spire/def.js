@@ -5,7 +5,7 @@ exports.HOST =
     : process.env.PRODUCTION_SERVER
 exports.HTTP = 9001
 exports.PLC = {
-  ip: '192.168.200.55',
+  ip: '192.168.67.2',
   rack: 0,
   slot: 1,
   polling_time: 600
@@ -24,14 +24,14 @@ const CARD_LEN = 12
 exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
-const DB_DATA = 506
-const DB_DATA_LEN = 508
+const DB_DATA = 505
+const DB_DATA_LEN = 362
 exports.DB_DATA_INIT_DEVICE = 32
-exports.DB_DATA_INIT_POS = 248
-exports.DB_DATA_INIT_QUEUE = 320
-exports.DB_DATA_INIT_AB = 360
-exports.DB_DATA_INIT_EB = 402
-exports.DB_DATA_INIT_MB = 474
+exports.DB_DATA_INIT_POS = 128
+exports.DB_DATA_INIT_QUEUE = 200
+exports.DB_DATA_INIT_AB = 240
+exports.DB_DATA_INIT_EB = 282
+exports.DB_DATA_INIT_MB = 354
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -61,7 +61,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 524,
+  start: 378,
   amount: 4,
   wordLen: 0x02
 }
@@ -75,26 +75,26 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 520,
+  start: 374,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 528,
+  start: 382,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 532,
+  start: 386,
   amount: 2,
   wordLen: 0x02
 }
 
-const DB_DIAG = 509
+const DB_DIAG = 506
 const DB_DIAG_LEN = 150
 exports.DB_DIAG_INIT_MOT = 0
 exports.DB_DIAG_INIT_VFD = 30
