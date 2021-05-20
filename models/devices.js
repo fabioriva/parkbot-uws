@@ -37,7 +37,7 @@ class Device {
   }
 }
 
-exports.generateDevices = names => {
+const generateDevices = names => {
   const devices = []
   for (let i = 0; i < names.length; i++) {
     devices.push(new Device(i + 1, names[i]))
@@ -45,7 +45,7 @@ exports.generateDevices = names => {
   return devices
 }
 
-exports.updateDevices = util.promisify(
+const updateDevices = util.promisify(
   (start, buffer, offset, devices, modes, callback) => {
     let byte = start
     for (let i = 0; i < devices.length; i++) {
@@ -55,3 +55,5 @@ exports.updateDevices = util.promisify(
     callback(null, devices)
   }
 )
+
+module.exports = { generateDevices, updateDevices, Device }

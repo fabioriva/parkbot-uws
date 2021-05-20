@@ -5,7 +5,7 @@ exports.HOST =
     : process.env.PRODUCTION_SERVER
 exports.HTTP = 9001
 exports.PLC = {
-  ip: '192.168.67.2',
+  ip: '192.168.200.55',
   rack: 0,
   slot: 1,
   polling_time: 600
@@ -95,9 +95,9 @@ exports.REQ_0 = {
 }
 
 const DB_DIAG = 509
-const DB_DIAG_LEN = 24
+const DB_DIAG_LEN = 150
 exports.DB_DIAG_INIT_MOT = 0
-exports.DB_DIAG_INIT_VFD = 4
+exports.DB_DIAG_INIT_VFD = 30
 exports.DIAG_READ = {
   area: 0x84,
   dbNumber: DB_DIAG,

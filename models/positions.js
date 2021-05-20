@@ -14,7 +14,7 @@ class Position {
   }
 }
 
-exports.generatePositions = names => {
+const generatePositions = names => {
   const positions = []
   for (let i = 0; i < names.length; i++) {
     positions.push(new Position(i + 1, names[i]))
@@ -22,7 +22,7 @@ exports.generatePositions = names => {
   return positions
 }
 
-exports.updatePositions = util.promisify(
+const updatePositions = util.promisify(
   (start, buffer, offset, data, callback) => {
     let byte = start
     for (let i = 0; i < data.length; i++) {
@@ -32,3 +32,5 @@ exports.updatePositions = util.promisify(
     callback(null, data)
   }
 )
+
+module.exports = { generatePositions, updatePositions, Position }

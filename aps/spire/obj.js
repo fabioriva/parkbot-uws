@@ -3,9 +3,7 @@ const str = require('./str')
 const { Alarms, generateAlarms } = require('../../models/alarms')
 const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
-const { generateDevices } = require('../../models/devices')
 const { generateQueue } = require('../../models/queue')
-const { generatePositions } = require('../../models/positions')
 const { generateStalls } = require('../../models/stalls')
 
 const al01 = new Alarms(generateAlarms(1, 1, 64, str.alarms1), 'EVT1')
@@ -98,18 +96,50 @@ exports.merkers = merkers
 const mb = generateBytes(merkers)
 exports.mb = mb
 
-const cards = generateCards(def)
-exports.cards = cards
+const device1 = require('./device1')
+const device2 = require('./device2')
+const device3 = require('./device3')
+const device4 = require('./device4')
+const device5 = require('./device5')
+const device6 = require('./device6')
 
-const devices = generateDevices([
-  'EVT1',
-  'EVT2',
-  'EVT3',
-  'IVT4',
-  'IVT5',
-  'IVT6'
-])
-exports.devices = devices
+const queue = generateQueue(def)
+exports.queue = queue
+
+exports.devices = [
+  device1.device,
+  device2.device,
+  device3.device,
+  device4.device,
+  device5.device,
+  device6.device
+]
+
+exports.inverters = device1.inverters.concat(
+  device2.inverters,
+  device3.inverters,
+  device4.inverters,
+  device5.inverters,
+  device6.inverters
+)
+
+exports.motors = device1.motors.concat(
+  device2.motors,
+  device3.motors,
+  device4.motors,
+  device5.motors,
+  device6.motors
+)
+
+exports.positions = device1.positions.concat(
+  device2.positions,
+  device3.positions,
+  device4.positions,
+  device5.positions,
+  device6.positions
+)
+
+exports.diagnostic = [device1, device2, device3, device4, device5, device6]
 
 exports.modes = [
   { id: 0, label: 'mode-no-func' },
@@ -142,42 +172,27 @@ exports.operations = [
   { id: 15, label: '---' }
 ]
 
-const positions = generatePositions([
-  'LV',
-  'ENR',
-  'LV',
-  'ENR',
-  'LV',
-  'ENR',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2',
-  'LV1',
-  'LV2',
-  'LH1',
-  'LH2'
-])
-exports.positions = positions
-
-const queue = generateQueue(def)
-exports.queue = queue
-
 exports.overview = {
   definitions: { cards: def.CARDS, stalls: def.STALLS },
-  devices: require('./devices'),
+  devices: [
+    device1.view,
+    device2.view,
+    device3.view,
+    device4.view,
+    device5.view,
+    device6.view
+  ],
   exitQueue: {
     queueList: queue,
-    exitButton: { enable: merkers.find(b => b.addr === 'M3.0'), label: 'exit' }
+    exitButton: {
+      enable: merkers.find(b => b.addr === 'M3.0'),
+      label: 'action-exit'
+    }
   }
 }
 
-const motors = require('./motors')
-exports.motors = motors
+const cards = generateCards(def)
+exports.cards = cards
 
 const stalls = generateStalls(def)
 exports.stalls = stalls
