@@ -77,22 +77,6 @@ const M1 = new Hoisting(
 )
 
 /**
- * Traveling
- */
-const AH = inputs.find(b => b.addr === 'E614.6')
-const T101 = outputs.find(b => b.addr === 'A611.0')
-const T102 = outputs.find(b => b.addr === 'A612.4')
-const T10F = outputs.find(b => b.addr === 'A612.5')
-
-const M2 = new Traveling(
-  2,
-  { key: 'mot-traveling' },
-  [AH, ...LC, EMC],
-  [T101, T102, T10F],
-  [LH1, LH2]
-)
-
-/**
  * Lock V
  */
 const EOM = inputs.find(b => b.addr === 'E605.3')
@@ -101,11 +85,27 @@ const AMM = inputs.find(b => b.addr === 'E605.2')
 const SMA = outputs.find(b => b.addr === 'A604.0')
 const SMB = outputs.find(b => b.addr === 'A604.1')
 
-const M3 = new Lock(
-  3,
+const M2 = new Lock(
+  2,
   { key: 'mot-lock', query: { nr: 1 } },
   [EOM, EZM, AMM],
   [SMA, SMB]
+)
+
+/**
+ * Traveling
+ */
+const AH = inputs.find(b => b.addr === 'E614.6')
+const T101 = outputs.find(b => b.addr === 'A611.0')
+const T102 = outputs.find(b => b.addr === 'A612.4')
+const T10F = outputs.find(b => b.addr === 'A612.5')
+
+const M3 = new Traveling(
+  3,
+  { key: 'mot-traveling' },
+  [AH, ...LC, EMC],
+  [T101, T102, T10F],
+  [LH1, LH2]
 )
 
 const motors = [M1, M2, M3]
