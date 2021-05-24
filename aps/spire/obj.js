@@ -9,9 +9,9 @@ const { generateStalls } = require('../../models/stalls')
 const al01 = new Alarms(generateAlarms(1, 1, 64, str.alarms1), 'EVT1')
 const al02 = new Alarms(generateAlarms(2, 1, 64, str.alarms1), 'EVT2')
 const al03 = new Alarms(generateAlarms(3, 1, 64, str.alarms1), 'EVT3')
-const al04 = new Alarms(generateAlarms(4, 1, 64, str.alarms4), 'IVT1')
-const al05 = new Alarms(generateAlarms(5, 1, 64, str.alarms4), 'IVT2')
-const al06 = new Alarms(generateAlarms(6, 1, 64, str.alarms4), 'IVT3')
+const al04 = new Alarms(generateAlarms(4, 1, 64, str.alarms4), 'IVT4')
+const al05 = new Alarms(generateAlarms(5, 1, 64, str.alarms4), 'IVT5')
+const al06 = new Alarms(generateAlarms(6, 1, 64, str.alarms4), 'IVT6')
 exports.alarms = [al01, al02, al03, al04, al05, al06]
 
 const inputs1 = generateBits('E', 0, 5, str.inputs1)
