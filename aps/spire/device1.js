@@ -119,22 +119,24 @@ const M4 = new Flap(
  */
 const EZE = inputs.find(b => b.addr === 'E106.0')
 const EOE = inputs.find(b => b.addr === 'E106.1')
+const FBE = inputs.find(b => b.addr === 'E106.2')
+const APE = inputs.find(b => b.addr === 'E101.6')
 const SZE = outputs.find(b => b.addr === 'A100.4')
 const SOE = outputs.find(b => b.addr === 'A100.5')
-const APE = inputs.find(b => b.addr === 'E101.6')
 
-const M5 = new Door(5, { key: 'mot-door-e' }, [EZE, EOE, APE], [SZE, SOE])
+const M5 = new Door(5, { key: 'mot-door-e' }, [EZE, EOE, FBE, APE], [SZE, SOE])
 
 /**
  * Door U
  */
 const EZA = inputs.find(b => b.addr === 'E101.0')
 const EOA = inputs.find(b => b.addr === 'E101.1')
+const FBA = inputs.find(b => b.addr === 'E101.2')
+const APA = inputs.find(b => b.addr === 'E101.3')
 const SZA = outputs.find(b => b.addr === 'A102.0')
 const SOA = outputs.find(b => b.addr === 'A102.1')
-const APA = inputs.find(b => b.addr === 'E101.3')
 
-const M6 = new Door(6, { key: 'mot-door-u' }, [EZA, EOA, APA], [SZA, SOA])
+const M6 = new Door(6, { key: 'mot-door-u' }, [EZA, EOA, FBA, APA], [SZA, SOA])
 
 const motors = [M1, M2, M3, M4, M5, M6]
 
