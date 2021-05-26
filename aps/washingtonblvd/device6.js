@@ -26,7 +26,7 @@ const silomat = [
   inputs.find(b => b.addr === 'E612.5'),
   inputs.find(b => b.addr === 'E612.6'),
   inputs.find(b => b.addr === 'E612.7'),
-  outputs.find(b => b.addr === 'A601'),
+  outputs.find(b => b.addr === 'A601.1'),
   outputs.find(b => b.addr === 'A611.2'),
   outputs.find(b => b.addr === 'A611.3'),
   outputs.find(b => b.addr === 'A611.4'),

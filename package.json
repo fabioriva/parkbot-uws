@@ -7,6 +7,7 @@
     "test": "standard",
     "spire": "nodemon aps/spire",
     "wblvd": "nodemon aps/washingtonblvd",
+    "vl": "nodemon aps/vl",
     "start": "NODE_ENV=production pm2 start aps/spire/index.js --name spire-uws --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
