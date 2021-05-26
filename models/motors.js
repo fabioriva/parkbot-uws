@@ -158,7 +158,7 @@ class Hoisting extends Motor {
 class Rotation extends Motor {
   constructor (id, name, inputs = [], outputs = [], positions = []) {
     super(id, name, inputs, outputs, positions)
-    this.motion_ = ['motion-clockwise', 'motion-anticlockwise']
+    this.motion_ = ['motion-anticlockwise', 'motion-clockwise']
   }
 }
 
