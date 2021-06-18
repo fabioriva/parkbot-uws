@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
+    "chandan": "nodemon aps/chandan",
     "spire": "nodemon aps/spire",
     "wblvd": "nodemon aps/washingtonblvd",
     "vl": "nodemon aps/vl",
@@ -13,10 +14,11 @@
   "author": "f.riva@sotefin.ch",
   "license": "ISC",
   "dependencies": {
-    "date-fns": "^2.21.3",
-    "dotenv": "^9.0.2",
-    "mongodb": "^3.6.6",
-    "node-snap7": "^1.0.5",
+    "date-fns": "^2.22.1",
+    "dotenv": "^10.0.0",
+    "mongodb": "^3.6.9",
+    "node-fetch": "^2.6.1",
+    "node-snap7": "^1.0.6",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v19.2.0"
   },
   "devDependencies": {
@@ -24,6 +26,8 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "ignore": ["/public"]
+    "ignore": [
+      "/public"
+    ]
   }
 }
