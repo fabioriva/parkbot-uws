@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
+    "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "spire": "nodemon aps/spire",
     "wblvd": "nodemon aps/washingtonblvd",
