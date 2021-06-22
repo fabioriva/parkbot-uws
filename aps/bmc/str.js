@@ -580,19 +580,67 @@ exports.alarms1 = [
   { class: 'EL1', label: 'AL46', i18n: { key: '', query: {} } },
   { class: 'EL1', label: 'AL47', i18n: { key: '', query: {} } },
   { class: 'EL1', label: 'AL48', i18n: { key: '', query: {} } },
-  { class: 'EL1', label: 'AL49', i18n: { key: 'al-th', query: { thermic: 'FE' } } },
-  { class: 'EL1', label: 'AL50', i18n: { key: '', query: {} },
-  { class: 'EL1', label: 'AL51', i18n: { key: 'al-th', query: { thermic: 'IV1' } } },
-  { class: 'EL1', label: 'AL52', i18n: { key: 'al-th', query: { thermic: 'RTA' } } },
-  { class: 'EL1', label: 'AL53', i18n: { key: 'al-th', query: { thermic: 'ASBK' } } },
-  { class: 'EL1', label: 'AL54', i18n: { key: 'al-th', query: { thermic: 'ASH' } } },
-  { class: 'EL1', label: 'AL55', i18n: { key: 'al-th', query: { thermic: 'AMM' } } },
-  { class: 'EL1', label: 'AL56', i18n: { key: 'al-th', query: { thermic: 'FE' } } },
-  { class: 'EL1', label: 'AL57', i18n: { key: 'al-th', query: { thermic: 'FE' } } },
-  { class: 'EL1', label: 'AL58', i18n: { key: 'al-th', query: { thermic: 'IV2' } } },
-  { class: 'EL1', label: 'AL59', i18n: { key: 'al-th', query: { thermic: 'AH' } } },
-  { class: 'EL1', label: 'AL60', i18n: { key: 'al-th', query: { thermic: 'MTC' } } },
-  { class: 'EL1', label: 'AL61', i18n: { key: 'al-th', query: { thermic: 'ATF' } } },
+  {
+    class: 'EL1',
+    label: 'AL49',
+    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+  },
+  { class: 'EL1', label: 'AL50', i18n: { key: '', query: {} } },
+  {
+    class: 'EL1',
+    label: 'AL51',
+    i18n: { key: 'al-th', query: { thermic: 'IV1' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL52',
+    i18n: { key: 'al-th', query: { thermic: 'RTA' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL53',
+    i18n: { key: 'al-th', query: { thermic: 'ASBK' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL54',
+    i18n: { key: 'al-th', query: { thermic: 'ASH' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL55',
+    i18n: { key: 'al-th', query: { thermic: 'AMM' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL56',
+    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL57',
+    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL58',
+    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL59',
+    i18n: { key: 'al-th', query: { thermic: 'AH' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL60',
+    i18n: { key: 'al-th', query: { thermic: 'MTC' } }
+  },
+  {
+    class: 'EL1',
+    label: 'AL61',
+    i18n: { key: 'al-th', query: { thermic: 'ATF' } }
+  },
   { class: 'EL1', label: 'AL62', i18n: { key: '', query: {} } },
   { class: 'EL1', label: 'AL63', i18n: { key: '', query: {} } },
   { class: 'EL1', label: 'AL64', i18n: { key: '', query: {} } }
@@ -647,14 +695,46 @@ exports.alarms3 = [
   { class: 'E1', label: 'AL46', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL47', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL48', i18n: { key: '', query: {} } },
-  { class: 'E1', label: 'AL49', i18n: { key: 'al-th', query: { thermic: 'FE' } } },
-  { class: 'E1', label: 'AL50', i18n: { key: 'al-th', query: { thermic: 'APB' } } },
-  { class: 'E1', label: 'AL51', i18n: { key: 'al-th', query: { thermic: 'AP' } } },
-  { class: 'E1', label: 'AL52', i18n: { key: 'al-th', query: { thermic: 'RTD' } } },
-  { class: 'E1', label: 'AL53', i18n: { key: 'al-th', query: { thermic: 'ASR' } } },
-  { class: 'E1', label: 'AL54', i18n: { key: 'al-th', query: { thermic: 'AMC' } } },
-  { class: 'E1', label: 'AL55', i18n: { key: 'al-th', query: { thermic: 'IV2' } } },
-  { class: 'E1', label: 'AL56', i18n: { key: 'al-th', query: { thermic: 'IV3' } } },
+  {
+    class: 'E1',
+    label: 'AL49',
+    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL50',
+    i18n: { key: 'al-th', query: { thermic: 'APB' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL51',
+    i18n: { key: 'al-th', query: { thermic: 'AP' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL52',
+    i18n: { key: 'al-th', query: { thermic: 'RTD' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL53',
+    i18n: { key: 'al-th', query: { thermic: 'ASR' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL54',
+    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL55',
+    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+  },
+  {
+    class: 'E1',
+    label: 'AL56',
+    i18n: { key: 'al-th', query: { thermic: 'IV3' } }
+  },
   { class: 'E1', label: 'AL57', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL58', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL59', i18n: { key: '', query: {} } },
@@ -714,14 +794,46 @@ exports.alarms5 = [
   { class: 'U1', label: 'AL46', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL47', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL48', i18n: { key: '', query: {} } },
-  { class: 'U1', label: 'AL49', i18n: { key: 'al-th', query: { thermic: 'FE' } } },
-  { class: 'U1', label: 'AL50', i18n: { key: 'al-th', query: { thermic: 'APB' } } },
-  { class: 'U1', label: 'AL51', i18n: { key: 'al-th', query: { thermic: 'AP' } } },
-  { class: 'U1', label: 'AL52', i18n: { key: 'al-th', query: { thermic: 'RTD' } } },
-  { class: 'U1', label: 'AL53', i18n: { key: 'al-th', query: { thermic: 'ASR' } } },
-  { class: 'U1', label: 'AL54', i18n: { key: 'al-th', query: { thermic: 'AMC' } } },
-  { class: 'U1', label: 'AL55', i18n: { key: 'al-th', query: { thermic: 'IV2' } } },
-  { class: 'U1', label: 'AL56', i18n: { key: 'al-th', query: { thermic: 'IV3' } } },
+  {
+    class: 'U1',
+    label: 'AL49',
+    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL50',
+    i18n: { key: 'al-th', query: { thermic: 'APB' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL51',
+    i18n: { key: 'al-th', query: { thermic: 'AP' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL52',
+    i18n: { key: 'al-th', query: { thermic: 'RTD' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL53',
+    i18n: { key: 'al-th', query: { thermic: 'ASR' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL54',
+    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL55',
+    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+  },
+  {
+    class: 'U1',
+    label: 'AL56',
+    i18n: { key: 'al-th', query: { thermic: 'IV3' } }
+  },
   { class: 'U1', label: 'AL57', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL58', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL59', i18n: { key: '', query: {} } },
