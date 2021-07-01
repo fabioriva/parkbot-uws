@@ -7,6 +7,7 @@ const PLC = require('../../lib/Plc')
 const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
+const parkworks = require('./parkworksApi') // Parkworks API
 
 const prefix = '/aps/washingtonblvd'
 
@@ -36,6 +37,9 @@ const start = async () => {
       maxPayloadLength: 16 * 1024 * 1024,
       idleTimeout: 16,
       prefix
+    })
+    parkworks(app, db, def, obj, plc01, {
+      prefix: '/aps/washingtonblvd/parkworks'
     })
   } catch (err) {
     console.error(new Error(err))

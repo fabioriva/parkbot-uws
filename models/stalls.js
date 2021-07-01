@@ -5,7 +5,7 @@ const { getPlcDateTime } = require('../lib/utils7')
 class Stall {
   constructor (
     nr,
-    status = false,
+    status = 0,
     date = format(new Date('1990-01-01 00:00:00'), 'yyyy-MM-dd HH:mm:ss'),
     size = 0
   ) {
