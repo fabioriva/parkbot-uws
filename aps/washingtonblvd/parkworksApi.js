@@ -24,25 +24,30 @@ function routes (app, def, obj, plc, options) {
         })
       }
     } else {
-      sendJson(res, { message: 'Card not valid' })
+      sendJson(res, { message: 'Card number not valid' })
     }
   })
   /**
-   * @api {get} /carIsCharging?id=123
+   * @api {get} /carIsCharging?id=123&status=1
+   * @apiParam {Number} id
+   * @apiParam {Number} status
    */
   app.get(prefix + '/carIsCharging', (res, req) => {
     const query = querystring.parse(req.getQuery())
     const id = parseInt(query.id)
-    if (id >= 1 && id <= def.CARDS) {
-      const stall = obj.stalls.find(stall => stall.status === id)
-      if (stall === undefined) {
-        sendJson(res, { message: 'Card not found' })
-      } else {
-        // plc.write
-        sendJson(res, { stall })
-      }
+    const status = parseInt(query.status)
+    console.log(id, status)
+    if (id >= 1 && id <= def.STALLS && (status === 0 || status === 1)) {
+      const buffer = Buffer.alloc(4)
+      buffer.writeUInt16BE(id, 0)
+      buffer.writeUInt16BE(status, 2)
+      // const response = await plc.write(def.REQ_0, buffer)
+      const response = Boolean(1)
+      sendJson(res, {
+        message: response ? 'Written' : 'Write error!'
+      })
     } else {
-      sendJson(res, { message: 'Card not valid' })
+      sendJson(res, { message: 'Invalid parameters' })
     }
   })
   /**
