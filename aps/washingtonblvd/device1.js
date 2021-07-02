@@ -1,5 +1,6 @@
 const { inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
+const { Inverter } = require('../../models/inverters')
 const { Position } = require('../../models/positions')
 
 const device = new Device(1, 'EL1')
@@ -24,7 +25,9 @@ const view = {
   e: silomat
 }
 
-const inverters = []
+const EN1 = inputs.find(b => b.addr === 'E104.3')
+const IV1 = new Inverter(1, 'IV1', EN1)
+const inverters = [IV1]
 
 const motors = []
 

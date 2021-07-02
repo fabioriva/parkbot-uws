@@ -38,7 +38,7 @@ const start = async () => {
       idleTimeout: 16,
       prefix
     })
-    parkworks(app, db, def, obj, plc01, {
+    parkworks(app, def, obj, plc01, {
       prefix: '/aps/washingtonblvd/parkworks'
     })
   } catch (err) {
