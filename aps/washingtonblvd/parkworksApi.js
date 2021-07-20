@@ -86,7 +86,7 @@ function routes (app, def, obj, plc, options) {
   app.get(prefix + '/exitIsEnabled', (res, req) => {
     const query = querystring.parse(req.getQuery())
     const id = parseInt(query.id)
-    const slot = parseInt(query.slot)
+    // const slot = parseInt(query.slot)
     if (id >= 1 && id <= def.CARDS) {
       const stall = obj.stalls.find(stall => stall.status === id)
       if (stall === undefined) {
@@ -101,8 +101,7 @@ function routes (app, def, obj, plc, options) {
           response
             ? {
                 id,
-                slot,
-                stall: stall.nr,
+                slot: stall.nr,
                 busy: 0
               }
             : sendError(ERR_0)
