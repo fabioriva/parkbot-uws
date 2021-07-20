@@ -2,8 +2,9 @@ const querystring = require('querystring')
 const { readJson, sendJson } = require('../../lib/json')
 
 const ERR_0 = { id: 0, message: 'PLC write error' }
-const ERR_1 = { id: 1, message: 'Card not found' }
-const ERR_2 = { id: 2, message: 'Card id not valid' }
+const ERR_1 = { id: 1, message: 'Card id not valid' }
+const ERR_2 = { id: 2, message: 'Card id not found' }
+// const ERR_3 = { id: 3, message: 'Card id in use' }
 
 function routes (app, def, obj, plc, options) {
   const { prefix } = options
@@ -18,18 +19,24 @@ function routes (app, def, obj, plc, options) {
     if (id >= 1 && id <= def.CARDS) {
       const stall = obj.stalls.find(stall => stall.status === id)
       if (stall === undefined) {
-        sendJson(res, { message: 'Card not found' })
+        sendJson(res, sendError(ERR_2))
       } else {
         const buffer = Buffer.allocUnsafe(2)
         buffer.writeUInt16BE(id, 0)
         // const response = await plc.write(def.REQ_0, buffer)
         const response = Boolean(1)
-        sendJson(res, {
-          message: response ? 'Written' : 'Write error!'
-        })
+        sendJson(
+          res,
+          response
+            ? {
+                id,
+                slot: stall.nr
+              }
+            : sendError(ERR_0)
+        )
       }
     } else {
-      sendJson(res, { message: 'Card number not valid' })
+      sendJson(res, sendError(ERR_1))
     }
   })
   /**
@@ -63,12 +70,12 @@ function routes (app, def, obj, plc, options) {
     if (id >= 1 && id <= def.CARDS) {
       const stall = obj.stalls.find(stall => stall.status === id)
       if (stall === undefined) {
-        sendJson(res, { message: 'Card not found' })
+        sendJson(res, sendError(ERR_2))
       } else {
-        sendJson(res, { stall })
+        sendJson(res, { id, slot: stall.nr })
       }
     } else {
-      sendJson(res, { message: 'Card not valid' })
+      sendJson(res, sendError(ERR_1))
     }
   })
   /**
@@ -83,7 +90,7 @@ function routes (app, def, obj, plc, options) {
     if (id >= 1 && id <= def.CARDS) {
       const stall = obj.stalls.find(stall => stall.status === id)
       if (stall === undefined) {
-        sendJson(res, sendError(ERR_1))
+        sendJson(res, sendError(ERR_2))
       } else {
         const buffer = Buffer.allocUnsafe(2)
         buffer.writeUInt16BE(id, 0)
@@ -102,7 +109,7 @@ function routes (app, def, obj, plc, options) {
         )
       }
     } else {
-      sendJson(res, sendError(ERR_2))
+      sendJson(res, sendError(ERR_1))
     }
   })
   /**
@@ -150,5 +157,5 @@ function routes (app, def, obj, plc, options) {
 module.exports = routes
 
 function sendError (err) {
-  return { error: err }
+  return { error: err.id, info: err.message }
 }
