@@ -1,6 +1,8 @@
 const querystring = require('querystring')
 const { readJson, sendJson } = require('../../lib/json')
 
+let count = 0
+
 const ERR_0 = { id: 0, message: 'PLC write error' }
 const ERR_1 = { id: 1, message: 'Card id not valid' }
 const ERR_2 = { id: 2, message: 'Card id not found' }
@@ -84,6 +86,7 @@ function routes (app, def, obj, plc, options) {
    * @apiParam {Number} slot
    */
   app.get(prefix + '/exitIsEnabled', (res, req) => {
+    count = count + 1
     const query = querystring.parse(req.getQuery())
     const id = parseInt(query.id)
     // const slot = parseInt(query.slot)
@@ -102,7 +105,8 @@ function routes (app, def, obj, plc, options) {
             ? {
                 id,
                 slot: stall.nr,
-                busy: 0
+                busy: count < 30 ? 1 : 0,
+                count
               }
             : sendError(ERR_0)
         )

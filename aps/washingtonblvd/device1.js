@@ -1,6 +1,7 @@
 const { inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
 const { Inverter } = require('../../models/inverters')
+const { Lock } = require('../../models/motors')
 const { Position } = require('../../models/positions')
 
 const device = new Device(1, 'EL1')
@@ -29,6 +30,14 @@ const EN1 = inputs.find(b => b.addr === 'E104.3')
 const IV1 = new Inverter(1, 'IV1', EN1)
 const inverters = [IV1]
 
-const motors = []
+const AMM = inputs.find(b => b.addr === 'E105.5')
+const EOM = inputs.find(b => b.addr === 'E105.3')
+const EZM = inputs.find(b => b.addr === 'E105.4')
+const SMA = outputs.find(b => b.addr === 'A102.0')
+const SMB = outputs.find(b => b.addr === 'A102.1')
+
+const M2 = new Lock(1, '', [AMM, EOM, EZM], [SMA, SMB])
+
+const motors = [M2]
 
 module.exports = { device, inverters, motors, positions, view }
