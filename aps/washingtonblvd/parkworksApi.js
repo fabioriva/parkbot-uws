@@ -84,7 +84,7 @@ function routes (app, def, obj, plc, options) {
     const query = querystring.parse(req.getQuery())
     const id = parseInt(query.id)
     if (id >= 1 && id <= def.STALLS) {
-      const stall = obj.stalls[id]
+      const stall = obj.stalls[id - 1]
       sendJson(res, { id: stall.nr, status: stall.status })
     } else {
       sendJson(res, sendError(ERR_1))
