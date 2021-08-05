@@ -66,20 +66,31 @@ function routes (app, def, obj, plc, options) {
   /**
    * @api {get} /carIsParked?id=123
    */
+  // app.get(prefix + '/carIsParked', (res, req) => {
+  //   const query = querystring.parse(req.getQuery())
+  //   const id = parseInt(query.id)
+  //   if (id >= 1 && id <= def.CARDS) {
+  //     const stall = obj.stalls.find(stall => stall.status === id)
+  //     if (stall === undefined) {
+  //       sendJson(res, sendError(ERR_2))
+  //     } else {
+  //       sendJson(res, { id, slot: stall.nr })
+  //     }
+  //   } else {
+  //     sendJson(res, sendError(ERR_1))
+  //   }
+  // })
   app.get(prefix + '/carIsParked', (res, req) => {
     const query = querystring.parse(req.getQuery())
     const id = parseInt(query.id)
-    if (id >= 1 && id <= def.CARDS) {
-      const stall = obj.stalls.find(stall => stall.status === id)
-      if (stall === undefined) {
-        sendJson(res, sendError(ERR_2))
-      } else {
-        sendJson(res, { id, slot: stall.nr })
-      }
+    if (id >= 1 && id <= def.STALLS) {
+      const stall = obj.stalls[id]
+      sendJson(res, { id: stall.nr, status: stall.status })
     } else {
       sendJson(res, sendError(ERR_1))
     }
   })
+
   /**
    * @api {get} /exitIsEnabled/
    * @apiParam {Number} id
