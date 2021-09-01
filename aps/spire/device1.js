@@ -39,7 +39,8 @@ const view = {
   b: positions,
   c: lamps,
   d: [],
-  e: silomat
+  e: silomat,
+  alarms: []
 }
 
 const EN1 = inputs.find(b => b.addr === 'E102.3')

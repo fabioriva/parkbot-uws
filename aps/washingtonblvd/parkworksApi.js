@@ -116,8 +116,7 @@ function routes (app, def, obj, plc, options) {
             ? {
                 id,
                 slot: stall.nr,
-                busy: count < 30 ? 1 : 0,
-                count
+                busy: count < 30 ? 1 : 0
               }
             : sendError(ERR_0)
         )

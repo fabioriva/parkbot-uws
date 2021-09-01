@@ -18,7 +18,8 @@ class Actuator {
       motion: this.motion(),
       position: this.position(),
       inputs: this.inputs,
-      outputs: this.outputs
+      outputs: this.outputs,
+      enable: this.motor[4].status
     }
   }
 
@@ -109,7 +110,8 @@ class Motor {
       motion: this.motion(),
       position: this.position(),
       inputs: this.inputs,
-      outputs: this.outputs
+      outputs: this.outputs,
+      enable: this.motor[4].status
     }
   }
 

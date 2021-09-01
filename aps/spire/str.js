@@ -445,7 +445,8 @@ exports.alarms1 = [
   {
     class: 'EVT1',
     label: 'AL48',
-    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'alarm-th', query: { thermic: 'AMC' } }
+    // help: { key: 'alarm-th', query: { thermic: 'AMC' } }
   },
   { class: 'EVT1', label: 'AL49', i18n: { key: '', query: {} } },
   { class: 'EVT1', label: 'AL50', i18n: { key: '', query: {} } },
