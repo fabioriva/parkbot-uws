@@ -3,9 +3,9 @@ const util = require('util')
 const { getPlcDateTime } = require('../lib/utils7')
 
 class Alarm {
-  constructor (id, device, status) {
+  constructor (id, status) {
     this.id = id
-    this.device = device
+    // this.device = device
     this.status = status
   }
 
@@ -29,9 +29,9 @@ class Alarm {
 }
 
 class Alarms {
-  constructor (alarms = [], name) {
+  constructor (alarms = [], id) {
     this.alarms = alarms
-    this.name = name
+    this.id = id
   }
 
   get _active () {
@@ -45,10 +45,10 @@ class Alarms {
   }
 }
 
-const generateAlarms = (device, min, max, str) => {
+const generateAlarms = (min, max, str) => {
   const alarms = []
   for (let i = min; i <= max; i++) {
-    alarms.push(new Alarm(i, device, false))
+    alarms.push(new Alarm(i, false))
   }
   alarms.forEach((alarm, index) => {
     alarm.label = str[index].label
@@ -56,6 +56,18 @@ const generateAlarms = (device, min, max, str) => {
   })
   return alarms
 }
+
+// const generateAlarms = (device, min, max, str) => {
+//   const alarms = []
+//   for (let i = min; i <= max; i++) {
+//     alarms.push(new Alarm(i, device, false))
+//   }
+//   alarms.forEach((alarm, index) => {
+//     alarm.label = str[index].label
+//     alarm._i18n = str[index].i18n
+//   })
+//   return alarms
+// }
 
 const updateAlarms = util.promisify(
   (start, buffer, offset, alarms, callback) => {
