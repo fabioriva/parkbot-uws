@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient
 const util = require('util')
 const obj = require('./aps/spire/obj')
 
-const DATABASE = 'wallstreet'
+const DATABASE = 'washingtonblvd'
 const COLLECTION = 'history'
 // const MONGODB_URI = 'mongodb://127.0.0.1:27017/'
 
@@ -19,6 +19,21 @@ const start = async () => {
 
     for (let i = 1; i <= 64; i++) {
       updateAlarms(db, 1, i, obj)
+    }
+    for (let i = 1; i <= 64; i++) {
+      updateAlarms(db, 2, i, obj)
+    }
+    for (let i = 1; i <= 64; i++) {
+      updateAlarms(db, 3, i, obj)
+    }
+    for (let i = 1; i <= 64; i++) {
+      updateAlarms(db, 4, i, obj)
+    }
+    for (let i = 1; i <= 64; i++) {
+      updateAlarms(db, 5, i, obj)
+    }
+    for (let i = 1; i <= 64; i++) {
+      updateAlarms(db, 6, i, obj)
     }
     for (let i = 0; i <= 15; i++) {
       updateOperations(db, i, obj)

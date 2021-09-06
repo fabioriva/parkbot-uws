@@ -118,19 +118,19 @@ exports.positions = device1.positions.concat(
 exports.diagnostic = [device1, device2, device3, device4, device5, device6]
 
 exports.modes = [
-  { id: 0, label: 'mode-no-func' },
+  { id: 0, label: 'mode-no' },
   { id: 1, label: 'mode-data-edit' },
   { id: 2, label: 'mode-data-read' },
   { id: 3, label: 'mode-eme-1' },
   { id: 4, label: 'mode-eme-2' },
-  { id: 5, label: 'mode-no-func' },
+  { id: 5, label: 'mode-no' },
   { id: 6, label: 'mode-step' },
   { id: 7, label: 'mode-preset' },
   { id: 8, label: 'mode-auto' }
 ]
 
 exports.operations = [
-  { id: 0, label: '---' },
+  { id: 0, label: 'op-no' },
   { id: 1, label: 'op-alarm-on' },
   { id: 2, label: 'op-alarm-off' },
   { id: 3, label: 'op-switch-mode' },
@@ -142,10 +142,10 @@ exports.operations = [
   { id: 9, label: 'op-stall-rsv' },
   { id: 10, label: 'op-req-exit' },
   { id: 11, label: 'op-req-entry' },
-  { id: 12, label: '---' },
-  { id: 13, label: '---' },
-  { id: 14, label: '---' },
-  { id: 15, label: '---' }
+  { id: 12, label: 'op-no' },
+  { id: 13, label: 'op-no' },
+  { id: 14, label: 'op-no' },
+  { id: 15, label: 'op-no' }
 ]
 
 exports.overview = {
