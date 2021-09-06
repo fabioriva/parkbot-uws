@@ -531,7 +531,7 @@ exports.outputs5 = [
   { addr: 'A217.7', label: '' }
 ]
 
-exports.alarms1 = [
+exports.EL = [
   { class: 'EL1', label: 'AL1', i18n: { key: 'al-sil-01', query: {} } },
   { class: 'EL1', label: 'AL2', i18n: { key: 'al-sil-02', query: {} } },
   { class: 'EL1', label: 'AL3', i18n: { key: 'al-sil-03', query: {} } },
@@ -646,7 +646,7 @@ exports.alarms1 = [
   { class: 'EL1', label: 'AL64', i18n: { key: '', query: {} } }
 ]
 
-exports.alarms3 = [
+exports.E = [
   { class: 'E1', label: 'AL1', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL2', i18n: { key: '', query: {} } },
   { class: 'E1', label: 'AL3', i18n: { key: '', query: {} } },
@@ -745,7 +745,7 @@ exports.alarms3 = [
   { class: 'E1', label: 'AL64', i18n: { key: '', query: {} } }
 ]
 
-exports.alarms5 = [
+exports.U = [
   { class: 'U1', label: 'AL1', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL2', i18n: { key: '', query: {} } },
   { class: 'U1', label: 'AL3', i18n: { key: '', query: {} } },

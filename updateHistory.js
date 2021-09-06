@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient
 const util = require('util')
 const obj = require('./aps/spire/obj')
 
-const DATABASE = 'washingtonblvd'
+const DATABASE = 'bmc'
 const COLLECTION = 'history'
 // const MONGODB_URI = 'mongodb://127.0.0.1:27017/'
 
