@@ -26,6 +26,7 @@ const start = async () => {
         console.log('Failed to listen to port ' + def.HTTP)
       }
     })
+
     const plc01 = new PLC(def.PLC)
     plc01.main(def, obj)
     plc01.on('pub', ({ channel, data }) => app.publish(channel, data))
