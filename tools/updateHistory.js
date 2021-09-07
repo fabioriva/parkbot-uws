@@ -28,21 +28,6 @@ const start = async () => {
       await updateAlarms(db, 5, i, obj.alarms[4].alarms)
       await updateAlarms(db, 6, i, obj.alarms[5].alarms)
     }
-    // for (let i = 1; i <= 64; i++) {
-    //   await updateAlarms(db, 2, i, obj)
-    // }
-    // for (let i = 1; i <= 64; i++) {
-    //   updateAlarms(db, 3, i, obj)
-    // }
-    // for (let i = 1; i <= 64; i++) {
-    //   updateAlarms(db, 4, i, obj)
-    // }
-    // for (let i = 1; i <= 64; i++) {
-    //   updateAlarms(db, 5, i, obj)
-    // }
-    // for (let i = 1; i <= 64; i++) {
-    //   updateAlarms(db, 6, i, obj)
-    // }
     // for (let i = 0; i <= 15; i++) {
     //   updateOperations(db, i, obj)
     // }
@@ -61,8 +46,6 @@ const start = async () => {
 start()
 
 const updateAlarms = util.promisify((db, device, alarm, alarms, callback) => {
-  // const updateAlarms = util.promisify(async (db, device, alarm, obj) => {
-  // console.log(device, alarm, obj.alarms[device - 1].alarms[alarm - 1])
   const filter = {
     $and: [
       { 'device.id': device },
@@ -70,8 +53,8 @@ const updateAlarms = util.promisify((db, device, alarm, alarms, callback) => {
       { $or: [{ 'operation.id': 1 }, { 'operation.id': 2 }] }
     ]
   }
-  console.log(filter)
-  db.collection(COLLECTION).updateOne(
+  // console.log(filter)
+  db.collection(COLLECTION).updateMany(
     filter,
     {
       $set: { alarm: alarms[alarm - 1] }
