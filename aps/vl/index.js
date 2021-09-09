@@ -8,7 +8,7 @@ const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
-const prefix = '/aps/lakshmi'
+const prefix = '/aps/vl' // 'lakshmi'
 
 const client = new MongoClient(process.env.MONGODB_URI, {
   useNewUrlParser: true,
