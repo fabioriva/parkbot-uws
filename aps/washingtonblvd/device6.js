@@ -79,7 +79,7 @@ const M1 = new Hoisting(
  * Traveling
  */
 const AH = inputs.find(b => b.addr === 'E601.5')
-const T101 = outputs.find(b => b.addr === 'A6101.0')
+const T101 = outputs.find(b => b.addr === 'A601.0')
 const T102 = outputs.find(b => b.addr === 'A601.3')
 const T10F = outputs.find(b => b.addr === 'A601.2')
 
