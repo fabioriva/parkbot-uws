@@ -60,7 +60,7 @@ class Traveling extends Actuator {
 class Hoisting extends Actuator {
   constructor (id, name, inputs = [], outputs = []) {
     super(id, name, inputs, outputs)
-    this.motion_ = ['motion-down', 'motion-up']
+    this.motion_ = ['motion-up', 'motion-down']
     this.position_ = ['position-low', 'position-high']
   }
 }

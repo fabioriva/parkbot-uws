@@ -28,12 +28,12 @@ const RCV = inputs.find(b => b.addr === 'E612.4')
 const REAV = inputs.find(b => b.addr === 'E612.5')
 const REAH = inputs.find(b => b.addr === 'E612.6')
 const RCH = inputs.find(b => b.addr === 'E612.7')
-const T2 = outputs.find(b => b.addr === 'A600.0')
-const TRA = outputs.find(b => b.addr === 'A610.2')
-const TRB = outputs.find(b => b.addr === 'A610.3')
-const KCS = outputs.find(b => b.addr === 'A610.4')
-const KCV = outputs.find(b => b.addr === 'A610.5')
-const KCH = outputs.find(b => b.addr === 'A610.6')
+const T2 = outputs.find(b => b.addr === 'A611.1')
+const TRA = outputs.find(b => b.addr === 'A611.2')
+const TRB = outputs.find(b => b.addr === 'A611.3')
+const KCS = outputs.find(b => b.addr === 'A611.4')
+const KCV = outputs.find(b => b.addr === 'A611.5')
+const KCH = outputs.find(b => b.addr === 'A611.6')
 
 // const silomat = [
 //   inputs.find(b => b.addr === 'E612.0'),
