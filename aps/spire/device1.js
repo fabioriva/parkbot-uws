@@ -3,6 +3,7 @@ const { Device } = require('../../models/devices')
 const { Inverter } = require('../../models/inverters')
 const { Door, Flap, Lock, Hoisting, Rotation } = require('../../models/motors')
 const { Position } = require('../../models/positions')
+const { Silomat } = require('../../models/silomat')
 
 const device = new Device(1, 'EVT1')
 
@@ -17,29 +18,44 @@ const lamps = [
   inputs.find(b => b.addr === 'E112.3')
 ]
 
-const silomat = [
-  inputs.find(b => b.addr === 'E112.0'),
-  inputs.find(b => b.addr === 'E112.1'),
-  inputs.find(b => b.addr === 'E112.2'),
-  inputs.find(b => b.addr === 'E112.3'),
-  inputs.find(b => b.addr === 'E112.4'),
-  inputs.find(b => b.addr === 'E112.5'),
-  inputs.find(b => b.addr === 'E112.6'),
-  inputs.find(b => b.addr === 'E112.7'),
-  outputs.find(b => b.addr === 'A100.0'),
-  outputs.find(b => b.addr === 'A110.2'),
-  outputs.find(b => b.addr === 'A110.3'),
-  outputs.find(b => b.addr === 'A110.4'),
-  outputs.find(b => b.addr === 'A110.5'),
-  outputs.find(b => b.addr === 'A110.6')
-]
+const RMV = inputs.find(b => b.addr === 'E112.0')
+const RMH = inputs.find(b => b.addr === 'E112.1')
+const RES = inputs.find(b => b.addr === 'E112.2')
+const REH = inputs.find(b => b.addr === 'E112.3')
+const RCV = inputs.find(b => b.addr === 'E112.4')
+const REAV = inputs.find(b => b.addr === 'E112.5')
+const REAH = inputs.find(b => b.addr === 'E112.6')
+const RCH = inputs.find(b => b.addr === 'E112.7')
+const T2 = outputs.find(b => b.addr === 'A100.0')
+const TRA = outputs.find(b => b.addr === 'A110.2')
+const TRB = outputs.find(b => b.addr === 'A110.3')
+const KCS = outputs.find(b => b.addr === 'A110.4')
+const KCV = outputs.find(b => b.addr === 'A110.5')
+const KCH = outputs.find(b => b.addr === 'A110.6')
+
+// const silomat = [
+//   inputs.find(b => b.addr === 'E112.0'),
+//   inputs.find(b => b.addr === 'E112.1'),
+//   inputs.find(b => b.addr === 'E112.2'),
+//   inputs.find(b => b.addr === 'E112.3'),
+//   inputs.find(b => b.addr === 'E112.4'),
+//   inputs.find(b => b.addr === 'E112.5'),
+//   inputs.find(b => b.addr === 'E112.6'),
+//   inputs.find(b => b.addr === 'E112.7'),
+//   outputs.find(b => b.addr === 'A100.0'),
+//   outputs.find(b => b.addr === 'A110.2'),
+//   outputs.find(b => b.addr === 'A110.3'),
+//   outputs.find(b => b.addr === 'A110.4'),
+//   outputs.find(b => b.addr === 'A110.5'),
+//   outputs.find(b => b.addr === 'A110.6')
+// ]
 
 const view = {
   a: device,
   b: positions,
   c: lamps,
   d: [],
-  e: silomat,
+  e: [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH, T2, TRA, TRB, KCS, KCV, KCH],
   alarms: []
 }
 
@@ -141,4 +157,15 @@ const M6 = new Door(6, { key: 'mot-door-u' }, [EZA, EOA, FBA, APA], [SZA, SOA])
 
 const motors = [M1, M2, M3, M4, M5, M6]
 
-module.exports = { device, inverters, motors, positions, view }
+/**
+ * Silomat
+ */
+const silomat = new Silomat(
+  1,
+  'SIL1',
+  [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH],
+  [T2, TRA, TRB, KCS, KCV, KCH]
+  // [...LC]
+)
+
+module.exports = { device, inverters, motors, positions, silomat, view }

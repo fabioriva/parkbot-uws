@@ -1,9 +1,9 @@
 require('dotenv').config()
 const MongoClient = require('mongodb').MongoClient
 const util = require('util')
-const obj = require('../aps/bmc/obj')
+const obj = require('../aps/spire/obj')
 
-const DATABASE = 'bmc'
+const DATABASE = 'wallstreet'
 const COLLECTION = 'history'
 // const MONGODB_URI = 'mongodb://127.0.0.1:27017/')
 

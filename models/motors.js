@@ -184,6 +184,7 @@ const updateMotors = util.promisify(
 
 module.exports = {
   updateMotors,
+  Actuator,
   Door,
   Flap,
   Lock,
