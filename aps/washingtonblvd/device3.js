@@ -1,5 +1,7 @@
 const { inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
+const { Inverter } = require('../../models/inverters')
+const { Door, Flap, Lock, Hoisting, Rotation } = require('../../models/motors')
 const { Position } = require('../../models/positions')
 
 const device = new Device(3, 'EL3')
@@ -14,18 +16,112 @@ const lamps = [
   outputs.find(b => b.addr === 'A300.6')
 ]
 
-const silomat = []
-
 const view = {
   a: device,
   b: positions,
   c: lamps,
   d: [],
-  e: silomat
+  e: []
 }
 
-const inverters = []
+const EN1 = inputs.find(b => b.addr === 'E304.3')
+const IV1 = new Inverter(1, 'IV1', EN1)
+const inverters = [IV1]
 
-const motors = []
+const FTXV = inputs.find(b => b.addr === 'E303.0')
+const FTXH = inputs.find(b => b.addr === 'E303.1')
+const FTC = inputs.find(b => b.addr === 'E302.1')
+const LC = [FTXV, FTXH, FTC]
 
-module.exports = { device, inverters, motors, positions, view }
+/**
+ * Hoisting
+ */
+const FSBK = inputs.find(b => b.addr === 'E304.4')
+const ASBK = inputs.find(b => b.addr === 'E304.5')
+const RTA = inputs.find(b => b.addr === 'E304.6')
+const SQA = outputs.find(b => b.addr === 'A302.2')
+const SBK1 = outputs.find(b => b.addr === 'A300.2')
+const SBK2 = outputs.find(b => b.addr === 'A303.5')
+
+const M1 = new Hoisting(
+  1,
+  { key: 'mot-hoisting' },
+  [FSBK, ASBK, RTA],
+  [SQA, SBK1, SBK2],
+  [LV]
+)
+
+/**
+ * Rotation
+ */
+const AD = inputs.find(b => b.addr === 'E305.1')
+const ASBK2 = inputs.find(b => b.addr === 'E304.1')
+const TD = outputs.find(b => b.addr === 'A302.6')
+
+const M2 = new Rotation(2, { key: 'mot-rotation' }, [AD, ASBK2], [TD], [ENR])
+
+/**
+ * Lock V
+ */
+const EOM = inputs.find(b => b.addr === 'E305.3')
+const EZM = inputs.find(b => b.addr === 'E305.4')
+const AMM = inputs.find(b => b.addr === 'E305.5')
+const SMA = outputs.find(b => b.addr === 'A302.0')
+const SMB = outputs.find(b => b.addr === 'A302.1')
+
+const M3 = new Lock(
+  3,
+  { key: 'mot-lock', query: { nr: 'V' } },
+  [EOM, EZM, AMM, ...LC],
+  [SMA, SMB]
+)
+
+/**
+ * Lock R
+ */
+const EOMD = inputs.find(b => b.addr === 'E308.0')
+const EZMD = inputs.find(b => b.addr === 'E308.1')
+const AMMD = inputs.find(b => b.addr === 'E308.2')
+const SMAD = outputs.find(b => b.addr === 'A305.0')
+const SMBD = outputs.find(b => b.addr === 'A305.1')
+
+const M4 = new Lock(
+  4,
+  { key: 'mot-lock', query: { nr: 'R' } },
+  [EOMD, EZMD, AMMD, ...LC],
+  [SMAD, SMBD]
+)
+
+/**
+ * Flap
+ */
+const ECA = inputs.find(b => b.addr === 'E302.4')
+const ECB = inputs.find(b => b.addr === 'E302.5')
+const AMC = inputs.find(b => b.addr === 'E302.6')
+const SCA = outputs.find(b => b.addr === 'A302.4')
+const SCB = outputs.find(b => b.addr === 'A302.5')
+
+const M5 = new Flap(
+  5,
+  { key: 'mot-flap', query: { nr: 1 } },
+  [ECA, ECB, AMC, ...LC],
+  [SCA, SCB]
+)
+
+/**
+ * Door E
+ */
+const EZE = inputs.find(b => b.addr === 'E306.0')
+const EOE = inputs.find(b => b.addr === 'E306.1')
+const FBE = inputs.find(b => b.addr === 'E306.2')
+const APE = inputs.find(b => b.addr === 'E302.7')
+const SZE = outputs.find(b => b.addr === 'A300.4')
+const SOE = outputs.find(b => b.addr === 'A300.5')
+
+const M6 = new Door(6, { key: 'mot-door' }, [EZE, EOE, FBE, APE], [SZE, SOE])
+
+const motors = [M1, M2, M3, M4, M5, M6]
+
+const silomat = { motors: [] }
+
+module.exports = { device, inverters, motors, positions, silomat, view }

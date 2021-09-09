@@ -115,6 +115,14 @@ exports.positions = device1.positions.concat(
   device6.positions
 )
 
+exports.silomats = device1.silomat.motors.concat(
+  device2.silomat.motors,
+  device3.silomat.motors,
+  device4.silomat.motors,
+  device5.silomat.motors,
+  device6.silomat.motors
+)
+
 exports.diagnostic = [device1, device2, device3, device4, device5, device6]
 
 exports.modes = [
