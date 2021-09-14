@@ -9,8 +9,9 @@
     "chandan": "nodemon aps/chandan",
     "nhidcl": "nodemon aps/nhidcl",
     "spire": "nodemon aps/spire",
-    "wblvd": "nodemon aps/washingtonblvd",
+    "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
+    "wblvd": "nodemon aps/washingtonblvd",
     "start": "NODE_ENV=production pm2 start aps/spire/index.js --name spire-uws --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
