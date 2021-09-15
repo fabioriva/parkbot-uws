@@ -448,21 +448,21 @@ exports.EVT = [
   },
   {
     label: 'AL49',
-    i18n: { key: 'alarm-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
   },
   {
     label: 'AL50',
-    i18n: { key: 'alarm-th', query: { thermic: 'APE' } }
+    i18n: { key: 'al-th', query: { thermic: 'APE' } }
   },
-  { label: 'AL51', i18n: { key: 'alarm-iv', query: { nr: 2 } } },
-  { label: 'AL52', i18n: { key: 'alarm-iv', query: { nr: 1 } } },
+  { label: 'AL51', i18n: { key: 'al-iv', query: { nr: 2 } } },
+  { label: 'AL52', i18n: { key: 'al-iv', query: { nr: 1 } } },
   {
     label: 'AL53',
-    i18n: { key: 'alarm-th', query: { thermic: 'ASBK' } }
+    i18n: { key: 'al-th', query: { thermic: 'ASBK' } }
   },
   {
     label: 'AL54',
-    i18n: { key: 'alarm-th', query: { thermic: 'RT' } }
+    i18n: { key: 'al-th', query: { thermic: 'RT' } }
   },
   { label: 'AL55', i18n: { key: '', query: {} } },
   { label: 'AL56', i18n: { key: '', query: {} } },
