@@ -334,7 +334,7 @@ exports.outputs4 = [
   { addr: 'A123.6', label: '' },
   { addr: 'A123.7', label: '' }
 ]
-exports.alarms1 = [
+exports.EL = [
   { label: 'AL1', i18n: { key: 'al-sil-01', query: {} } },
   { label: 'AL2', i18n: { key: 'al-sil-01', query: {} } },
   { label: 'AL3', i18n: { key: 'al-sil-01', query: {} } },

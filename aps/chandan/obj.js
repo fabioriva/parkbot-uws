@@ -6,9 +6,9 @@ const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
-const al01 = new Alarms(generateAlarms(1, 64, str.alarms1), 1) // EL1
-const al02 = new Alarms(generateAlarms(1, 64, str.alarms2), 2) // EL2
-const al03 = new Alarms(generateAlarms(1, 64, str.alarms3), 3) // T(A)
+const al01 = new Alarms(generateAlarms(1, 64, str.EL1), 1)
+const al02 = new Alarms(generateAlarms(1, 64, str.EL2), 2)
+const al03 = new Alarms(generateAlarms(1, 64, str.A), 3)
 exports.alarms = [al01, al02, al03]
 
 const inputs1 = generateBits('E', 0, 1, str.inputs1)
