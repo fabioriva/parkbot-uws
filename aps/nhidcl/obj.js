@@ -7,7 +7,7 @@ const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.alarms1), 1)
-const al02 = new Alarms(generateAlarms(1, 64, str.alarms2), 2)
+const al02 = new Alarms(generateAlarms(1, 64, str.alarms1), 2)
 exports.alarms = [al01, al02]
 
 const inputs1 = generateBits('E', 0, 3, str.inputs1)
