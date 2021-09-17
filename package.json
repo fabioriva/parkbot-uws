@@ -7,6 +7,7 @@
     "test": "standard",
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
+    "ironbank": "nodemon aps/ironbank",
     "nhidcl": "nodemon aps/nhidcl",
     "spire": "nodemon aps/spire",
     "trumpeldor": "nodemon aps/trumpeldor",
