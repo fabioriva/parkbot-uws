@@ -33,23 +33,6 @@ const KCS = outputs.find(b => b.addr === 'A210.4')
 const KCV = outputs.find(b => b.addr === 'A210.5')
 const KCH = outputs.find(b => b.addr === 'A210.6')
 
-// const silomat = [
-//   inputs.find(b => b.addr === 'E212.0'),
-//   inputs.find(b => b.addr === 'E212.1'),
-//   inputs.find(b => b.addr === 'E212.2'),
-//   inputs.find(b => b.addr === 'E212.3'),
-//   inputs.find(b => b.addr === 'E212.4'),
-//   inputs.find(b => b.addr === 'E212.5'),
-//   inputs.find(b => b.addr === 'E212.6'),
-//   inputs.find(b => b.addr === 'E212.7'),
-//   outputs.find(b => b.addr === 'A200.0'),
-//   outputs.find(b => b.addr === 'A210.2'),
-//   outputs.find(b => b.addr === 'A210.3'),
-//   outputs.find(b => b.addr === 'A210.4'),
-//   outputs.find(b => b.addr === 'A210.5'),
-//   outputs.find(b => b.addr === 'A210.6')
-// ]
-
 const view = {
   a: device,
   b: positions,
@@ -70,7 +53,7 @@ const inverters = [IV1, IV2]
 const FTXV = inputs.find(b => b.addr === 'E211.6')
 const FTXH = inputs.find(b => b.addr === 'E211.7')
 const EM = inputs.find(b => b.addr === 'E211.0')
-const LC = [FTXV, FTXH, EM]
+const LC = [EM, FTXV, FTXH]
 
 /**
  * Hoisting
@@ -87,7 +70,8 @@ const M1 = new Hoisting(
   { key: 'mot-hoisting' },
   [FSBK, ASBK, RTA],
   [SQA, SBK1, SBK2],
-  [LV]
+  [LV],
+  LC
 )
 
 /**
@@ -97,7 +81,14 @@ const AKKM = inputs.find(b => b.addr === 'E201.5')
 const ASBK2 = inputs.find(b => b.addr === 'E202.1')
 const TD = outputs.find(b => b.addr === 'A202.6')
 
-const M2 = new Rotation(2, { key: 'mot-rotation' }, [AKKM, ASBK2], [TD], [ENR])
+const M2 = new Rotation(
+  2,
+  { key: 'mot-rotation' },
+  [AKKM, ASBK2],
+  [TD],
+  [ENR],
+  LC
+)
 
 /**
  * Lock
@@ -111,7 +102,7 @@ const SMB = outputs.find(b => b.addr === 'A211.1')
 const M3 = new Lock(
   3,
   { key: 'mot-lock', query: { nr: 1 } },
-  [EOM, EZM, AMM, ...LC],
+  [EOM, EZM, AMM],
   [SMA, SMB]
 )
 
@@ -127,7 +118,7 @@ const SCB = outputs.find(b => b.addr === 'A211.3')
 const M4 = new Flap(
   4,
   { key: 'mot-flap', query: { nr: 1 } },
-  [ECA, ECB, AMC, ...LC],
+  [ECA, ECB, AMC],
   [SCA, SCB]
 )
 

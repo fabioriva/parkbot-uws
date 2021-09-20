@@ -2,11 +2,12 @@ const util = require('util')
 const { generateBits } = require('./bits')
 
 class Actuator {
-  constructor (id, name, inputs = [], outputs = []) {
+  constructor (id, name, inputs = [], outputs = [], ready = []) {
     this.id = id
     this.name = name
     this.inputs = inputs
     this.outputs = outputs
+    this.ready = ready
     this.motor = generateBits('M', 0, 0)
     this.flags = generateBits('M', 1, 1)
   }
@@ -19,7 +20,8 @@ class Actuator {
       position: this.position(),
       inputs: this.inputs,
       outputs: this.outputs,
-      enable: this.motor[4].status
+      enable: this.motor[4].status,
+      error: this.motor[7].status
     }
   }
 
@@ -93,12 +95,20 @@ class Lock extends Actuator {
 }
 
 class Motor {
-  constructor (id, name, inputs = [], outputs = [], positions = []) {
+  constructor (
+    id,
+    name,
+    inputs = [],
+    outputs = [],
+    positions = [],
+    ready = []
+  ) {
     this.id = id
     this.name = name
     this.inputs = inputs
     this.outputs = outputs
     this.positions = positions
+    this.ready = ready
     this.motor = generateBits('M', 0, 0)
     this.flags = generateBits('M', 1, 1)
   }
@@ -111,7 +121,9 @@ class Motor {
       position: this.position(),
       inputs: this.inputs,
       outputs: this.outputs,
-      enable: this.motor[4].status
+      ready: this.ready,
+      enable: this.motor[4].status,
+      error: this.motor[7].status
     }
   }
 
@@ -151,22 +163,43 @@ class Motor {
 }
 
 class Hoisting extends Motor {
-  constructor (id, name, inputs = [], outputs = [], positions = []) {
-    super(id, name, inputs, outputs, positions)
+  constructor (
+    id,
+    name,
+    inputs = [],
+    outputs = [],
+    positions = [],
+    ready = []
+  ) {
+    super(id, name, inputs, outputs, positions, ready)
     this.motion_ = ['motion-down', 'motion-up']
   }
 }
 
 class Rotation extends Motor {
-  constructor (id, name, inputs = [], outputs = [], positions = []) {
-    super(id, name, inputs, outputs, positions)
+  constructor (
+    id,
+    name,
+    inputs = [],
+    outputs = [],
+    positions = [],
+    ready = []
+  ) {
+    super(id, name, inputs, outputs, positions, ready)
     this.motion_ = ['motion-anticlockwise', 'motion-clockwise']
   }
 }
 
 class Traveling extends Motor {
-  constructor (id, name, inputs = [], outputs = [], positions = []) {
-    super(id, name, inputs, outputs, positions)
+  constructor (
+    id,
+    name,
+    inputs = [],
+    outputs = [],
+    positions = [],
+    ready = []
+  ) {
+    super(id, name, inputs, outputs, positions, ready)
     this.motion_ = ['motion-left', 'motion-right']
   }
 }

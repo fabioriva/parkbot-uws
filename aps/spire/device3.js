@@ -33,23 +33,6 @@ const KCS = outputs.find(b => b.addr === 'A310.4')
 const KCV = outputs.find(b => b.addr === 'A310.5')
 const KCH = outputs.find(b => b.addr === 'A310.6')
 
-// const silomat = [
-//   inputs.find(b => b.addr === 'E312.0'),
-//   inputs.find(b => b.addr === 'E312.1'),
-//   inputs.find(b => b.addr === 'E312.2'),
-//   inputs.find(b => b.addr === 'E312.3'),
-//   inputs.find(b => b.addr === 'E312.4'),
-//   inputs.find(b => b.addr === 'E312.5'),
-//   inputs.find(b => b.addr === 'E312.6'),
-//   inputs.find(b => b.addr === 'E312.7'),
-//   outputs.find(b => b.addr === 'A300.0'),
-//   outputs.find(b => b.addr === 'A310.2'),
-//   outputs.find(b => b.addr === 'A310.3'),
-//   outputs.find(b => b.addr === 'A310.4'),
-//   outputs.find(b => b.addr === 'A310.5'),
-//   outputs.find(b => b.addr === 'A310.6')
-// ]
-
 const view = {
   a: device,
   b: positions,
@@ -87,7 +70,8 @@ const M1 = new Hoisting(
   { key: 'mot-hoisting' },
   [FSBK, ASBK, RTA],
   [SQA, SBK1, SBK2],
-  [LV]
+  [LV],
+  LC
 )
 
 /**
@@ -97,7 +81,14 @@ const AKKM = inputs.find(b => b.addr === 'E301.5')
 const ASBK2 = inputs.find(b => b.addr === 'E302.1')
 const TD = outputs.find(b => b.addr === 'A302.6')
 
-const M2 = new Rotation(2, { key: 'mot-rotation' }, [AKKM, ASBK2], [TD], [ENR])
+const M2 = new Rotation(
+  2,
+  { key: 'mot-rotation' },
+  [AKKM, ASBK2],
+  [TD],
+  [ENR],
+  LC
+)
 
 /**
  * Lock
@@ -111,7 +102,7 @@ const SMB = outputs.find(b => b.addr === 'A311.1')
 const M3 = new Lock(
   3,
   { key: 'mot-lock', query: { nr: 1 } },
-  [EOM, EZM, AMM, ...LC],
+  [EOM, EZM, AMM],
   [SMA, SMB]
 )
 
@@ -127,7 +118,7 @@ const SCB = outputs.find(b => b.addr === 'A311.3')
 const M4 = new Flap(
   4,
   { key: 'mot-flap', query: { nr: 1 } },
-  [ECA, ECB, AMC, ...LC],
+  [ECA, ECB, AMC],
   [SCA, SCB]
 )
 

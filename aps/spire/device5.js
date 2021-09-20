@@ -35,23 +35,6 @@ const KCS = outputs.find(b => b.addr === 'A511.4')
 const KCV = outputs.find(b => b.addr === 'A511.5')
 const KCH = outputs.find(b => b.addr === 'A511.6')
 
-// const silomat = [
-//   inputs.find(b => b.addr === 'E512.0'),
-//   inputs.find(b => b.addr === 'E512.1'),
-//   inputs.find(b => b.addr === 'E512.2'),
-//   inputs.find(b => b.addr === 'E512.3'),
-//   inputs.find(b => b.addr === 'E512.4'),
-//   inputs.find(b => b.addr === 'E512.5'),
-//   inputs.find(b => b.addr === 'E512.6'),
-//   inputs.find(b => b.addr === 'E512.7'),
-//   outputs.find(b => b.addr === 'A511.1'),
-//   outputs.find(b => b.addr === 'A511.2'),
-//   outputs.find(b => b.addr === 'A511.3'),
-//   outputs.find(b => b.addr === 'A511.4'),
-//   outputs.find(b => b.addr === 'A511.5'),
-//   outputs.find(b => b.addr === 'A511.6')
-// ]
-
 const view = {
   a: device,
   b: positions,
@@ -72,7 +55,7 @@ const inverters = [IV1, IV2]
 const FTXV = inputs.find(b => b.addr === 'E511.6')
 const FTXH = inputs.find(b => b.addr === 'E511.7')
 const EM = inputs.find(b => b.addr === 'E511.3')
-const LC = [FTXV, FTXH, EM]
+const LC = [EM, FTXV, FTXH]
 
 const EMC = inputs.find(b => b.addr === 'E505.5')
 
@@ -88,9 +71,10 @@ const SBK2 = outputs.find(b => b.addr === 'A500.0')
 const M1 = new Hoisting(
   1,
   { key: 'mot-hoisting' },
-  [FSBK, ASBK, RTA, ...LC],
+  [FSBK, ASBK, RTA],
   [SBK1, SBK2],
-  [LV1, LV2]
+  [LV1, LV2],
+  LC
 )
 
 /**
@@ -120,9 +104,10 @@ const T10F = outputs.find(b => b.addr === 'A512.5')
 const M3 = new Traveling(
   3,
   { key: 'mot-traveling' },
-  [AH, ...LC, EMC],
+  [AH, EMC],
   [T101, T102, T10F],
-  [LH1, LH2]
+  [LH1, LH2],
+  LC
 )
 
 const motors = [M1, M2, M3]
