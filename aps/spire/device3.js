@@ -18,6 +18,21 @@ const lamps = [
   inputs.find(b => b.addr === 'E312.3')
 ]
 
+const L1 = outputs.find(b => b.addr === 'A301.0')
+const L2 = outputs.find(b => b.addr === 'A301.1')
+const L3 = outputs.find(b => b.addr === 'A301.2')
+const L4 = outputs.find(b => b.addr === 'A301.3')
+const L5 = outputs.find(b => b.addr === 'A301.4')
+
+const FDL = inputs.find(b => b.addr === 'E306.4')
+const FDR = inputs.find(b => b.addr === 'E306.5')
+const FLA = inputs.find(b => b.addr === 'E307.2')
+const FLP = inputs.find(b => b.addr === 'E307.0')
+const FPE = inputs.find(b => b.addr === 'E306.3')
+const FRE = inputs.find(b => b.addr === 'E310.6')
+const FT1 = inputs.find(b => b.addr === 'E307.3')
+const FT2 = inputs.find(b => b.addr === 'E307.4')
+
 const RMV = inputs.find(b => b.addr === 'E312.0')
 const RMH = inputs.find(b => b.addr === 'E312.1')
 const RES = inputs.find(b => b.addr === 'E312.2')
@@ -39,9 +54,12 @@ const view = {
   c: lamps,
   d: [],
   e: [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH, T2, TRA, TRB, KCS, KCV, KCH],
-  alarms: []
+  alarms: [],
+  vg: {
+    panel: [L1, L2, L3, L4, L5],
+    sensors: [FPE, FRE, FLA, FLP, FDL, FDR, FT1, FT2]
+  }
 }
-
 const EN1 = inputs.find(b => b.addr === 'E302.3')
 const EN2 = inputs.find(b => b.addr === 'E302.0')
 
