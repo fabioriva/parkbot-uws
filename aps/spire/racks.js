@@ -123,9 +123,9 @@ const rack10 = {
     new S7_131_6BF00_0BA0(3, eb[47]),
     new S7_131_6BF00_0BA0(4, eb[48]),
     new S7_131_6BF00_0BA0(5, eb[49]),
-    new S7_132_6BF00_0BA0(1, ab[27]),
-    new S7_132_6BF00_0BA0(2, ab[28]),
-    new S7_132_6BF00_0BA0(3, ab[29])
+    new S7_132_6BF00_0BA0(6, ab[27]),
+    new S7_132_6BF00_0BA0(7, ab[28]),
+    new S7_132_6BF00_0BA0(8, ab[29])
   ]
 }
 
@@ -160,9 +160,9 @@ const rack13 = {
     new S7_131_6BF00_0BA0(3, eb[58]),
     new S7_131_6BF00_0BA0(4, eb[59]),
     new S7_131_6BF00_0BA0(5, eb[60]),
-    new S7_132_6BF00_0BA0(1, ab[33]),
-    new S7_132_6BF00_0BA0(2, ab[34]),
-    new S7_132_6BF00_0BA0(3, ab[35])
+    new S7_132_6BF00_0BA0(6, ab[33]),
+    new S7_132_6BF00_0BA0(7, ab[34]),
+    new S7_132_6BF00_0BA0(8, ab[35])
   ]
 }
 
@@ -197,9 +197,9 @@ const rack16 = {
     new S7_131_6BF00_0BA0(3, eb[69]),
     new S7_131_6BF00_0BA0(4, eb[70]),
     new S7_131_6BF00_0BA0(5, eb[71]),
-    new S7_132_6BF00_0BA0(1, ab[39]),
-    new S7_132_6BF00_0BA0(2, ab[40]),
-    new S7_132_6BF00_0BA0(3, ab[41])
+    new S7_132_6BF00_0BA0(6, ab[39]),
+    new S7_132_6BF00_0BA0(7, ab[40]),
+    new S7_132_6BF00_0BA0(8, ab[41])
   ]
 }
 
