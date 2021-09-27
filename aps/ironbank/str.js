@@ -477,7 +477,7 @@ exports.T = [
   { label: 'AL4', i18n: { key: 'al-iv', query: { nr: 1 } } },
   { label: 'AL5', i18n: { key: '', query: {} } },
   { label: 'AL6', i18n: { key: 'al-v-fdbk', query: {} } },
-  { label: 'AL7', i18n: { key: 'al-th', query: { thermic: 'LS' } } },
+  { label: 'AL7', i18n: { key: 'al-th', query: { name: 'LS' } } },
   { label: 'AL8', i18n: { key: 'al-sil-15', query: {} } },
   { label: 'AL9', i18n: { key: 'al-sil-01', query: {} } },
   { label: 'AL10', i18n: { key: 'al-sil-03', query: {} } },
@@ -543,7 +543,7 @@ exports.VG = [
   { label: 'AL4', i18n: { key: 'al-iv', query: { nr: 3 } } },
   { label: 'AL5', i18n: { key: '', query: {} } },
   { label: 'AL6', i18n: { key: '', query: {} } },
-  { label: 'AL7', i18n: { key: 'al-th', query: { thermic: 'LS' } } },
+  { label: 'AL7', i18n: { key: 'al-th', query: { name: 'LS' } } },
   { label: 'AL8', i18n: { key: '', query: {} } },
   { label: 'AL9', i18n: { key: 'al-spb-to', query: {} } },
   {

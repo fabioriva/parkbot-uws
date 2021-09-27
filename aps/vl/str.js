@@ -290,52 +290,52 @@ exports.alarms1 = [
   {
     class: 'EL1',
     label: 'AL49',
-    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'al-th', query: { name: 'AMC' } }
   },
   {
     class: 'EL1',
     label: 'AL50',
-    i18n: { key: 'al-th', query: { thermic: 'APE' } }
+    i18n: { key: 'al-th', query: { name: 'APE' } }
   },
   {
     class: 'EL1',
     label: 'AL51',
-    i18n: { key: 'al-th', query: { thermic: 'AF7' } }
+    i18n: { key: 'al-th', query: { name: 'AF7' } }
   },
   {
     class: 'EL1',
     label: 'AL52',
-    i18n: { key: 'al-th', query: { thermic: 'ASBK2' } }
+    i18n: { key: 'al-th', query: { name: 'ASBK2' } }
   },
   {
     class: 'EL1',
     label: 'AL53',
-    i18n: { key: 'al-th', query: { thermic: 'ASBK' } }
+    i18n: { key: 'al-th', query: { name: 'ASBK' } }
   },
   {
     class: 'EL1',
     label: 'AL54',
-    i18n: { key: 'al-th', query: { thermic: 'RT' } }
+    i18n: { key: 'al-th', query: { name: 'RT' } }
   },
   {
     class: 'EL1',
     label: 'AL55',
-    i18n: { key: 'al-th', query: { thermic: 'FE1' } }
+    i18n: { key: 'al-th', query: { name: 'FE1' } }
   },
   {
     class: 'EL1',
     label: 'AL56',
-    i18n: { key: 'al-th', query: { thermic: 'AD' } }
+    i18n: { key: 'al-th', query: { name: 'AD' } }
   },
   {
     class: 'EL1',
     label: 'AL57',
-    i18n: { key: 'al-th', query: { thermic: 'AMM' } }
+    i18n: { key: 'al-th', query: { name: 'AMM' } }
   },
   {
     class: 'EL1',
     label: 'AL58',
-    i18n: { key: 'al-th', query: { thermic: 'AMD' } }
+    i18n: { key: 'al-th', query: { name: 'AMD' } }
   },
   { label: 'AL59', i18n: { key: '', query: {} } },
   { label: 'AL60', i18n: { key: '', query: {} } },

@@ -582,52 +582,52 @@ exports.EL = [
   { label: 'AL48', i18n: { key: '', query: {} } },
   {
     label: 'AL49',
-    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+    i18n: { key: 'al-th', query: { name: 'FE' } }
   },
   { label: 'AL50', i18n: { key: '', query: {} } },
   {
     label: 'AL51',
-    i18n: { key: 'al-th', query: { thermic: 'IV1' } }
+    i18n: { key: 'al-th', query: { name: 'IV1' } }
   },
   {
     label: 'AL52',
-    i18n: { key: 'al-th', query: { thermic: 'RTA' } }
+    i18n: { key: 'al-th', query: { name: 'RTA' } }
   },
   {
     label: 'AL53',
-    i18n: { key: 'al-th', query: { thermic: 'ASBK' } }
+    i18n: { key: 'al-th', query: { name: 'ASBK' } }
   },
   {
     label: 'AL54',
-    i18n: { key: 'al-th', query: { thermic: 'ASH' } }
+    i18n: { key: 'al-th', query: { name: 'ASH' } }
   },
   {
     label: 'AL55',
-    i18n: { key: 'al-th', query: { thermic: 'AMM' } }
+    i18n: { key: 'al-th', query: { name: 'AMM' } }
   },
   {
     label: 'AL56',
-    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+    i18n: { key: 'al-th', query: { name: 'FE' } }
   },
   {
     label: 'AL57',
-    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+    i18n: { key: 'al-th', query: { name: 'FE' } }
   },
   {
     label: 'AL58',
-    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+    i18n: { key: 'al-th', query: { name: 'IV2' } }
   },
   {
     label: 'AL59',
-    i18n: { key: 'al-th', query: { thermic: 'AH' } }
+    i18n: { key: 'al-th', query: { name: 'AH' } }
   },
   {
     label: 'AL60',
-    i18n: { key: 'al-th', query: { thermic: 'MTC' } }
+    i18n: { key: 'al-th', query: { name: 'MTC' } }
   },
   {
     label: 'AL61',
-    i18n: { key: 'al-th', query: { thermic: 'ATF' } }
+    i18n: { key: 'al-th', query: { name: 'ATF' } }
   },
   { label: 'AL62', i18n: { key: '', query: {} } },
   { label: 'AL63', i18n: { key: '', query: {} } },
@@ -685,35 +685,35 @@ exports.E = [
   { label: 'AL48', i18n: { key: '', query: {} } },
   {
     label: 'AL49',
-    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+    i18n: { key: 'al-th', query: { name: 'FE' } }
   },
   {
     label: 'AL50',
-    i18n: { key: 'al-th', query: { thermic: 'APB' } }
+    i18n: { key: 'al-th', query: { name: 'APB' } }
   },
   {
     label: 'AL51',
-    i18n: { key: 'al-th', query: { thermic: 'AP' } }
+    i18n: { key: 'al-th', query: { name: 'AP' } }
   },
   {
     label: 'AL52',
-    i18n: { key: 'al-th', query: { thermic: 'RTD' } }
+    i18n: { key: 'al-th', query: { name: 'RTD' } }
   },
   {
     label: 'AL53',
-    i18n: { key: 'al-th', query: { thermic: 'ASR' } }
+    i18n: { key: 'al-th', query: { name: 'ASR' } }
   },
   {
     label: 'AL54',
-    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'al-th', query: { name: 'AMC' } }
   },
   {
     label: 'AL55',
-    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+    i18n: { key: 'al-th', query: { name: 'IV2' } }
   },
   {
     label: 'AL56',
-    i18n: { key: 'al-th', query: { thermic: 'IV3' } }
+    i18n: { key: 'al-th', query: { name: 'IV3' } }
   },
   { label: 'AL57', i18n: { key: '', query: {} } },
   { label: 'AL58', i18n: { key: '', query: {} } },
@@ -776,35 +776,35 @@ exports.U = [
   { label: 'AL48', i18n: { key: '', query: {} } },
   {
     label: 'AL49',
-    i18n: { key: 'al-th', query: { thermic: 'FE' } }
+    i18n: { key: 'al-th', query: { name: 'FE' } }
   },
   {
     label: 'AL50',
-    i18n: { key: 'al-th', query: { thermic: 'APB' } }
+    i18n: { key: 'al-th', query: { name: 'APB' } }
   },
   {
     label: 'AL51',
-    i18n: { key: 'al-th', query: { thermic: 'AP' } }
+    i18n: { key: 'al-th', query: { name: 'AP' } }
   },
   {
     label: 'AL52',
-    i18n: { key: 'al-th', query: { thermic: 'RTD' } }
+    i18n: { key: 'al-th', query: { name: 'RTD' } }
   },
   {
     label: 'AL53',
-    i18n: { key: 'al-th', query: { thermic: 'ASR' } }
+    i18n: { key: 'al-th', query: { name: 'ASR' } }
   },
   {
     label: 'AL54',
-    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'al-th', query: { name: 'AMC' } }
   },
   {
     label: 'AL55',
-    i18n: { key: 'al-th', query: { thermic: 'IV2' } }
+    i18n: { key: 'al-th', query: { name: 'IV2' } }
   },
   {
     label: 'AL56',
-    i18n: { key: 'al-th', query: { thermic: 'IV3' } }
+    i18n: { key: 'al-th', query: { name: 'IV3' } }
   },
   { label: 'AL57', i18n: { key: '', query: {} } },
   { label: 'AL58', i18n: { key: '', query: {} } },

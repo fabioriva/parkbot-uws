@@ -353,39 +353,39 @@ exports.EL = [
   { label: 'AL16', i18n: { key: 'al-spa-to', query: {} } },
   {
     label: 'AL17',
-    i18n: { key: 'al-th', query: { thermic: 'ASBK' } }
+    i18n: { key: 'al-th', query: { name: 'ASBK' } }
   },
   {
     label: 'AL18',
-    i18n: { key: 'al-th', query: { thermic: 'RTA' } }
+    i18n: { key: 'al-th', query: { name: 'RTA' } }
   },
   {
     label: 'AL19',
-    i18n: { key: 'al-th', query: { thermic: 'AMC' } }
+    i18n: { key: 'al-th', query: { name: 'AMC' } }
   },
   {
     label: 'AL20',
-    i18n: { key: 'al-th', query: { thermic: 'APBE' } }
+    i18n: { key: 'al-th', query: { name: 'APBE' } }
   },
   {
     label: 'AL21',
-    i18n: { key: 'al-th', query: { thermic: 'APE' } }
+    i18n: { key: 'al-th', query: { name: 'APE' } }
   },
   {
     label: 'AL22',
-    i18n: { key: 'al-th', query: { thermic: 'APBA' } }
+    i18n: { key: 'al-th', query: { name: 'APBA' } }
   },
   {
     label: 'AL23',
-    i18n: { key: 'al-th', query: { thermic: 'APA' } }
+    i18n: { key: 'al-th', query: { name: 'APA' } }
   },
   {
     label: 'AL24',
-    i18n: { key: 'al-th', query: { thermic: 'AGK' } }
+    i18n: { key: 'al-th', query: { name: 'AGK' } }
   },
   {
     label: 'AL25',
-    i18n: { key: 'al-th', query: { thermic: 'AMM' } }
+    i18n: { key: 'al-th', query: { name: 'AMM' } }
   },
   { label: 'AL26', i18n: { key: 'al-tl', query: { name: 'TLK' } } },
   { label: 'AL27', i18n: { key: 'al-tl', query: { name: 'TL' } } },
