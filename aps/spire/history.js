@@ -136,6 +136,7 @@ const ALARMS = [
 ]
 
 const DEVICES = [
+  { id: 0, i18nKey: 'operator' },
   { id: 1, i18nKey: 'EVT1' },
   { id: 2, i18nKey: 'EVT2' },
   { id: 3, i18nKey: 'EVT3' },
