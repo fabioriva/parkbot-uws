@@ -31,8 +31,8 @@ const start = async () => {
     await client.connect()
     const db = client.db(DATABASE)
     // Drop collections
-    // await dropCollection(db, 'alarms')
-    // await dropCollection(db, 'devices')
+    await dropCollection(db, 'alarms')
+    await dropCollection(db, 'devices')
     await dropCollection(db, 'modes')
     await dropCollection(db, 'operations')
     // Insert data
