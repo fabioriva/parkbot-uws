@@ -148,7 +148,7 @@ exports.silomats = device1.silomat.motors.concat(
 )
 
 exports.diagnostic = [device1, device2, device3, device4, device5, device6]
-
+/** only required in Plc.js */
 exports.modes = [
   { id: 0, label: 'mode-no' },
   { id: 1, label: 'mode-data-edit' },
@@ -160,7 +160,7 @@ exports.modes = [
   { id: 7, label: 'mode-preset' },
   { id: 8, label: 'mode-auto' }
 ]
-
+/** only required in db.js */
 exports.operations = [
   { id: 0, label: 'op-no' },
   { id: 1, label: 'op-alarm-on' },
