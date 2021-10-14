@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
+    "alumim": "nodemon aps/alumim",
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "ironbank": "nodemon aps/ironbank",
@@ -31,8 +32,6 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "ignore": [
-      "/public"
-    ]
+    "ignore": ["/public"]
   }
 }
