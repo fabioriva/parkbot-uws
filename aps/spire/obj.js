@@ -6,6 +6,14 @@ const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
+// const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1)
+// const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2)
+// const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 3)
+// const al04 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 4)
+// const al05 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 5)
+// const al06 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 6)
+// exports.alarms = [al01, al02, al03, al04, al05, al06]
+
 const al01 = new Alarms(generateAlarms(1, 64, str.EVT), 1)
 const al02 = new Alarms(generateAlarms(1, 64, str.EVT), 2)
 const al03 = new Alarms(generateAlarms(1, 64, str.EVT), 3)
@@ -148,7 +156,8 @@ exports.silomats = device1.silomat.motors.concat(
 )
 
 exports.diagnostic = [device1, device2, device3, device4, device5, device6]
-/** only required in Plc.js */
+
+// exports.modes = str.MODES
 exports.modes = [
   { id: 0, label: 'mode-no' },
   { id: 1, label: 'mode-data-edit' },
@@ -160,7 +169,8 @@ exports.modes = [
   { id: 7, label: 'mode-preset' },
   { id: 8, label: 'mode-auto' }
 ]
-/** only required in db.js */
+
+// exports.operations = str.OPERATIONS
 exports.operations = [
   { id: 0, label: 'op-no' },
   { id: 1, label: 'op-alarm-on' },

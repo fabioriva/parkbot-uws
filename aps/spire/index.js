@@ -8,6 +8,10 @@ const log = require('../../lib/log')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
+// const querystring = require('querystring')
+// const { getHistory_, getOperations } = require('../../lib/history')
+// const { sendJson } = require('../../lib/json')
+
 const prefix = '/aps/wallstreet'
 
 const client = new MongoClient(process.env.MONGODB_URI, {
@@ -26,6 +30,26 @@ const start = async () => {
         console.log('Failed to listen to port ' + def.HTTP)
       }
     })
+
+    // app.get(prefix + '/statistics', async (res, req) => {
+    //   console.log('/aps/wallstreet/statistics', req.getQuery())
+    //   res.onAborted(() => {
+    //     res.aborted = true
+    //   })
+    //   const query = querystring.parse(req.getQuery())
+    //   const docs = await getOperations(db, query)
+    //   sendJson(res, docs)
+    // })
+
+    // app.get(prefix + '/test', async (res, req) => {
+    //   console.log('/aps/wallstreet/logs', req.getQuery())
+    //   res.onAborted(() => {
+    //     res.aborted = true
+    //   })
+    //   const query = querystring.parse(req.getQuery())
+    //   const docs = await getHistory_(db, query)
+    //   sendJson(res, docs)
+    // })
 
     const plc01 = new PLC(def.PLC)
     plc01.main(def, obj)

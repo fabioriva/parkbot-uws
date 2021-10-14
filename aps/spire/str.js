@@ -519,9 +519,9 @@ exports.ALARMS = [
   { id: 122, key: 'al-th', query: { name: 'AF7' } },
   { id: 123, key: 'al-th', query: { name: 'AH' } },
   { id: 124, key: 'al-th', query: { name: 'MTC' } },
-  { id: 125, key: 'al-th', query: { name: 'LS I/O' } },
-  { id: 126, key: 'al-th', query: { name: 'KKP I/O' } },
-  { id: 127, key: 'al-th', query: { name: 'SH I/O' } },
+  { id: 125, key: 'al-th', query: { name: 'LS shutdown' } },
+  { id: 126, key: 'al-th', query: { name: 'KKP shutdown' } },
+  { id: 127, key: 'al-th', query: { name: 'SH shutdown' } },
   { id: 128, key: '', query: {} }
 ]
 
