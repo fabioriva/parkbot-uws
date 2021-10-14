@@ -182,6 +182,111 @@ exports.outputs2 = [
   { addr: 'A15.6', label: 'SCB' },
   { addr: 'A15.7', label: 'SBK1' }
 ]
+
+exports.ALARMS = [
+  { id: 1, key: 'al-v-to', query: {} },
+  { id: 2, key: 'al-h-to', query: {} },
+  { id: 3, key: 'al-sil-01', query: {} },
+  { id: 4, key: 'al-sil-01', query: {} },
+  { id: 5, key: 'al-sil-02', query: {} },
+  { id: 6, key: 'al-sil-03', query: {} },
+  { id: 7, key: 'al-sil-04', query: {} },
+  { id: 8, key: 'al-r-to', query: {} },
+  { id: 9, key: 'al-flap-to', query: {} },
+  { id: 10, key: 'al-v-lck-to', query: {} },
+  { id: 11, key: 'al-v-lck-to', query: {} },
+  { id: 12, key: 'al-v-lck-to', query: {} },
+  { id: 13, key: 'al-v-lck-to', query: {} },
+  { id: 14, key: 'al-sp-to', query: {} },
+  { id: 15, key: 'al-sp-to', query: {} },
+  { id: 16, key: '', query: {} },
+  { id: 17, key: 'al-th', query: { name: 'AMM' } },
+  { id: 18, key: 'al-th', query: { name: 'RTA' } },
+  { id: 19, key: 'al-th', query: { name: 'FE1' } },
+  { id: 20, key: 'al-th', query: { name: 'APE' } },
+  { id: 21, key: 'al-th', query: { name: 'AF9' } },
+  { id: 22, key: 'al-th', query: { name: 'ASH' } },
+  { id: 23, key: 'al-th', query: { name: 'AIV' } },
+  { id: 24, key: 'al-th', query: { name: 'ASBK1' } },
+  { id: 25, key: 'al-th', query: { name: 'MTC' } },
+  { id: 26, key: 'al-th', query: { name: 'ACR' } },
+  { id: 27, key: 'al-th', query: { name: 'ASBK2' } },
+  { id: 28, key: 'al-th', query: { name: 'F24' } },
+  { id: 29, key: 'al-th', query: { name: 'AMC' } },
+  { id: 30, key: 'al-th', query: { name: 'AD' } },
+  { id: 31, key: 'al-th', query: { name: 'AKKS' } },
+  { id: 32, key: '', query: {} },
+  { id: 33, key: 'al-v-lck-fc', query: {} },
+  { id: 34, key: 'al-sp-fc', query: {} },
+  { id: 35, key: 'al-flap-fc', query: {} },
+  { id: 36, key: 'al-sil-11', query: {} },
+  { id: 37, key: '', query: {} },
+  { id: 38, key: '', query: {} },
+  { id: 39, key: '', query: {} },
+  { id: 40, key: '', query: {} },
+  { id: 41, key: '', query: {} },
+  { id: 42, key: '', query: {} },
+  { id: 43, key: '', query: {} },
+  { id: 44, key: '', query: {} },
+  { id: 45, key: '', query: {} },
+  { id: 46, key: '', query: {} },
+  { id: 47, key: '', query: {} },
+  { id: 48, key: '', query: {} },
+  { id: 49, key: '', query: {} },
+  { id: 50, key: '', query: {} },
+  { id: 51, key: '', query: {} },
+  { id: 52, key: '', query: {} },
+  { id: 53, key: '', query: {} },
+  { id: 54, key: '', query: {} },
+  { id: 55, key: '', query: {} },
+  { id: 56, key: '', query: {} },
+  { id: 57, key: '', query: {} },
+  { id: 58, key: '', query: {} },
+  { id: 59, key: '', query: {} },
+  { id: 60, key: '', query: {} },
+  { id: 61, key: '', query: {} },
+  { id: 62, key: '', query: {} },
+  { id: 63, key: '', query: {} },
+  { id: 64, key: '', query: {} }
+]
+
+exports.DEVICES = [
+  { id: 0, key: 'operator' },
+  { id: 1, key: 'EL' }
+]
+
+exports.MODES = [
+  { id: 0, key: 'mode-no' },
+  { id: 1, key: 'mode-data-edit' },
+  { id: 2, key: 'mode-data-read' },
+  { id: 3, key: 'mode-eme-1' },
+  { id: 4, key: 'mode-eme-2' },
+  { id: 5, key: 'mode-no' },
+  { id: 6, key: 'mode-step' },
+  { id: 7, key: 'mode-preset' },
+  { id: 8, key: 'mode-auto' }
+]
+
+exports.OPERATIONS = [
+  { id: 0, key: 'op-no' },
+  { id: 1, key: 'op-alarm-on' },
+  { id: 2, key: 'op-alarm-off' },
+  { id: 3, key: 'op-switch-mode' },
+  { id: 4, key: 'op-change-pin' },
+  { id: 5, key: 'op-stall-in' },
+  { id: 6, key: 'op-stall-out' },
+  { id: 7, key: 'op-shuffle-in' },
+  { id: 8, key: 'op-shuffle-out' },
+  { id: 9, key: 'op-stall-rsv' },
+  { id: 10, key: 'op-req-exit' },
+  { id: 11, key: 'op-req-entry' },
+  { id: 12, key: 'op-no' },
+  { id: 13, key: 'op-no' },
+  { id: 14, key: 'op-no' },
+  { id: 15, key: 'op-no' }
+]
+
+// ...
 exports.alarms1 = [
   { label: 'AL1', i18n: { key: 'al-v-to', query: {} } },
   { label: 'AL2', i18n: { key: 'al-h-to', query: {} } },
