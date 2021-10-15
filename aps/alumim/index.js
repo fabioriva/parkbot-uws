@@ -37,6 +37,7 @@ const start = async () => {
     })
 
     app.get(prefix + '/dashboard', async (res, req) => {
+      console.log(prefix + '/dashboard', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
@@ -54,12 +55,22 @@ const start = async () => {
     })
 
     app.get(prefix + '/history', async (res, req) => {
-      console.log('/aps/wallstreet/history', req.getQuery())
+      console.log(prefix + '/history', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
       const query = querystring.parse(req.getQuery())
       const docs = await getHistory_(db, query)
+      sendJson(res, docs)
+    })
+
+    app.get(prefix + '/statistics', async (res, req) => {
+      console.log(prefix + '/statistics', req.getQuery())
+      res.onAborted(() => {
+        res.aborted = true
+      })
+      const query = querystring.parse(req.getQuery())
+      const docs = await getOperations_(db, query)
       sendJson(res, docs)
     })
 
