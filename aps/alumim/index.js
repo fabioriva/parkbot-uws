@@ -8,6 +8,7 @@ const log = require('../../lib/log_')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
+const format = require('date-fns/format')
 const querystring = require('querystring')
 const {
   getHistory_,
@@ -40,14 +41,14 @@ const start = async () => {
         res.aborted = true
       })
       const activity = await getRecentActivity_(db, 6)
-      // const statistics = await getOperations(db, {
-      //   dateString: format(new Date(), 'yyyy-MM-dd')
-      // })
+      const statistics = await getOperations_(db, {
+        dateString: format(new Date(), 'yyyy-MM-dd')
+      })
       sendJson(res, {
         activity: activity,
         cards: obj.cards.length,
         occupancy: obj.map.occupancy,
-        // operations: statistics,
+        operations: statistics,
         system: obj.overview
       })
     })
