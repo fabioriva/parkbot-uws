@@ -4,12 +4,16 @@ const uWS = require('uWebSockets.js')
 const def = require('./def')
 const obj = require('./obj')
 const PLC = require('../../lib/Plc')
-const log = require('../../lib/log')
+const log = require('../../lib/log_')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
 const querystring = require('querystring')
-const { getHistory_, getOperations } = require('../../lib/history')
+const {
+  getHistory_,
+  getOperations_,
+  getRecentActivity_
+} = require('../../lib/history')
 const { sendJson } = require('../../lib/json')
 
 const prefix = '/aps/alumim'
@@ -29,6 +33,23 @@ const start = async () => {
       } else {
         console.log('Failed to listen to port ' + def.HTTP)
       }
+    })
+
+    app.get(prefix + '/dashboard', async (res, req) => {
+      res.onAborted(() => {
+        res.aborted = true
+      })
+      const activity = await getRecentActivity_(db, 6)
+      // const statistics = await getOperations(db, {
+      //   dateString: format(new Date(), 'yyyy-MM-dd')
+      // })
+      sendJson(res, {
+        activity: activity,
+        cards: obj.cards.length,
+        occupancy: obj.map.occupancy,
+        // operations: statistics,
+        system: obj.overview
+      })
     })
 
     app.get(prefix + '/history', async (res, req) => {
