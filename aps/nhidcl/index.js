@@ -4,7 +4,7 @@ const uWS = require('uWebSockets.js')
 const def = require('./def')
 const obj = require('./obj')
 const PLC = require('../../lib/Plc')
-const log = require('../../lib/log')
+const log = require('../../lib/log_')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
@@ -53,14 +53,14 @@ const start = async () => {
       })
     })
 
-    app.get(prefix + '/history', async (res, req) => {
-      res.onAborted(() => {
-        res.aborted = true
-      })
-      const query = querystring.parse(req.getQuery())
-      const docs = await getHistory_(db, query)
-      sendJson(res, docs)
-    })
+    // app.get(prefix + '/history', async (res, req) => {
+    //   res.onAborted(() => {
+    //     res.aborted = true
+    //   })
+    //   const query = querystring.parse(req.getQuery())
+    //   const docs = await getHistory_(db, query)
+    //   sendJson(res, docs)
+    // })
 
     app.get(prefix + '/statistics', async (res, req) => {
       res.onAborted(() => {
