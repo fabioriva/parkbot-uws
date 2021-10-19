@@ -37,7 +37,7 @@ const start = async () => {
     })
 
     app.get(prefix + '/dashboard', async (res, req) => {
-      console.log(prefix + '/dashboard', req.getQuery())
+      // console.log(prefix + '/dashboard', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
@@ -47,7 +47,7 @@ const start = async () => {
       })
       sendJson(res, {
         activity: activity,
-        cards: obj.cards.length,
+        // cards: obj.cards.length,
         occupancy: obj.map.occupancy,
         operations: statistics,
         system: obj.overview
@@ -55,7 +55,7 @@ const start = async () => {
     })
 
     app.get(prefix + '/history', async (res, req) => {
-      console.log(prefix + '/history', req.getQuery())
+      // console.log(prefix + '/history', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
@@ -65,7 +65,7 @@ const start = async () => {
     })
 
     app.get(prefix + '/statistics', async (res, req) => {
-      console.log(prefix + '/statistics', req.getQuery())
+      // console.log(prefix + '/statistics', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
