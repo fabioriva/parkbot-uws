@@ -3,8 +3,8 @@ const MongoClient = require('mongodb').MongoClient
 const util = require('util')
 
 /** Edit APS */
-const DATABASE = 'trumpeldor'
-const { ALARMS, DEVICES, MODES, OPERATIONS } = require('../aps/trumpeldor/str')
+const DATABASE = 'ironbank'
+const { ALARMS, DEVICES, MODES, OPERATIONS } = require('../aps/ironbank/str')
 /** End */
 
 const client = new MongoClient(process.env.MONGODB_URI, {
