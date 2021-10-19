@@ -6,12 +6,12 @@ const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
-const al01 = new Alarms(generateAlarms(1, 64, str.EL), 1) // 'EL1')
-const al02 = new Alarms(generateAlarms(1, 64, str.EL), 2) // 'EL2')
-const al03 = new Alarms(generateAlarms(1, 64, str.E), 3) // 'E1')
-const al04 = new Alarms(generateAlarms(1, 64, str.E), 4) // 'E2')
-const al05 = new Alarms(generateAlarms(1, 64, str.U), 5) // 'U1')
-const al06 = new Alarms(generateAlarms(1, 64, str.U), 6) // 'U2')
+const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1) // 'EL1')
+const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2) // 'EL2')
+const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 3) // 'E1')
+const al04 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 4) // 'E2')
+const al05 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(128, 192)), 5) // 'U1')
+const al06 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(128, 192)), 6) // 'U2')
 exports.alarms = [al01, al02, al03, al04, al05, al06]
 
 const inputs1 = generateBits('E', 0, 1, str.inputs1)
@@ -89,36 +89,7 @@ exports.positions = device1.positions.concat(
 
 exports.diagnostic = [device1, device2, device3, device4, device5, device6]
 
-exports.modes = [
-  { id: 0, label: 'mode-no' },
-  { id: 1, label: 'mode-data-edit' },
-  { id: 2, label: 'mode-data-read' },
-  { id: 3, label: 'mode-eme-1' },
-  { id: 4, label: 'mode-eme-2' },
-  { id: 5, label: 'mode-no' },
-  { id: 6, label: 'mode-step' },
-  { id: 7, label: 'mode-preset' },
-  { id: 8, label: 'mode-auto' }
-]
-
-exports.operations = [
-  { id: 0, label: 'op-no' },
-  { id: 1, label: 'op-alarm-on' },
-  { id: 2, label: 'op-alarm-off' },
-  { id: 3, label: 'op-switch-mode' },
-  { id: 4, label: 'op-change-pin' },
-  { id: 5, label: 'op-stall-in' },
-  { id: 6, label: 'op-stall-out' },
-  { id: 7, label: 'op-shuffle-in' },
-  { id: 8, label: 'op-shuffle-out' },
-  { id: 9, label: 'op-stall-rsv' },
-  { id: 10, label: 'op-req-exit' },
-  { id: 11, label: 'op-req-entry' },
-  { id: 12, label: 'op-no' },
-  { id: 13, label: 'op-no' },
-  { id: 14, label: 'op-no' },
-  { id: 15, label: 'op-no' }
-]
+exports.modes = str.MODES
 
 exports.overview = {
   definitions: { cards: def.CARDS, stalls: def.STALLS },
