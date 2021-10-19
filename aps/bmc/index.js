@@ -4,7 +4,7 @@ const uWS = require('uWebSockets.js')
 const def = require('./def')
 const obj = require('./obj')
 const PLC = require('../../lib/Plc')
-const log = require('../../lib/log')
+const log = require('../../lib/log_')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
