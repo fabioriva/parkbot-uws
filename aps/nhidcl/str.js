@@ -334,114 +334,223 @@ exports.outputs4 = [
   { addr: 'A123.6', label: '' },
   { addr: 'A123.7', label: '' }
 ]
-exports.EL = [
-  { label: 'AL1', i18n: { key: 'al-sil-01', query: {} } },
-  { label: 'AL2', i18n: { key: 'al-sil-01', query: {} } },
-  { label: 'AL3', i18n: { key: 'al-sil-01', query: {} } },
-  { label: 'AL4', i18n: { key: 'al-sil-02', query: {} } },
-  { label: 'AL5', i18n: { key: 'al-sil-03', query: {} } },
-  { label: 'AL6', i18n: { key: 'al-sil-04', query: {} } },
-  { label: 'AL7', i18n: { key: 'al-v-to', query: {} } },
-  { label: 'AL8', i18n: { key: 'al-h-to', query: {} } },
-  { label: 'AL9', i18n: { key: 'al-flap-to', query: {} } },
-  { label: 'AL10', i18n: { key: 'al-v-fdbk', query: {} } },
-  { label: 'AL11', i18n: { key: 'al-v-fdbk', query: {} } },
-  { label: 'AL12', i18n: { key: 'al-v-lck-to', query: {} } },
-  { label: 'AL13', i18n: { key: 'al-spbe-to', query: {} } },
-  { label: 'AL14', i18n: { key: 'al-spe-to', query: {} } },
-  { label: 'AL15', i18n: { key: 'al-spba-to', query: {} } },
-  { label: 'AL16', i18n: { key: 'al-spa-to', query: {} } },
-  {
-    label: 'AL17',
-    i18n: { key: 'al-th', query: { name: 'ASBK' } }
-  },
-  {
-    label: 'AL18',
-    i18n: { key: 'al-th', query: { name: 'RTA' } }
-  },
-  {
-    label: 'AL19',
-    i18n: { key: 'al-th', query: { name: 'AMC' } }
-  },
-  {
-    label: 'AL20',
-    i18n: { key: 'al-th', query: { name: 'APBE' } }
-  },
-  {
-    label: 'AL21',
-    i18n: { key: 'al-th', query: { name: 'APE' } }
-  },
-  {
-    label: 'AL22',
-    i18n: { key: 'al-th', query: { name: 'APBA' } }
-  },
-  {
-    label: 'AL23',
-    i18n: { key: 'al-th', query: { name: 'APA' } }
-  },
-  {
-    label: 'AL24',
-    i18n: { key: 'al-th', query: { name: 'AGK' } }
-  },
-  {
-    label: 'AL25',
-    i18n: { key: 'al-th', query: { name: 'AMM' } }
-  },
-  { label: 'AL26', i18n: { key: 'al-tl', query: { name: 'TLK' } } },
-  { label: 'AL27', i18n: { key: 'al-tl', query: { name: 'TL' } } },
-  { label: 'AL28', i18n: { key: 'al-tl', query: { name: 'TJ1' } } },
-  { label: 'AL29', i18n: { key: 'al-tl', query: { name: 'TJ2' } } },
-  { label: 'AL30', i18n: { key: '', query: {} } },
-  { label: 'AL31', i18n: { key: '', query: {} } },
-  { label: 'AL32', i18n: { key: '', query: {} } },
-  {
-    label: 'AL33',
-    i18n: { key: 'al-fc', query: { fc1: 'EOM', fc2: 'EZM' } }
-  },
-  { label: 'AL34', i18n: { key: 'al-sil-07', query: {} } },
-  { label: 'AL35', i18n: { key: 'al-sil-10', query: {} } },
-  { label: 'AL36', i18n: { key: 'al-sil-13', query: {} } },
-  {
-    label: 'AL37',
-    i18n: { key: 'al-fc', query: { fc1: 'ECA', fc2: 'ECB' } }
-  },
-  {
-    label: 'AL38',
-    i18n: { key: 'al-fc', query: { fc1: 'EBZE', fc2: 'EBOE' } }
-  },
-  {
-    label: 'AL39',
-    i18n: { key: 'al-fc', query: { fc1: 'EZE', fc2: 'EOE' } }
-  },
-  {
-    label: 'AL40',
-    i18n: { key: 'al-fc', query: { fc1: 'EBZA', fc2: 'EBOA' } }
-  },
-  {
-    label: 'AL41',
-    i18n: { key: 'al-fc', query: { fc1: 'EZA', fc2: 'EOA' } }
-  },
-  { label: 'AL42', i18n: { key: '', query: {} } },
-  { label: 'AL43', i18n: { key: '', query: {} } },
-  { label: 'AL44', i18n: { key: '', query: {} } },
-  { label: 'AL45', i18n: { key: '', query: {} } },
-  { label: 'AL46', i18n: { key: '', query: {} } },
-  { label: 'AL47', i18n: { key: '', query: {} } },
-  { label: 'AL48', i18n: { key: '', query: {} } },
-  { label: 'AL49', i18n: { key: 'al-lv', query: {} } },
-  { label: 'AL50', i18n: { key: 'al-lv', query: {} } },
-  { label: 'AL51', i18n: { key: 'al-lh', query: {} } },
-  { label: 'AL52', i18n: { key: 'al-lh', query: {} } },
-  { label: 'AL53', i18n: { key: 'al-lv-diff', query: {} } },
-  { label: 'AL54', i18n: { key: 'al-lh-diff', query: {} } },
-  { label: 'AL55', i18n: { key: '', query: {} } },
-  { label: 'AL56', i18n: { key: '', query: {} } },
-  { label: 'AL57', i18n: { key: '', query: {} } },
-  { label: 'AL58', i18n: { key: '', query: {} } },
-  { label: 'AL59', i18n: { key: '', query: {} } },
-  { label: 'AL60', i18n: { key: '', query: {} } },
-  { label: 'AL61', i18n: { key: '', query: {} } },
-  { label: 'AL62', i18n: { key: '', query: {} } },
-  { label: 'AL63', i18n: { key: '', query: {} } },
-  { label: 'AL64', i18n: { key: '', query: {} } }
+
+exports.ALARMS = [
+  { id: 1, key: 'al-sil-01', query: {} },
+  { id: 2, key: 'al-sil-01', query: {} },
+  { id: 3, key: 'al-sil-01', query: {} },
+  { id: 4, key: 'al-sil-02', query: {} },
+  { id: 5, key: 'al-sil-03', query: {} },
+  { id: 6, key: 'al-sil-04', query: {} },
+  { id: 7, key: 'al-v-to', query: {} },
+  { id: 8, key: 'al-h-to', query: {} },
+  { id: 9, key: 'al-flap-to', query: {} },
+  { id: 10, key: 'al-v-fdbk', query: {} },
+  { id: 11, key: 'al-v-fdbk', query: {} },
+  { id: 12, key: 'al-v-lck-to', query: {} },
+  { id: 13, key: 'al-spbe-to', query: {} },
+  { id: 14, key: 'al-spe-to', query: {} },
+  { id: 15, key: 'al-spba-to', query: {} },
+  { id: 16, key: 'al-spa-to', query: {} },
+  { id: 17, key: 'al-th', query: { name: 'ASBK' } },
+  { id: 18, key: 'al-th', query: { name: 'RTA' } },
+  { id: 19, key: 'al-th', query: { name: 'AMC' } },
+  { id: 20, key: 'al-th', query: { name: 'APBE' } },
+  { id: 21, key: 'al-th', query: { name: 'APE' } },
+  { id: 22, key: 'al-th', query: { name: 'APBA' } },
+  { id: 23, key: 'al-th', query: { name: 'APA' } },
+  { id: 24, key: 'al-th', query: { name: 'AGK' } },
+  { id: 25, key: 'al-th', query: { name: 'AMM' } },
+  { id: 26, key: 'al-tl', query: { name: 'TLK' } },
+  { id: 27, key: 'al-tl', query: { name: 'TL' } },
+  { id: 28, key: 'al-tl', query: { name: 'TJ1' } },
+  { id: 29, key: 'al-tl', query: { name: 'TJ2' } },
+  { id: 30, key: '', query: {} },
+  { id: 31, key: '', query: {} },
+  { id: 32, key: '', query: {} },
+  { id: 33, key: 'al-fc', query: { fc1: 'EOM', fc2: 'EZM' } },
+  { id: 34, key: 'al-sil-07', query: {} },
+  { id: 35, key: 'al-sil-10', query: {} },
+  { id: 36, key: 'al-sil-13', query: {} },
+  { id: 37, key: 'al-fc', query: { fc1: 'ECA', fc2: 'ECB' } },
+  { id: 38, key: 'al-fc', query: { fc1: 'EBZE', fc2: 'EBOE' } },
+  { id: 39, key: 'al-fc', query: { fc1: 'EZE', fc2: 'EOE' } },
+  { id: 40, key: 'al-fc', query: { fc1: 'EBZA', fc2: 'EBOA' } },
+  { id: 41, key: 'al-fc', query: { fc1: 'EZA', fc2: 'EOA' } },
+  { id: 42, key: '', query: {} },
+  { id: 43, key: '', query: {} },
+  { id: 44, key: '', query: {} },
+  { id: 45, key: '', query: {} },
+  { id: 46, key: '', query: {} },
+  { id: 47, key: '', query: {} },
+  { id: 48, key: '', query: {} },
+  { id: 49, key: 'al-lv', query: {} },
+  { id: 50, key: 'al-lv', query: {} },
+  { id: 51, key: 'al-lh', query: {} },
+  { id: 52, key: 'al-lh', query: {} },
+  { id: 53, key: 'al-lv-diff', query: {} },
+  { id: 54, key: 'al-lh-diff', query: {} },
+  { id: 55, key: '', query: {} },
+  { id: 56, key: '', query: {} },
+  { id: 57, key: '', query: {} },
+  { id: 58, key: '', query: {} },
+  { id: 59, key: '', query: {} },
+  { id: 60, key: '', query: {} },
+  { id: 61, key: '', query: {} },
+  { id: 62, key: '', query: {} },
+  { id: 63, key: '', query: {} },
+  { id: 64, key: '', query: {} }
 ]
+
+exports.DEVICES = [
+  { id: 0, key: 'operator' },
+  { id: 1, key: 'EL1' },
+  { id: 2, key: 'EL2' },
+  { id: 3, key: 'E1' },
+  { id: 4, key: 'U1' },
+  { id: 5, key: 'E2' },
+  { id: 6, key: 'U2' }
+]
+
+exports.MODES = [
+  { id: 0, label: 'mode-no' },
+  { id: 1, label: 'mode-data-edit' },
+  { id: 2, label: 'mode-data-read' },
+  { id: 3, label: 'mode-eme-1' },
+  { id: 4, label: 'mode-eme-2' },
+  { id: 5, label: 'mode-no' },
+  { id: 6, label: 'mode-step' },
+  { id: 7, label: 'mode-preset' },
+  { id: 8, label: 'mode-auto' }
+]
+
+exports.OPERATIONS = [
+  { id: 0, label: 'op-no' },
+  { id: 1, label: 'op-alarm-on' },
+  { id: 2, label: 'op-alarm-off' },
+  { id: 3, label: 'op-switch-mode' },
+  { id: 4, label: 'op-change-pin' },
+  { id: 5, label: 'op-stall-in' },
+  { id: 6, label: 'op-stall-out' },
+  { id: 7, label: 'op-shuffle-in' },
+  { id: 8, label: 'op-shuffle-out' },
+  { id: 9, label: 'op-stall-rsv' },
+  { id: 10, label: 'op-req-exit' },
+  { id: 11, label: 'op-req-entry' },
+  { id: 12, label: 'op-no' },
+  { id: 13, label: 'op-no' },
+  { id: 14, label: 'op-no' },
+  { id: 15, label: 'op-no' }
+]
+
+// exports.EL = [
+//   { label: 'AL1', i18n: { key: 'al-sil-01', query: {} } },
+//   { label: 'AL2', i18n: { key: 'al-sil-01', query: {} } },
+//   { label: 'AL3', i18n: { key: 'al-sil-01', query: {} } },
+//   { label: 'AL4', i18n: { key: 'al-sil-02', query: {} } },
+//   { label: 'AL5', i18n: { key: 'al-sil-03', query: {} } },
+//   { label: 'AL6', i18n: { key: 'al-sil-04', query: {} } },
+//   { label: 'AL7', i18n: { key: 'al-v-to', query: {} } },
+//   { label: 'AL8', i18n: { key: 'al-h-to', query: {} } },
+//   { label: 'AL9', i18n: { key: 'al-flap-to', query: {} } },
+//   { label: 'AL10', i18n: { key: 'al-v-fdbk', query: {} } },
+//   { label: 'AL11', i18n: { key: 'al-v-fdbk', query: {} } },
+//   { label: 'AL12', i18n: { key: 'al-v-lck-to', query: {} } },
+//   { label: 'AL13', i18n: { key: 'al-spbe-to', query: {} } },
+//   { label: 'AL14', i18n: { key: 'al-spe-to', query: {} } },
+//   { label: 'AL15', i18n: { key: 'al-spba-to', query: {} } },
+//   { label: 'AL16', i18n: { key: 'al-spa-to', query: {} } },
+//   {
+//     label: 'AL17',
+//     i18n: { key: 'al-th', query: { name: 'ASBK' } }
+//   },
+//   {
+//     label: 'AL18',
+//     i18n: { key: 'al-th', query: { name: 'RTA' } }
+//   },
+//   {
+//     label: 'AL19',
+//     i18n: { key: 'al-th', query: { name: 'AMC' } }
+//   },
+//   {
+//     label: 'AL20',
+//     i18n: { key: 'al-th', query: { name: 'APBE' } }
+//   },
+//   {
+//     label: 'AL21',
+//     i18n: { key: 'al-th', query: { name: 'APE' } }
+//   },
+//   {
+//     label: 'AL22',
+//     i18n: { key: 'al-th', query: { name: 'APBA' } }
+//   },
+//   {
+//     label: 'AL23',
+//     i18n: { key: 'al-th', query: { name: 'APA' } }
+//   },
+//   {
+//     label: 'AL24',
+//     i18n: { key: 'al-th', query: { name: 'AGK' } }
+//   },
+//   {
+//     label: 'AL25',
+//     i18n: { key: 'al-th', query: { name: 'AMM' } }
+//   },
+//   { label: 'AL26', i18n: { key: 'al-tl', query: { name: 'TLK' } } },
+//   { label: 'AL27', i18n: { key: 'al-tl', query: { name: 'TL' } } },
+//   { label: 'AL28', i18n: { key: 'al-tl', query: { name: 'TJ1' } } },
+//   { label: 'AL29', i18n: { key: 'al-tl', query: { name: 'TJ2' } } },
+//   { label: 'AL30', i18n: { key: '', query: {} } },
+//   { label: 'AL31', i18n: { key: '', query: {} } },
+//   { label: 'AL32', i18n: { key: '', query: {} } },
+//   {
+//     label: 'AL33',
+//     i18n: { key: 'al-fc', query: { fc1: 'EOM', fc2: 'EZM' } }
+//   },
+//   { label: 'AL34', i18n: { key: 'al-sil-07', query: {} } },
+//   { label: 'AL35', i18n: { key: 'al-sil-10', query: {} } },
+//   { label: 'AL36', i18n: { key: 'al-sil-13', query: {} } },
+//   {
+//     label: 'AL37',
+//     i18n: { key: 'al-fc', query: { fc1: 'ECA', fc2: 'ECB' } }
+//   },
+//   {
+//     label: 'AL38',
+//     i18n: { key: 'al-fc', query: { fc1: 'EBZE', fc2: 'EBOE' } }
+//   },
+//   {
+//     label: 'AL39',
+//     i18n: { key: 'al-fc', query: { fc1: 'EZE', fc2: 'EOE' } }
+//   },
+//   {
+//     label: 'AL40',
+//     i18n: { key: 'al-fc', query: { fc1: 'EBZA', fc2: 'EBOA' } }
+//   },
+//   {
+//     label: 'AL41',
+//     i18n: { key: 'al-fc', query: { fc1: 'EZA', fc2: 'EOA' } }
+//   },
+//   { label: 'AL42', i18n: { key: '', query: {} } },
+//   { label: 'AL43', i18n: { key: '', query: {} } },
+//   { label: 'AL44', i18n: { key: '', query: {} } },
+//   { label: 'AL45', i18n: { key: '', query: {} } },
+//   { label: 'AL46', i18n: { key: '', query: {} } },
+//   { label: 'AL47', i18n: { key: '', query: {} } },
+//   { label: 'AL48', i18n: { key: '', query: {} } },
+//   { label: 'AL49', i18n: { key: 'al-lv', query: {} } },
+//   { label: 'AL50', i18n: { key: 'al-lv', query: {} } },
+//   { label: 'AL51', i18n: { key: 'al-lh', query: {} } },
+//   { label: 'AL52', i18n: { key: 'al-lh', query: {} } },
+//   { label: 'AL53', i18n: { key: 'al-lv-diff', query: {} } },
+//   { label: 'AL54', i18n: { key: 'al-lh-diff', query: {} } },
+//   { label: 'AL55', i18n: { key: '', query: {} } },
+//   { label: 'AL56', i18n: { key: '', query: {} } },
+//   { label: 'AL57', i18n: { key: '', query: {} } },
+//   { label: 'AL58', i18n: { key: '', query: {} } },
+//   { label: 'AL59', i18n: { key: '', query: {} } },
+//   { label: 'AL60', i18n: { key: '', query: {} } },
+//   { label: 'AL61', i18n: { key: '', query: {} } },
+//   { label: 'AL62', i18n: { key: '', query: {} } },
+//   { label: 'AL63', i18n: { key: '', query: {} } },
+//   { label: 'AL64', i18n: { key: '', query: {} } }
+// ]
