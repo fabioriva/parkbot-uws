@@ -3,8 +3,8 @@ const MongoClient = require('mongodb').MongoClient
 const util = require('util')
 
 /** Edit APS */
-const DATABASE = 'alumim'
-const { ALARMS, DEVICES, MODES, OPERATIONS } = require('../aps/alumim/str')
+const DATABASE = 'trumpeldor'
+const { ALARMS, DEVICES, MODES, OPERATIONS } = require('../aps/trumpeldor/str')
 /** End */
 
 const client = new MongoClient(process.env.MONGODB_URI, {
@@ -31,10 +31,10 @@ const start = async () => {
     await client.connect()
     const db = client.db(DATABASE)
     // Drop collections
-    await dropCollection(db, 'alarms')
-    await dropCollection(db, 'devices')
-    await dropCollection(db, 'modes')
-    await dropCollection(db, 'operations')
+    // await dropCollection(db, 'alarms')
+    // await dropCollection(db, 'devices')
+    // await dropCollection(db, 'modes')
+    // await dropCollection(db, 'operations')
     // Insert data
     await insertMany(db, 'alarms', ALARMS)
     await insertMany(db, 'devices', DEVICES)

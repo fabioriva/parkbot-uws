@@ -37,7 +37,6 @@ const start = async () => {
     })
 
     app.get(prefix + '/dashboard', async (res, req) => {
-      // console.log(prefix + '/dashboard', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
@@ -55,7 +54,6 @@ const start = async () => {
     })
 
     app.get(prefix + '/history', async (res, req) => {
-      // console.log(prefix + '/history', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
@@ -65,7 +63,6 @@ const start = async () => {
     })
 
     app.get(prefix + '/statistics', async (res, req) => {
-      // console.log(prefix + '/statistics', req.getQuery())
       res.onAborted(() => {
         res.aborted = true
       })
