@@ -53,14 +53,14 @@ const start = async () => {
       })
     })
 
-    // app.get(prefix + '/history', async (res, req) => {
-    //   res.onAborted(() => {
-    //     res.aborted = true
-    //   })
-    //   const query = querystring.parse(req.getQuery())
-    //   const docs = await getHistory_(db, query)
-    //   sendJson(res, docs)
-    // })
+    app.get(prefix + '/history', async (res, req) => {
+      res.onAborted(() => {
+        res.aborted = true
+      })
+      const query = querystring.parse(req.getQuery())
+      const docs = await getHistory_(db, query)
+      sendJson(res, docs)
+    })
 
     app.get(prefix + '/statistics', async (res, req) => {
       res.onAborted(() => {
