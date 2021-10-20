@@ -308,34 +308,34 @@ exports.DEVICES = [
 ]
 
 exports.MODES = [
-  { id: 0, label: 'mode-no' },
-  { id: 1, label: 'mode-data-edit' },
-  { id: 2, label: 'mode-data-read' },
-  { id: 3, label: 'mode-eme-1' },
-  { id: 4, label: 'mode-eme-2' },
-  { id: 5, label: 'mode-no' },
-  { id: 6, label: 'mode-step' },
-  { id: 7, label: 'mode-preset' },
-  { id: 8, label: 'mode-auto' }
+  { id: 0, key: 'mode-no' },
+  { id: 1, key: 'mode-data-edit' },
+  { id: 2, key: 'mode-data-read' },
+  { id: 3, key: 'mode-eme-1' },
+  { id: 4, key: 'mode-eme-2' },
+  { id: 5, key: 'mode-no' },
+  { id: 6, key: 'mode-step' },
+  { id: 7, key: 'mode-preset' },
+  { id: 8, key: 'mode-auto' }
 ]
 
 exports.OPERATIONS = [
-  { id: 0, label: 'op-no' },
-  { id: 1, label: 'op-alarm-on' },
-  { id: 2, label: 'op-alarm-off' },
-  { id: 3, label: 'op-switch-mode' },
-  { id: 4, label: 'op-change-pin' },
-  { id: 5, label: 'op-stall-in' },
-  { id: 6, label: 'op-stall-out' },
-  { id: 7, label: 'op-shuffle-in' },
-  { id: 8, label: 'op-shuffle-out' },
-  { id: 9, label: 'op-stall-rsv' },
-  { id: 10, label: 'op-req-exit' },
-  { id: 11, label: 'op-req-entry' },
-  { id: 12, label: 'op-no' },
-  { id: 13, label: 'op-no' },
-  { id: 14, label: 'op-no' },
-  { id: 15, label: 'op-no' }
+  { id: 0, key: 'op-no' },
+  { id: 1, key: 'op-alarm-on' },
+  { id: 2, key: 'op-alarm-off' },
+  { id: 3, key: 'op-switch-mode' },
+  { id: 4, key: 'op-change-pin' },
+  { id: 5, key: 'op-stall-in' },
+  { id: 6, key: 'op-stall-out' },
+  { id: 7, key: 'op-shuffle-in' },
+  { id: 8, key: 'op-shuffle-out' },
+  { id: 9, key: 'op-stall-rsv' },
+  { id: 10, key: 'op-req-exit' },
+  { id: 11, key: 'op-req-entry' },
+  { id: 12, key: 'op-no' },
+  { id: 13, key: 'op-no' },
+  { id: 14, key: 'op-no' },
+  { id: 15, key: 'op-no' }
 ]
 
 // exports.alarms1 = [
