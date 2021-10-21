@@ -37,13 +37,13 @@ class Device {
   }
 }
 
-const generateDevices = names => {
-  const devices = []
-  for (let i = 0; i < names.length; i++) {
-    devices.push(new Device(i + 1, names[i]))
-  }
-  return devices
-}
+// const generateDevices = names => {
+//   const devices = []
+//   for (let i = 0; i < names.length; i++) {
+//     devices.push(new Device(i + 1, names[i]))
+//   }
+//   return devices
+// }
 
 const updateDevices = util.promisify(
   (start, buffer, offset, devices, modes, callback) => {
@@ -56,4 +56,5 @@ const updateDevices = util.promisify(
   }
 )
 
-module.exports = { generateDevices, updateDevices, Device }
+// module.exports = { generateDevices, updateDevices, Device }
+module.exports = { updateDevices, Device }
