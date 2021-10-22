@@ -2,7 +2,7 @@
 const { Actuator } = require('./motors')
 
 class Silomat {
-  constructor (id, name, inputs = [], outputs = []) {
+  constructor (id, name, inputs = [], outputs = [], ready = [], speed = 0) {
     this.id = id
     this.name = name
     this.M1 = new Traveling(

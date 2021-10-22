@@ -101,7 +101,8 @@ class Motor {
     inputs = [],
     outputs = [],
     positions = [],
-    ready = []
+    ready = [],
+    speed = 0
   ) {
     this.id = id
     this.name = name
@@ -109,6 +110,7 @@ class Motor {
     this.outputs = outputs
     this.positions = positions
     this.ready = ready
+    this.speed = speed
     this.motor = generateBits('M', 0, 0)
     this.flags = generateBits('M', 1, 1)
   }
@@ -122,6 +124,7 @@ class Motor {
       inputs: this.inputs,
       outputs: this.outputs,
       ready: this.ready,
+      speed: this.speed,
       enable: this.motor[4].status,
       error: this.motor[7].status
     }
