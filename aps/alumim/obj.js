@@ -45,6 +45,8 @@ exports.motors = device1.motors
 
 exports.positions = device1.positions
 
+exports.silomats = device1.silomat.motors
+
 exports.diagnostic = [device1]
 
 exports.modes = str.MODES

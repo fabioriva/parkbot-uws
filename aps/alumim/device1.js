@@ -86,7 +86,8 @@ const M1 = new Hoisting(
   [FKBA, RTA, ASBK, FSBK],
   [KQA, SBK1, SBK2],
   [LV1, LV2],
-  LC
+  LC,
+  IV1.speed
 )
 
 /**
@@ -213,8 +214,9 @@ const silomat = new Silomat(
   1,
   'SIL1',
   [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH],
-  [T2, TRA, TRB, KCS, KCV, KCH]
-  // [...LC]
+  [T2, TRA, TRB, KCS, KCV, KCH],
+  LC,
+  IV1.speed
 )
 
 module.exports = { device, inverters, motors, positions, silomat, view }
