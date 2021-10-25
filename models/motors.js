@@ -2,12 +2,11 @@ const util = require('util')
 const { generateBits } = require('./bits')
 
 class Actuator {
-  constructor (id, name, inputs = [], outputs = [], ready = []) {
+  constructor (id, name, inputs = [], outputs = []) {
     this.id = id
     this.name = name
     this.inputs = inputs
     this.outputs = outputs
-    this.ready = ready
     this.motor = generateBits('M', 0, 0)
     this.flags = generateBits('M', 1, 1)
   }
@@ -102,7 +101,7 @@ class Motor {
     outputs = [],
     positions = [],
     ready = [],
-    speed = 0
+    inverter
   ) {
     this.id = id
     this.name = name
@@ -110,7 +109,7 @@ class Motor {
     this.outputs = outputs
     this.positions = positions
     this.ready = ready
-    this.speed = speed
+    this.inverter = inverter
     this.motor = generateBits('M', 0, 0)
     this.flags = generateBits('M', 1, 1)
   }
@@ -124,7 +123,7 @@ class Motor {
       inputs: this.inputs,
       outputs: this.outputs,
       ready: this.ready,
-      speed: this.speed,
+      inverter: this.inverter,
       enable: this.motor[4].status,
       error: this.motor[7].status
     }
@@ -172,9 +171,10 @@ class Hoisting extends Motor {
     inputs = [],
     outputs = [],
     positions = [],
-    ready = []
+    ready = [],
+    inverter
   ) {
-    super(id, name, inputs, outputs, positions, ready)
+    super(id, name, inputs, outputs, positions, ready, inverter)
     this.motion_ = ['motion-down', 'motion-up']
   }
 }
@@ -186,9 +186,10 @@ class Rotation extends Motor {
     inputs = [],
     outputs = [],
     positions = [],
-    ready = []
+    ready = [],
+    inverter
   ) {
-    super(id, name, inputs, outputs, positions, ready)
+    super(id, name, inputs, outputs, positions, ready, inverter)
     this.motion_ = ['motion-anticlockwise', 'motion-clockwise']
   }
 }
@@ -200,9 +201,10 @@ class Traveling extends Motor {
     inputs = [],
     outputs = [],
     positions = [],
-    ready = []
+    ready = [],
+    inverter
   ) {
-    super(id, name, inputs, outputs, positions, ready)
+    super(id, name, inputs, outputs, positions, ready, inverter)
     this.motion_ = ['motion-left', 'motion-right']
   }
 }

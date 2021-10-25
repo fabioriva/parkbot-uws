@@ -87,13 +87,13 @@ const M1 = new Hoisting(
   [KQA, SBK1, SBK2],
   [LV1, LV2],
   LC,
-  IV1.speed
+  IV1
 )
 
 /**
  * Traveling
  */
-const AH = inputs.find(b => b.addr === 'E8.6')
+const AKKS = inputs.find(b => b.addr === 'E17.4')
 const ASH = inputs.find(b => b.addr === 'E9.3')
 const AIV = inputs.find(b => b.addr === 'E9.4')
 const EMC = inputs.find(b => b.addr === 'E17.1')
@@ -105,10 +105,11 @@ const T10 = outputs.find(b => b.addr === 'A15.0')
 const M2 = new Traveling(
   2,
   { key: 'mot-traveling' },
-  [AH, ASH, AIV, EMC, MNR, MNL],
+  [AKKS, ASH, AIV, EMC, MNR, MNL],
   [TLIV, T10],
   [ENH],
-  LC
+  LC,
+  IV2
 )
 
 /**
@@ -125,7 +126,8 @@ const M3 = new Rotation(
   [AD, ASBK2, ASH, AIV, EXD],
   [TLIV, TD],
   [ENR],
-  LC
+  LC,
+  IV2
 )
 
 /**
@@ -226,7 +228,7 @@ const silomat = new Silomat(
   [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH],
   [T2, TRA, TRB, KCS, KCV, KCH],
   LC,
-  IV1.speed
+  IV2
 )
 
 module.exports = { device, inverters, motors, positions, silomat, view }
