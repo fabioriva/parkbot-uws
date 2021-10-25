@@ -9,6 +9,7 @@
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "ironbank": "nodemon aps/ironbank",
+    "muse": "nodemon aps/muse",
     "nhidcl": "nodemon aps/nhidcl",
     "spire": "nodemon aps/spire",
     "trumpeldor": "nodemon aps/trumpeldor",

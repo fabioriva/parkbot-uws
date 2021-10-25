@@ -1,37 +1,37 @@
-exports.PORT = 49009
+exports.PORT = 49004
 exports.HOST =
   process.env.NODE_ENV !== 'production'
     ? process.env.DEVELOPMENT_SERVER
     : process.env.PRODUCTION_SERVER
-exports.HTTP = 9001
+exports.HTTP = 9010
 exports.PLC = {
-  ip: '192.168.67.2',
+  ip: '140.80.49.2',
   rack: 0,
   slot: 1,
-  polling_time: 500
+  polling_time: 300
 }
 
 exports.QUEUE_LEN = 5
 
 const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
-exports.DB_ALARM_INIT = 4
+exports.DB_ALARM_INIT = 12
 exports.DB_ALARM_LEN = 64 * ALARM_LEN
-exports.DBS_ALARM = [531, 532, 533, 534, 535, 536]
+exports.DBS_ALARM = [431, 432, 433, 434]
 
-const CARDS = 266
+const CARDS = 208
 const CARD_LEN = 10
 exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
-const DB_DATA = 505
-const DB_DATA_LEN = 362
+const DB_DATA = 450
+const DB_DATA_LEN = 398
 exports.DB_DATA_INIT_DEVICE = 32
-exports.DB_DATA_INIT_POS = 128
-exports.DB_DATA_INIT_QUEUE = 200
-exports.DB_DATA_INIT_AB = 240
-exports.DB_DATA_INIT_EB = 282
-exports.DB_DATA_INIT_MB = 354
+exports.DB_DATA_INIT_POS = 96
+exports.DB_DATA_INIT_QUEUE = 160
+exports.DB_DATA_INIT_AB = 236
+exports.DB_DATA_INIT_EB = 188
+exports.DB_DATA_INIT_MB = 180
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -40,7 +40,7 @@ exports.DATA_READ = {
   wordLen: 0x02
 }
 
-const STALLS = 276
+const STALLS = 208
 const STALL_LEN = 10
 exports.STALLS = STALLS
 exports.STALL_LEN = STALL_LEN
@@ -53,7 +53,7 @@ exports.STALL_STATUS = {
 
 exports.CARD_READ = {
   area: 0x84,
-  dbNumber: 511,
+  dbNumber: 441,
   start: 0,
   amount: CARDS * CARD_LEN,
   wordLen: 0x02
@@ -61,13 +61,13 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 378,
+  start: 410,
   amount: 4,
   wordLen: 0x02
 }
 exports.MAP_READ = {
   area: 0x84,
-  dbNumber: 510,
+  dbNumber: 440,
   start: 0,
   amount: STALLS * STALL_LEN,
   wordLen: 0x02
@@ -75,34 +75,34 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 374,
+  start: 406,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 382,
+  start: 414,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 386,
+  start: 418,
   amount: 2,
   wordLen: 0x02
 }
 
-const DB_DIAG = 506
-const DB_DIAG_LEN = 222
-exports.DB_DIAG_INIT_MOT = 0
-exports.DB_DIAG_INIT_VFD = 54
-exports.DB_DIAG_INIT_SIL = 174
-exports.DIAG_READ = {
-  area: 0x84,
-  dbNumber: DB_DIAG,
-  start: 0,
-  amount: DB_DIAG_LEN,
-  wordLen: 0x02
-}
+// const DB_DIAG = 506
+// const DB_DIAG_LEN = 222
+// exports.DB_DIAG_INIT_MOT = 0
+// exports.DB_DIAG_INIT_VFD = 54
+// exports.DB_DIAG_INIT_SIL = 174
+// exports.DIAG_READ = {
+//   area: 0x84,
+//   dbNumber: DB_DIAG,
+//   start: 0,
+//   amount: DB_DIAG_LEN,
+//   wordLen: 0x02
+// }
