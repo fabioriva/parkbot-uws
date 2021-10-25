@@ -196,14 +196,24 @@ const M8 = new Flap(
 /**
  * Door E/U
  */
+const FXPE = inputs.find(b => b.addr === 'E8.1')
+const KEZE = inputs.find(b => b.addr === 'E8.4')
 const EZE = inputs.find(b => b.addr === 'E10.0')
 const EOE = inputs.find(b => b.addr === 'E10.1')
 const FBE = inputs.find(b => b.addr === 'E10.2')
 const APE = inputs.find(b => b.addr === 'E9.1')
+const SPE = outputs.find(b => b.addr === 'A4.5')
 const SZE = merkers.find(b => b.addr === 'M1.0')
+SZE.label = 'SZE'
 const SOE = merkers.find(b => b.addr === 'M1.1')
+SOE.label = 'SOE'
 
-const M9 = new Door(5, { key: 'mot-door-e' }, [EZE, EOE, FBE, APE], [SZE, SOE])
+const M9 = new Door(
+  5,
+  { key: 'mot-door-e' },
+  [FXPE, KEZE, EZE, EOE, FBE, APE],
+  [SPE, SZE, SOE]
+)
 
 const motors = [M1, M2, M3, M4, M5, M6, M7, M8, M9]
 
