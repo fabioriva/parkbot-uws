@@ -1,6 +1,7 @@
 const format = require('date-fns/format')
 const util = require('util')
 const { getPlcDateTime } = require('../lib/utils7')
+// const i18next = require('i18next')
 
 class Alarm {
   constructor (id, status, str) {
@@ -18,6 +19,26 @@ class Alarm {
       'yyyy-MM-dd HH:mm:ss:SSS'
     )
   }
+
+  // async translate (locale) {
+  //   const t = await i18next.changeLanguage(locale)
+  //   console.log(
+  //     'i18next',
+  //     locale,
+  //     this.key,
+  //     this.query,
+  //     t(this.key, {
+  //       ns: 'alarms',
+  //       interpolation: { escapeValue: false },
+  //       ...this.query
+  //     })
+  //   )
+  //   this.i18n = t(this.key, {
+  //     ns: 'alarms',
+  //     interpolation: { escapeValue: false },
+  //     ...this.query
+  //   })
+  // }
 }
 
 class Alarms {
@@ -50,6 +71,7 @@ const updateAlarms = util.promisify(
     let byte = start
     for (let i = 0; i < alarms.length; i++) {
       alarms[i].update(buffer.slice(byte, byte + offset))
+      // alarms[i].translate('it')
       byte += offset
     }
     callback(null, alarms)

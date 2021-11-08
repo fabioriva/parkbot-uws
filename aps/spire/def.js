@@ -1,3 +1,4 @@
+exports.APS = 'Spire'
 exports.PORT = 49009
 exports.HOST =
   process.env.NODE_ENV !== 'production'
