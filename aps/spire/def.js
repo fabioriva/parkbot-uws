@@ -94,6 +94,23 @@ exports.REQ_0 = {
   amount: 2,
   wordLen: 0x02
 }
+exports.ROLLBACK_1 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 354 * 8 + 0, // Offset 354.0
+  amount: 1,
+  wordLen: 0x01, // Bit (inside a word)
+  buffer: Boolean(1)
+}
+
+exports.ROLLBACK_2 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 354 * 8 + 4, // Offset 354.4
+  amount: 1,
+  wordLen: 0x01, // Bit (inside a word)
+  buffer: Boolean(1)
+}
 
 const DB_DIAG = 506
 const DB_DIAG_LEN = 222
