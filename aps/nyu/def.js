@@ -89,7 +89,7 @@ exports.QUEUE_DELETE = {
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 188,
+  start: 192,
   amount: 2,
   wordLen: 0x02
 }
