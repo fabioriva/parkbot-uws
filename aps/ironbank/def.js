@@ -82,7 +82,7 @@ exports.MAP_EDIT = {
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 252,
+  start: 256,
   amount: 4,
   wordLen: 0x02
 }
