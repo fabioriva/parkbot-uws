@@ -93,14 +93,14 @@ exports.REQ_0 = {
   amount: 2,
   wordLen: 0x02
 }
-exports.ROLLBACK_3 = {
+exports.ROLLBACK_1 = {
   area: 0x84,
   dbNumber: DB_DATA,
   start: 184 * 8 + 4, // Offset 184.4
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
-exports.ROLLBACK_4 = {
+exports.ROLLBACK_2 = {
   area: 0x84,
   dbNumber: DB_DATA,
   start: 184 * 8 + 5, // Offset 184.5

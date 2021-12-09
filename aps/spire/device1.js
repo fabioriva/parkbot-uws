@@ -1,5 +1,4 @@
-const def = require('./def')
-const { inputs, merkers, outputs } = require('./obj')
+const { inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
 const { Inverter } = require('../../models/inverters')
 const { Door, Flap, Lock, Hoisting, Rotation } = require('../../models/motors')
@@ -7,17 +6,6 @@ const { Position } = require('../../models/positions')
 const { Silomat } = require('../../models/silomat')
 
 const device = new Device(1, 'EVT1')
-
-const A0 = {
-  conn: def.ROLLBACK_1,
-  enable: merkers.find(b => b.addr === 'M1.0'),
-  key: 'action-entry'
-}
-const A1 = {
-  conn: def.ROLLBACK_2,
-  enable: merkers.find(b => b.addr === 'M1.1'),
-  key: 'action-rollback'
-}
 
 const LV = new Position(1, 'LV')
 const ENR = new Position(2, 'ENR')
@@ -64,7 +52,7 @@ const view = {
   a: device,
   b: positions,
   c: lamps,
-  d: [], // [A0, A1],
+  d: [],
   e: [RMV, RMH, RES, REH, RCV, REAV, REAH, RCH, T2, TRA, TRB, KCS, KCV, KCH],
   alarms: [],
   vg: {

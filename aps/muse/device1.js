@@ -1,4 +1,5 @@
-const { alarms, inputs, outputs } = require('./obj')
+const def = require('./def')
+const { alarms, inputs, merkers, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
 const { Inverter } = require('../../models/inverters')
 const { Position } = require('../../models/positions')
@@ -17,11 +18,17 @@ const lamps = [
   outputs.find(b => b.addr === 'A103.6')
 ]
 
+const A0 = {
+  conn: def.ROLLBACK_1,
+  enable: merkers.find(b => b.addr === 'M3.0'),
+  key: 'action-entry'
+}
+
 const view = {
   a: device,
   b: positions,
   c: lamps,
-  d: [],
+  d: [A0],
   e: [],
   alarms: alarms[0]._active
 }
