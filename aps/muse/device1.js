@@ -21,7 +21,7 @@ const lamps = [
 const A0 = {
   conn: def.ROLLBACK_1,
   enable: merkers.find(b => b.addr === 'M3.0'),
-  key: 'action-entry'
+  key: 'action-rollback'
 }
 
 const view = {
