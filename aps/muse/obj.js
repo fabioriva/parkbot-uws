@@ -119,7 +119,7 @@ exports.overview = {
   exitQueue: {
     queueList: queue,
     exitButton: {
-      enable: merkers.find(b => b.addr === 'M3.0'),
+      enable: merkers.find(b => b.addr === 'M3.5'),
       label: 'action-exit'
     }
   }
