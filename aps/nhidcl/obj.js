@@ -116,8 +116,9 @@ exports.overview = {
   exitQueue: {
     queueList: queue,
     exitButton: {
+      conn: def.REQ_0,
       enable: merkers.find(b => b.addr === 'M3.0'),
-      label: 'action-exit'
+      key: 'action-exit'
     }
   }
 }
