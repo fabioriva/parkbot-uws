@@ -12,6 +12,7 @@
     "muse": "nodemon aps/muse",
     "nhidcl": "nodemon aps/nhidcl",
     "nyu": "nodemon aps/nyu",
+    "qihe": "nodemon aps/qihe",
     "spire": "nodemon aps/spire",
     "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
