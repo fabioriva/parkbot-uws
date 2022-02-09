@@ -51,6 +51,14 @@ exports.STALL_STATUS = {
   LOCK: 999
 }
 
+exports.ACTIVATE = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 173 * 8 + 6, // Offset 173.6 (M7.6)
+  amount: 1,
+  wordLen: 0x01 // Bit (inside a word)
+}
+
 exports.CARD_READ = {
   area: 0x84,
   dbNumber: 511,
@@ -61,7 +69,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 184,
+  start: 182,
   amount: 4,
   wordLen: 0x02
 }
@@ -75,21 +83,21 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 180,
+  start: 178,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 188,
+  start: 186,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 192,
+  start: 190,
   amount: 2,
   wordLen: 0x02
 }
