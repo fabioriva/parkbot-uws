@@ -1,3 +1,4 @@
+exports.APS = '8888'
 exports.PORT = 49012
 exports.HOST =
   process.env.NODE_ENV !== 'production'

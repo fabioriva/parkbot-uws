@@ -1,3 +1,4 @@
+exports.APS = 'The Muse'
 exports.PORT = 49004
 exports.HOST =
   process.env.NODE_ENV !== 'production'
