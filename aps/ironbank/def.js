@@ -8,7 +8,7 @@ exports.PLC = {
   ip: '140.80.4.2',
   rack: 0,
   slot: 2, // 1=s7-1500, 2=s7-300
-  polling_time: 500
+  polling_time: 999
 }
 
 exports.QUEUE_LEN = 5
