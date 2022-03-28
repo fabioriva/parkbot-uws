@@ -14,7 +14,7 @@ const lamps = [
 
 const A0 = {
   conn: REQ_1,
-  enable: merkers.find(b => b.addr === 'M3.0'),
+  enable: merkers.find(b => b.addr === 'M3.1'),
   key: 'action-entry'
 }
 
