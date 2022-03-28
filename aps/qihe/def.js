@@ -101,3 +101,31 @@ exports.REQ_0 = {
   amount: 2,
   wordLen: 0x02
 }
+exports.REQ_1 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 366,
+  amount: 2,
+  wordLen: 0x02
+}
+exports.REQ_2 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 368,
+  amount: 2,
+  wordLen: 0x02
+}
+exports.REQ_3 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 370,
+  amount: 2,
+  wordLen: 0x02
+}
+exports.REQ_4 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 372,
+  amount: 2,
+  wordLen: 0x02
+}

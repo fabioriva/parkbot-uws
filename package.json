@@ -1,7 +1,7 @@
 {
   "name": "parkbot-uws",
   "version": "1.0.0",
-  "description": "uWebSockets",
+  "description": "parkbot backend",
   "main": "index.js",
   "scripts": {
     "test": "standard",
@@ -9,6 +9,7 @@
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "ironbank": "nodemon aps/ironbank",
+    "kn": "nodemon aps/kn",
     "muse": "nodemon aps/muse",
     "nhidcl": "nodemon aps/nhidcl",
     "nyu": "nodemon aps/nyu",
@@ -36,6 +37,8 @@
     "standard": "^16.0.4"
   },
   "standard": {
-    "ignore": ["/public"]
+    "ignore": [
+      "/public"
+    ]
   }
 }

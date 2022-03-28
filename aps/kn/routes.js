@@ -7,9 +7,9 @@ const {
   getHistoryLog,
   getOperations,
   getRecentActivity
-} = require('./history')
-const { readJson, sendJson } = require('./json')
-const { getMailingList, deleteItem, insertItem } = require('./mailer')
+} = require('../../lib/history')
+const { readJson, sendJson } = require('../../lib/json')
+const { getMailingList, deleteItem, insertItem } = require('../../lib/mailer')
 
 // const FALSE = Buffer.alloc(1, 0, 'hex')
 // const TRUE = Buffer.alloc(1, 1, 'hex')
@@ -22,7 +22,7 @@ function log (req) {
   })
 }
 
-function routes (app, db, def, obj, plc, options) {
+function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
   const { prefix } = options
 
   app.post(prefix + '/activate', (res, req) => {
@@ -63,12 +63,12 @@ function routes (app, db, def, obj, plc, options) {
   })
 
   // app.get(prefix + '/alarms', (res, req) => {
-  //   const active = obj.alarms.map(item => item._active)
+  //   const active = objLeft.alarms.map(item => item._active)
   //   sendJson(res, active)
   // })
 
   // app.get(prefix + '/cards', (res, req) => {
-  //   sendJson(res, obj.cards)
+  //   sendJson(res, objLeft.cards)
   // })
 
   app.get(prefix + '/cards', (res, req) => {
@@ -78,7 +78,7 @@ function routes (app, db, def, obj, plc, options) {
       if (err) {
         res.writeStatus(err.statusCode.toString()).end(err.message)
       } else {
-        sendJson(res, obj.cards)
+        sendJson(res, objLeft.cards)
       }
     })
   })
@@ -94,17 +94,18 @@ function routes (app, db, def, obj, plc, options) {
     })
     sendJson(res, {
       activity: activity,
-      // cards: obj.cards.length,
-      occupancy: obj.map.occupancy,
+      // cards: objLeft.cards.length,
+      occupancy: objLeft.map.occupancy,
       operations: statistics,
-      system: obj.overview
+      left: objLeft.overview,
+      right: objRight.overview
     })
   })
 
   app.get(prefix + '/device/:id', (res, req) => {
-    // sendJson(res, obj.diagnostic[req.getParameter(0)])
-    const diagnostic = obj.diagnostic.map((item, key) => ({
-      device: obj.overview.devices[key],
+    // sendJson(res, objLeft.diagnostic[req.getParameter(0)])
+    const diagnostic = objLeft.diagnostic.map((item, key) => ({
+      device: objLeft.overview.devices[key],
       inverters: item.inverters,
       motors: item.motors.map(m => m.json),
       silomat: item.silomat.json
@@ -174,24 +175,39 @@ function routes (app, db, def, obj, plc, options) {
   })
 
   app.get(prefix + '/map', (res, req) => {
-    sendJson(res, obj.map)
+    sendJson(res, objLeft.map)
   })
 
   app.get(prefix + '/overview', (res, req) => {
-    sendJson(res, obj.overview)
+    sendJson(res, {
+      left: objLeft.overview,
+      right: objRight.overview
+    })
   })
 
   app.get(prefix + '/racks', (res, req) => {
-    sendJson(res, obj.racks)
+    sendJson(res, {
+      left: objLeft.racks,
+      right: objRight.racks
+    })
   })
 
-  app.get(prefix + '/rack/:id', (res, req) => {
-    sendJson(res, obj.racks[req.getParameter(0)])
+  // app.get(prefix + '/rack/:id', (res, req) => {
+  //   const racks = [...objLeft.racks, ...objRight.racks]
+  //   sendJson(res, racks[req.getParameter(0)])
+  // })
+
+  app.get(prefix + '/left/rack/:id', (res, req) => {
+    sendJson(res, objLeft.racks[req.getParameter(0)])
   })
 
-  app.get(prefix + '/stalls', (res, req) => {
-    sendJson(res, obj.stalls)
+  app.get(prefix + '/right/rack/:id', (res, req) => {
+    sendJson(res, objRight.racks[req.getParameter(0)])
   })
+
+  // app.get(prefix + '/stalls', (res, req) => {
+  //   sendJson(res, objLeft.stalls)
+  // })
 
   app.get(prefix + '/statistics', async (res, req) => {
     res.onAborted(() => {
@@ -271,7 +287,7 @@ function routes (app, db, def, obj, plc, options) {
             ) {
               return sendJson(res, new Message('warning', 'Card not valid'))
             }
-            const found = obj.stalls.find(stall => stall.status === card)
+            const found = objLeft.stalls.find(stall => stall.status === card)
             if (card !== FREE && card !== LOCK && found) {
               return sendJson(res, new Message('warning', 'Card in use'))
             }
@@ -313,7 +329,7 @@ function routes (app, db, def, obj, plc, options) {
             if (card < 1 || card > def.CARDS) {
               return sendJson(res, new Message('warning', 'Card not valid'))
             }
-            const found = obj.stalls.find(stall => stall.status === card)
+            const found = objLeft.stalls.find(stall => stall.status === card)
             if (id === 0 && found === undefined) {
               return sendJson(res, new Message('warning', 'Card not present'))
             }
@@ -334,9 +350,6 @@ function routes (app, db, def, obj, plc, options) {
             }
             if (id === 3 && def.REQ_3 !== undefined) {
               response = await plc.write(def.REQ_3, buffer)
-            }
-            if (id === 4 && def.REQ_4 !== undefined) {
-              response = await plc.write(def.REQ_4, buffer)
             }
             sendJson(
               res,
