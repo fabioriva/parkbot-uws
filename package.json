@@ -15,6 +15,7 @@
     "nyu": "nodemon aps/nyu",
     "qihe": "nodemon aps/qihe",
     "spire": "nodemon aps/spire",
+    "teenmurty": "nodemon aps/teenmurty",
     "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
     "wblvd": "nodemon aps/washingtonblvd",

@@ -1,5 +1,5 @@
 const fs = require('fs')
-  
+
 const FILE = 'io.js'
 
 // const args = process.argv.slice(2)
@@ -8,8 +8,10 @@ const FILE = 'io.js'
 
 fs.writeFileSync(FILE, '// generate I/O\n')
 
-generate('inputs1', 'E', 0, 95)
-generate('outputs1', 'A', 0, 53)
+generate('inputs1', 'E', 0, 7)
+generate('inputs1', 'E', 10, 15)
+generate('outputs1', 'A', 0, 5)
+generate('outputs1', 'A', 10, 13)
 
 function generate (exports, type, from, to) {
   fs.appendFileSync(FILE, `exports.${exports} = [\n`)
