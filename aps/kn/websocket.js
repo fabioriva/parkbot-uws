@@ -34,11 +34,17 @@ function websocket (app, obj, options) {
   //   }
   // })
 
-  app.ws(prefix + side + '/info', {
+  app.ws(prefix + '/info', {
     open: ws => {
-      ws.subscribe(side + '/info')
+      ws.subscribe('aps/info')
     }
   })
+
+  // app.ws(prefix + side + '/info', {
+  //   open: ws => {
+  //     ws.subscribe(side + '/info')
+  //   }
+  // })
 
   app.ws(prefix + '/map', {
     open: ws => {

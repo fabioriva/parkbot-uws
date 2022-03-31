@@ -19,7 +19,7 @@ exports.PLC_R = {
   // ip: '192.168.20.55',
   rack: 0,
   slot: 2,
-  polling_time: 1500
+  polling_time: 500
 }
 
 exports.QUEUE_LEN = 10
@@ -57,9 +57,9 @@ exports.STALLS = STALLS
 exports.STALL_LEN = STALL_LEN
 exports.STALL_STATUS = {
   FREE: 0,
-  PAPA: 997,
-  RSVD: 998,
-  LOCK: 999
+  PAPA: -3,
+  RSVD: -2,
+  LOCK: -1
 }
 
 exports.MAP_READ = {

@@ -43,7 +43,9 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
             if (result.matchedCount === 1) {
               // sendJson(res, new Message('success', code))
               const buffer = Buffer.alloc(1, 1, 'hex')
-              const response = await plc.write(def.ACTIVATE, buffer)
+              let response
+              response = await plc01.write(def.ACTIVATE, buffer)
+              response = await plc02.write(def.ACTIVATE, buffer)
               console.log(result, response)
               sendJson(
                 res,
@@ -219,45 +221,45 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
     sendJson(res, docs)
   })
 
-  app.post(prefix + '/card/edit', (res, req) => {
-    const authorization = req.getHeader('authorization')
-    readJson(
-      res,
-      async json => {
-        checkAuth(res, authorization, async (err, user) => {
-          if (err) {
-            console.log(err)
-            res.writeStatus(err.statusCode.toString()).end(err.message)
-          } else {
-            const { card, code } = json
-            if (card < 1 || card > def.CARDS) {
-              return sendJson(res, new Message('warning', 'Card not valid'))
-            }
-            const regexp = /^[a-fA-F0-9]{3}$/
-            if (regexp.test(code)) {
-              const buffer = Buffer.alloc(4)
-              buffer.writeUInt16BE(card, 0)
-              buffer.writeUInt16BE(parseInt(code, 16), 2) // string to hex
-              const response = await plc.write(def.CARD_EDIT, buffer)
-              sendJson(
-                res,
-                new Message(
-                  response ? 'success' : 'error',
-                  response ? 'Updated card ' + card : 'Write error!'
-                )
-              )
-            } else {
-              sendJson(
-                res,
-                new Message('warning', 'PIN code regexp is not valid')
-              )
-            }
-          }
-        })
-      },
-      () => sendJson(res, new Message('error', 'Invalid JSON'))
-    )
-  })
+  // app.post(prefix + '/card/edit', (res, req) => {
+  //   const authorization = req.getHeader('authorization')
+  //   readJson(
+  //     res,
+  //     async json => {
+  //       checkAuth(res, authorization, async (err, user) => {
+  //         if (err) {
+  //           console.log(err)
+  //           res.writeStatus(err.statusCode.toString()).end(err.message)
+  //         } else {
+  //           const { card, code } = json
+  //           if (card < 1 || card > def.CARDS) {
+  //             return sendJson(res, new Message('warning', 'Card not valid'))
+  //           }
+  //           const regexp = /^[a-fA-F0-9]{3}$/
+  //           if (regexp.test(code)) {
+  //             const buffer = Buffer.alloc(4)
+  //             buffer.writeUInt16BE(card, 0)
+  //             buffer.writeUInt16BE(parseInt(code, 16), 2) // string to hex
+  //             const response = await plc.write(def.CARD_EDIT, buffer)
+  //             sendJson(
+  //               res,
+  //               new Message(
+  //                 response ? 'success' : 'error',
+  //                 response ? 'Updated card ' + card : 'Write error!'
+  //               )
+  //             )
+  //           } else {
+  //             sendJson(
+  //               res,
+  //               new Message('warning', 'PIN code regexp is not valid')
+  //             )
+  //           }
+  //         }
+  //       })
+  //     },
+  //     () => sendJson(res, new Message('error', 'Invalid JSON'))
+  //   )
+  // })
 
   app.post(prefix + '/map/edit', (res, req) => {
     const authorization = req.getHeader('authorization')
@@ -293,8 +295,9 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
             }
             const buffer = Buffer.alloc(4)
             buffer.writeUInt16BE(stall, 0)
-            buffer.writeUInt16BE(card, 2)
-            const response = await plc.write(def.MAP_EDIT, buffer)
+            // buffer.writeUInt16BE(card, 2)
+            buffer.writeInt16BE(card, 2)
+            const response = await plc01.write(def.MAP_EDIT, buffer)
             sendJson(
               res,
               new Message(
@@ -320,6 +323,7 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
           } else {
             const card = parseInt(json.card)
             const id = parseInt(json.id)
+            const side = json.side
             if (!Number.isInteger(card) || !Number.isInteger(id)) {
               return sendJson(
                 res,
@@ -339,25 +343,49 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
             const buffer = Buffer.allocUnsafe(2)
             buffer.writeUInt16BE(card, 0)
             let response = Boolean(0)
-            if (id === 0 && def.REQ_0 !== undefined) {
-              response = await plc.write(def.REQ_0, buffer)
-            }
-            if (id === 1 && def.REQ_1 !== undefined) {
-              response = await plc.write(def.REQ_1, buffer)
-            }
-            if (id === 2 && def.REQ_2 !== undefined) {
-              response = await plc.write(def.REQ_2, buffer)
-            }
-            if (id === 3 && def.REQ_3 !== undefined) {
-              response = await plc.write(def.REQ_3, buffer)
-            }
-            sendJson(
-              res,
-              new Message(
-                response ? 'success' : 'error',
-                response ? 'Sent request for card ' + card : 'Write error!'
+            if (side === 'left') {
+              if (id === 0 && def.REQ_0 !== undefined) {
+                response = await plc01.write(def.REQ_0, buffer)
+              }
+              if (id === 1 && def.REQ_1 !== undefined) {
+                response = await plc01.write(def.REQ_1, buffer)
+              }
+              if (id === 2 && def.REQ_2 !== undefined) {
+                response = await plc01.write(def.REQ_2, buffer)
+              }
+              if (id === 3 && def.REQ_3 !== undefined) {
+                response = await plc01.write(def.REQ_3, buffer)
+              }
+              sendJson(
+                res,
+                new Message(
+                  response ? 'success' : 'error',
+                  response ? 'Sent request for card ' + card : 'Write error!'
+                )
               )
-            )
+            } else if (side === 'right') {
+              if (id === 0 && def.REQ_0 !== undefined) {
+                response = await plc02.write(def.REQ_0, buffer)
+              }
+              if (id === 1 && def.REQ_1 !== undefined) {
+                response = await plc02.write(def.REQ_1, buffer)
+              }
+              if (id === 2 && def.REQ_2 !== undefined) {
+                response = await plc02.write(def.REQ_2, buffer)
+              }
+              if (id === 3 && def.REQ_3 !== undefined) {
+                response = await plc02.write(def.REQ_3, buffer)
+              }
+              sendJson(
+                res,
+                new Message(
+                  response ? 'success' : 'error',
+                  response ? 'Sent request for card ' + card : 'Write error!'
+                )
+              )
+            } else {
+              sendJson(res, new Message('error', 'Invalid JSON'))
+            }
           }
         })
       },
@@ -379,7 +407,7 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
             const buffer = Buffer.alloc(def.QUEUE_DELETE.amount).fill(0)
             buffer.writeUInt16BE(index, 0)
             buffer.writeUInt16BE(card, 2)
-            const response = await plc.write(def.QUEUE_DELETE, buffer)
+            const response = await plc01.write(def.QUEUE_DELETE, buffer)
             sendJson(
               res,
               new Message(
@@ -394,50 +422,50 @@ function routes (app, db, def, objLeft, plc01, objRight, plc02, options) {
     )
   })
 
-  app.post(prefix + '/readArea', (res, req) => {
-    console.log(req)
-    readJson(
-      res,
-      async json => {
-        const { conn } = json
-        const response = await plc.read(conn)
-        console.log('/readArea', json, response)
-        sendJson(
-          res,
-          new Message(response ? 'success' : 'error', response || 'Read error!')
-        )
-      },
-      () => sendJson(res, new Message('error', 'Invalid JSON'))
-    )
-  })
+  // app.post(prefix + '/readArea', (res, req) => {
+  //   console.log(req)
+  //   readJson(
+  //     res,
+  //     async json => {
+  //       const { conn } = json
+  //       const response = await plc.read(conn)
+  //       console.log('/readArea', json, response)
+  //       sendJson(
+  //         res,
+  //         new Message(response ? 'success' : 'error', response || 'Read error!')
+  //       )
+  //     },
+  //     () => sendJson(res, new Message('error', 'Invalid JSON'))
+  //   )
+  // })
 
-  app.post(prefix + '/writeArea', (res, req) => {
-    readJson(
-      res,
-      async json => {
-        const { conn, buffer } = json
-        console.log(conn, typeof buffer, buffer)
-        // const buffer_ = Buffer.allocUnsafe(2)
-        // buffer_.writeUInt16BE(buffer, 0)
-        // const buffer_ = Buffer.alloc(1, buffer, 'hex')
-        // const buffer_ = Buffer.alloc(conn.amount, buffer, 'hex')
-        const buffer_ = Buffer.from(buffer)
-        console.log(typeof buffer_, buffer_)
-        // const { area, dbNumber, start, amount, wordLen } = json
-        // const response = await plc.write(0x84, s7def.DB_DATA, ((184 * 8) + 4), 1, 0x01, s7def.TRUE)
-        const response = await plc.write(conn, buffer_)
-        console.log('/writeArea', json, response)
-        sendJson(
-          res,
-          new Message(
-            response ? 'success' : 'error',
-            response ? 'Written' : 'Write error!'
-          )
-        )
-      },
-      () => sendJson(res, new Message('error', 'Invalid JSON'))
-    )
-  })
+  // app.post(prefix + '/writeArea', (res, req) => {
+  //   readJson(
+  //     res,
+  //     async json => {
+  //       const { conn, buffer } = json
+  //       console.log(conn, typeof buffer, buffer)
+  //       // const buffer_ = Buffer.allocUnsafe(2)
+  //       // buffer_.writeUInt16BE(buffer, 0)
+  //       // const buffer_ = Buffer.alloc(1, buffer, 'hex')
+  //       // const buffer_ = Buffer.alloc(conn.amount, buffer, 'hex')
+  //       const buffer_ = Buffer.from(buffer)
+  //       console.log(typeof buffer_, buffer_)
+  //       // const { area, dbNumber, start, amount, wordLen } = json
+  //       // const response = await plc.write(0x84, s7def.DB_DATA, ((184 * 8) + 4), 1, 0x01, s7def.TRUE)
+  //       const response = await plc.write(conn, buffer_)
+  //       console.log('/writeArea', json, response)
+  //       sendJson(
+  //         res,
+  //         new Message(
+  //           response ? 'success' : 'error',
+  //           response ? 'Written' : 'Write error!'
+  //         )
+  //       )
+  //     },
+  //     () => sendJson(res, new Message('error', 'Invalid JSON'))
+  //   )
+  // })
 }
 
 class Message {
