@@ -1393,5 +1393,10 @@ exports.OPERATIONS = [
   { id: 12, key: 'op-no' },
   { id: 13, key: 'op-no' },
   { id: 14, key: 'op-no' },
-  { id: 15, key: 'op-no' }
+  { id: 15, key: 'op-no' },
+  { id: 95, key: 'op-stall-in' },
+  { id: 96, key: 'op-stall-out' },
+  { id: 97, key: 'op-stall-lck' },
+  { id: 98, key: 'op-shuffle-in' },
+  { id: 99, key: 'op-shuffle-out' }
 ]
