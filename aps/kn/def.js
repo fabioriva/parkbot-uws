@@ -1,14 +1,13 @@
 exports.APS = 'Kamla Nagar'
-exports.PORT = 49019
+exports.PORT = 49021
 exports.HOST =
   process.env.NODE_ENV !== 'production'
     ? process.env.DEVELOPMENT_SERVER
     : process.env.PRODUCTION_SERVER
-exports.HTTP = 9013
+exports.HTTP = 9015
 // PLC left
 exports.PLC_L = {
   ip: '140.80.25.22',
-  // ip: '192.168.20.55',
   rack: 0,
   slot: 2,
   polling_time: 500
@@ -16,7 +15,6 @@ exports.PLC_L = {
 // PLC right
 exports.PLC_R = {
   ip: '140.80.25.12',
-  // ip: '192.168.20.55',
   rack: 0,
   slot: 2,
   polling_time: 500

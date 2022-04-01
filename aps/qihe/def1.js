@@ -1,3 +1,17 @@
+exports.PORT = 49018
+exports.HOST =
+  process.env.NODE_ENV !== 'production'
+    ? process.env.DEVELOPMENT_SERVER
+    : process.env.PRODUCTION_SERVER
+exports.HTTP = 9012
+
+exports.PLC = {
+  ip: '192.168.77.2',
+  rack: 0,
+  slot: 1,
+  polling_time: 500
+}
+
 exports.QUEUE_LEN = 5
 
 const ALARM_LEN = 8
