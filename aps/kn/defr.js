@@ -1,10 +1,25 @@
+exports.APS = 'Kamla Nagar (Right)'
+exports.PORT = 49022
+exports.HOST =
+  process.env.NODE_ENV !== 'production'
+    ? process.env.DEVELOPMENT_SERVER
+    : process.env.PRODUCTION_SERVER
+exports.HTTP = 9016
+exports.PLC = {
+  ip: '140.80.25.12',
+  rack: 0,
+  slot: 2,
+  polling_time: 500
+}
+
 exports.QUEUE_LEN = 10
 
 const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
 exports.DB_ALARM_INIT = 6
 exports.DB_ALARM_LEN = 64 * ALARM_LEN
-exports.DBS_ALARM = [531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545]
+exports.DBS_ALARM = []
+// exports.DBS_ALARM = [531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545]
 
 const CARDS = 9999
 const CARD_LEN = 10

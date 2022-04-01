@@ -121,13 +121,13 @@ class PLC extends EventEmitter {
     }
   }
 
-  async map (def, obj) {
+  async map (def, obj, side) {
     try {
       const buffer = await this.read(def.MAP_READ)
       const stalls = await updateStalls(0, buffer, def.STALL_LEN, obj.stalls)
       const data = occupancy(0, stalls, def.STALL_STATUS)
       obj.map.occupancy = data
-      this.publish('aps/map', obj.map)
+      this.publish(side + 'aps/map', obj.map)
     } catch (error) {
       this.error(error)
     }
@@ -138,7 +138,7 @@ class PLC extends EventEmitter {
       await this.connect()
       // await this.alarms(def, obj)
       // await this.cards(def, obj)
-      await this.map(def, obj)
+      await this.map(def, obj, side)
       // recursive
       this.forever(def, obj, side)
     } catch (err) {
@@ -158,7 +158,7 @@ class PLC extends EventEmitter {
       }
       // const hrend = process.hrtime(hrstart)
       // console.info('Execution time (hr):', hrend)
-      this.publish('/info', {
+      this.publish(side + '/info', {
         comm: this.online,
         diag: countAlarms(obj.alarms),
         map: obj.map.occupancy,
