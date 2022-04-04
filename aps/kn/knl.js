@@ -18,7 +18,7 @@ const client = new MongoClient(process.env.MONGODB_URI, {
 const start = async () => {
   try {
     await client.connect()
-    const db = client.db('knl')
+    const db = client.db('kn')
     const app = uWS.App().listen(def.HTTP, token => {
       if (token) {
         console.log('Listening to port ' + def.HTTP, token)
