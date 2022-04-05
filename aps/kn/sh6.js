@@ -35,7 +35,7 @@ const view = {
   c: lamps,
   d: [],
   e: [RMV, RMH, RES, REH, RCVH, REAV, REAH, REP, T2, TRA, TRB, KCS, KCV, KCH],
-  alarms: alarms[3]._active
+  alarms: alarms[8]._active
 }
 
 const inverters = []
