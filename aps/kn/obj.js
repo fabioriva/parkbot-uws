@@ -41,132 +41,165 @@ exports.merkers = merkers
 const mb = generateBytes(merkers)
 exports.mb = mb
 
-const device1 = require('./el1')
-const device2 = require('./el2')
-const device3 = require('./el3')
-const device4 = require('./sh1')
-const device5 = require('./sh2')
-const device6 = require('./sh3')
-const device7 = require('./sh4')
-const device8 = require('./sh5')
-const device9 = require('./sh6')
-const device10 = require('./sh7')
-const device11 = require('./sh8')
-const device12 = require('./sh9')
-const device13 = require('./sh10')
-const device14 = require('./sh11')
-const device15 = require('./sh12')
+const el = require('./el.js')
+const sh = require('./sh.js')
+
+exports.devices = [...el.devices_, ...sh.devices_]
+
+exports.inverters = [...el.inverters_, ...sh.inverters_]
+
+exports.motors = [...el.motors_, ...sh.motors_]
+
+exports.positions = [...el.positions_, ...sh.positions_]
+
+exports.silomats = [...el.silomats_, ...sh.silomats_]
+
+exports.diagnostic = [...el.diagnostic_, ...sh.diagnostic_]
+
+// const device1 = require('./el1')
+// const device2 = require('./el2')
+// const device3 = require('./el3')
+// const device4 = require('./sh1')
+// const device5 = require('./sh2')
+// const device6 = require('./sh3')
+// const device7 = require('./sh4')
+// const device8 = require('./sh5')
+// const device9 = require('./sh6')
+// const device10 = require('./sh7')
+// const device11 = require('./sh8')
+// const device12 = require('./sh9')
+// const device13 = require('./sh10')
+// const device14 = require('./sh11')
+// const device15 = require('./sh12')
 
 const queue = generateQueue(def)
 exports.queue = queue
 
-exports.devices = [
-  device1.device,
-  device2.device,
-  device3.device,
-  device4.device,
-  device5.device,
-  device6.device,
-  device7.device,
-  device8.device,
-  device9.device,
-  device10.device,
-  device11.device,
-  device12.device,
-  device13.device,
-  device14.device,
-  device15.device
-]
+// exports.devices = [
+//   device1.device,
+//   device2.device,
+//   device3.device,
+//   device4.device,
+//   device5.device,
+//   device6.device,
+//   device7.device,
+//   device8.device,
+//   device9.device,
+//   device10.device,
+//   device11.device,
+//   device12.device,
+//   device13.device,
+//   device14.device,
+//   device15.device
+// ]
 
-exports.inverters = device1.inverters.concat(
-  device2.inverters,
-  device3.inverters,
-  device4.inverters,
-  device5.inverters,
-  device6.inverters,
-  device7.inverters,
-  device8.inverters,
-  device9.inverters,
-  device10.inverters,
-  device11.inverters,
-  device12.inverters,
-  device13.inverters,
-  device14.inverters,
-  device15.inverters
-)
+// exports.inverters = device1.inverters.concat(
+//   device2.inverters,
+//   device3.inverters,
+//   device4.inverters,
+//   device5.inverters,
+//   device6.inverters,
+//   device7.inverters,
+//   device8.inverters,
+//   device9.inverters,
+//   device10.inverters,
+//   device11.inverters,
+//   device12.inverters,
+//   device13.inverters,
+//   device14.inverters,
+//   device15.inverters
+// )
 
-exports.motors = device1.motors.concat(
-  device2.motors,
-  device3.motors,
-  device4.motors,
-  device5.motors,
-  device6.motors,
-  device7.motors,
-  device8.motors,
-  device9.motors,
-  device10.motors,
-  device11.motors,
-  device12.motors,
-  device13.motors,
-  device14.motors,
-  device15.motors
-)
+// exports.motors = device1.motors.concat(
+//   device2.motors,
+//   device3.motors,
+//   device4.motors,
+//   device5.motors,
+//   device6.motors,
+//   device7.motors,
+//   device8.motors,
+//   device9.motors,
+//   device10.motors,
+//   device11.motors,
+//   device12.motors,
+//   device13.motors,
+//   device14.motors,
+//   device15.motors
+// )
 
-exports.positions = device1.positions.concat(
-  device2.positions,
-  device3.positions,
-  device4.positions,
-  device5.positions,
-  device6.positions,
-  device7.positions,
-  device8.positions,
-  device9.positions,
-  device10.positions,
-  device11.positions,
-  device12.positions,
-  device13.positions,
-  device14.positions,
-  device15.positions
-)
+// exports.positions = device1.positions.concat(
+//   device2.positions,
+//   device3.positions,
+//   device4.positions,
+//   device5.positions,
+//   device6.positions,
+//   device7.positions,
+//   device8.positions,
+//   device9.positions,
+//   device10.positions,
+//   device11.positions,
+//   device12.positions,
+//   device13.positions,
+//   device14.positions,
+//   device15.positions
+// )
 
-exports.diagnostic = [
-  device1,
-  device2,
-  device3,
-  device4,
-  device5,
-  device6,
-  device7,
-  device8,
-  device9,
-  device10,
-  device11,
-  device12,
-  device13,
-  device14,
-  device15
-]
+// exports.silomats = device1.silomat.motors.concat(
+//   device2.silomat.motors,
+//   device3.silomat.motors,
+//   device4.silomat.motors,
+//   device6.silomat.motors,
+//   device7.silomat.motors,
+//   device8.silomat.motors,
+//   device9.silomat.motors,
+//   device10.silomat.motors,
+//   device11.silomat.motors,
+//   device12.silomat.motors,
+//   device13.silomat.motors,
+//   device14.silomat.motors,
+//   device15.silomat.motors
+// )
+
+// exports.diagnostic = [
+//   device1,
+//   device2,
+//   device3,
+//   device4,
+//   device5,
+//   device6,
+//   device7,
+//   device8,
+//   device9,
+//   device10,
+//   device11,
+//   device12,
+//   device13,
+//   device14,
+//   device15
+// ]
 
 exports.modes = str.MODES
 
 exports.overview = {
   definitions: { cards: def.CARDS, stalls: def.STALLS },
   devices: [
-    device1.view,
-    device2.view,
-    device3.view,
-    device4.view,
-    device5.view,
-    device6.view,
-    device7.view,
-    device8.view,
-    device9.view,
-    device10.view,
-    device11.view,
-    device12.view,
-    device13.view,
-    device14.view,
-    device15.view
+    ...el.views_,
+    ...sh.views_
+  // device1.view,
+  // device2.view,
+  // device3.view,
+  // device4.view,
+  // device5.view,
+  // device6.view,
+  // device7.view,
+  // device8.view,
+  // device9.view,
+  // device10.view,
+  // device11.view,
+  // device12.view,
+  // device13.view,
+  // device14.view,
+  // device15.view
   ],
   exitQueue: {
     queueList: queue,
