@@ -4,9 +4,9 @@ const { Position } = require('../../models/positions')
 
 const device = new Device(3, 'SH3')
 
-const LH1 = new Position(5, 'LH1')
-const LH2 = new Position(6, 'LH2')
-const positions = [LH1, LH2]
+const LH = new Position(5, 'LH')
+const ENR = new Position(6, 'ENR')
+const positions = [LH, ENR]
 
 const lamps = [
   inputs.find(b => b.addr === 'E33.3'),
