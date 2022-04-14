@@ -8,6 +8,7 @@
     "alumim": "nodemon aps/alumim",
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
+    "chiattone": "nodemon aps/chiattone",
     "ironbank": "nodemon aps/ironbank",
     "knl": "nodemon aps/kn/knl",
     "knr": "nodemon aps/kn/knr",
