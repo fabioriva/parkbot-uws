@@ -223,7 +223,11 @@ const elevators = [
   { id: 'el-3', label: 'EL3' },
   { id: 'el-4', label: 'EL4' },
   { id: 'el-5', label: 'EL5' },
-  { id: 'el-6', label: 'EL6' }
+  { id: 'el-6', label: 'EL6' },
+  { id: 'sh-1L', label: 'SH1L' },
+  { id: 'sh-2L', label: 'SH2L' },
+  { id: 'sh-1R', label: 'SH1R' },
+  { id: 'sh-2R', label: 'SH2R' }
 ]
 
 exports.map = {
@@ -235,7 +239,7 @@ exports.map = {
   levels: [
     {
       nr: 1,
-      label: 'Level 1',
+      label: 'P6 (-2)',
       min: 1,
       max: 152,
       stalls: stalls.slice(0, 152),
@@ -243,7 +247,7 @@ exports.map = {
     },
     {
       nr: 2,
-      label: 'Level 2',
+      label: 'P5 (-3)',
       min: 153,
       max: 304,
       stalls: stalls.slice(152, 304),
@@ -251,7 +255,7 @@ exports.map = {
     },
     {
       nr: 3,
-      label: 'Level 3',
+      label: 'P4 (-4)',
       min: 305,
       max: 456,
       stalls: stalls.slice(304, 456),
@@ -259,7 +263,7 @@ exports.map = {
     },
     {
       nr: 4,
-      label: 'Level 4',
+      label: 'P3 (-5)',
       min: 457,
       max: 608,
       stalls: stalls.slice(456, 608),
@@ -267,7 +271,7 @@ exports.map = {
     },
     {
       nr: 5,
-      label: 'Level 5',
+      label: 'P2 (-6)',
       min: 609,
       max: 760,
       stalls: stalls.slice(608, 760),
@@ -275,7 +279,7 @@ exports.map = {
     },
     {
       nr: 6,
-      label: 'Level 6',
+      label: 'P1 (-7)',
       min: 761,
       max: 912,
       stalls: stalls.slice(760, 912),
