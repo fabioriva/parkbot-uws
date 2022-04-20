@@ -25,7 +25,8 @@ for (let i = 4; i <= 15; i++) {
   const lamps = [
     inputs.find(b => b.addr === 'E' + (EB + 3).toString() + '.3'),
     outputs.find(b => b.addr === 'A' + (AB + 0).toString() + '.7'),
-    outputs.find(b => b.addr === 'A' + (AB + 0).toString() + '.6')
+    outputs.find(b => b.addr === 'A' + (AB + 0).toString() + '.6'),
+    inputs.find(b => b.addr === 'E' + (EB + 2).toString() + '.3') // REH
   ]
 
   const RMV = inputs.find(b => b.addr === 'E' + (EB + 2).toString() + '.0')
