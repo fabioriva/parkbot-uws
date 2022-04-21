@@ -157,7 +157,7 @@ const outputs = outputs1.concat(
 exports.outputs = outputs
 const ab = generateBytes(outputs)
 exports.ab = ab
-console.log(eb.length, ab.length)
+
 const racks = require('./racks')
 exports.racks = racks
 
