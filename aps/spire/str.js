@@ -393,6 +393,180 @@ exports.outputs10 = [
   { addr: 'A412.6', label: 'LA' },
   { addr: 'A412.7', label: 'LC' }
 ]
+// Failsafe I/O
+exports.inputs17 = [
+  { addr: 'E10.0', label: 'UG_BBL' },
+  { addr: 'E10.1', label: 'FDBK' },
+  { addr: 'E10.2', label: 'PS' },
+  { addr: 'E10.3', label: '' },
+  { addr: 'E10.4', label: 'SF1' },
+  { addr: 'E10.5', label: 'BBL1' },
+  { addr: 'E10.6', label: 'SF2' },
+  { addr: 'E10.7', label: 'BBL2' },
+  { addr: 'E11.0', label: 'SF3' },
+  { addr: 'E11.1', label: 'BBL3' },
+  { addr: 'E11.2', label: 'SF4' },
+  { addr: 'E11.3', label: 'BBL4' },
+  { addr: 'E11.4', label: 'SF5' },
+  { addr: 'E11.5', label: 'BBL5' },
+  { addr: 'E11.6', label: 'SF6' },
+  { addr: 'E11.7', label: 'BBL6' }
+]
+exports.inputs18 = [
+  { addr: 'E20.0', label: 'WAL' },
+  { addr: 'E20.1', label: 'FAL' },
+  { addr: 'E20.2', label: 'EZD' },
+  { addr: 'E20.3', label: '' },
+  { addr: 'E20.4', label: '' },
+  { addr: 'E20.5', label: '' },
+  { addr: 'E20.6', label: '' },
+  { addr: 'E20.7', label: '' },
+  { addr: 'E21.0', label: 'BBEL1' },
+  { addr: 'E21.1', label: 'BBEL2' },
+  { addr: 'E21.2', label: 'BBEL3' },
+  { addr: 'E21.3', label: '' },
+  { addr: 'E21.4', label: '' },
+  { addr: 'E21.5', label: '' },
+  { addr: 'E21.6', label: '' },
+  { addr: 'E21.7', label: '' }
+]
+// LS1
+exports.inputs19 = [
+  { addr: 'E1000.0', label: 'UG_BBL' },
+  { addr: 'E1000.1', label: 'FDBK' },
+  { addr: 'E1000.2', label: 'SA' },
+  { addr: 'E1000.3', label: 'US' },
+  { addr: 'E1000.4', label: 'BBV1' },
+  { addr: 'E1000.5', label: 'BBV2' },
+  { addr: 'E1000.6', label: 'BPS' },
+  { addr: 'E1000.7', label: 'EXZA' },
+  { addr: 'E1001.0', label: 'EXZE' },
+  { addr: 'E1001.1', label: 'FKXPE' },
+  { addr: 'E1001.2', label: 'FKXPA' },
+  { addr: 'E1001.3', label: 'BBE1' },
+  { addr: 'E1001.4', label: 'BBE2' },
+  { addr: 'E1001.5', label: '' },
+  { addr: 'E1001.6', label: '' },
+  { addr: 'E1001.7', label: '' }
+]
+// KKM1
+exports.inputs20 = [
+  { addr: 'E1020.0', label: 'FDBK' },
+  { addr: 'E1020.1', label: 'ETAB' },
+  { addr: 'E1020.2', label: 'BBM' },
+  { addr: 'E1020.3', label: 'KEXPV' },
+  { addr: 'E1020.4', label: '' },
+  { addr: 'E1020.5', label: '' },
+  { addr: 'E1020.6', label: '' },
+  { addr: 'E1020.7', label: '' }
+]
+// LS4
+exports.inputs21 = [
+  { addr: 'E4000.0', label: 'UG_BBL' },
+  { addr: 'E4000.1', label: 'FDBK' },
+  { addr: 'E4000.2', label: 'SA' },
+  { addr: 'E4000.3', label: 'US' },
+  { addr: 'E4000.4', label: 'BBV1' },
+  { addr: 'E4000.5', label: 'BBV2' },
+  { addr: 'E4000.6', label: 'BPS' },
+  { addr: 'E4000.7', label: '' },
+  { addr: 'E4001.0', label: '' },
+  { addr: 'E4001.1', label: '' },
+  { addr: 'E4001.2', label: '' },
+  { addr: 'E4001.3', label: '' },
+  { addr: 'E4001.4', label: '' },
+  { addr: 'E4001.5', label: '' },
+  { addr: 'E4001.6', label: 'FTS1' },
+  { addr: 'E4001.7', label: 'FTS2' }
+]
+// KKP4
+exports.inputs22 = [
+  { addr: 'E4020.0', label: 'BBP' },
+  { addr: 'E4020.1', label: 'FDBK' },
+  { addr: 'E4020.2', label: 'ETAB' },
+  { addr: 'E4020.3', label: '' },
+  { addr: 'E4020.4', label: '' },
+  { addr: 'E4020.5', label: '' },
+  { addr: 'E4020.6', label: '' },
+  { addr: 'E4020.7', label: '' }
+]
+// SH4
+exports.inputs23 = [
+  { addr: 'E4040.0', label: 'BBH' },
+  { addr: 'E4040.1', label: 'FDBK' },
+  { addr: 'E4040.2', label: 'SA' },
+  { addr: 'E4040.3', label: 'US' },
+  { addr: 'E4040.4', label: 'BBV1' },
+  { addr: 'E4040.5', label: 'BBV2' },
+  { addr: 'E4040.6', label: 'BPS' },
+  { addr: 'E4040.7', label: 'ETLR' }
+]
+// CPU
+exports.outputs17 = [
+  { addr: 'A30.0', label: 'K1' },
+  { addr: 'A30.1', label: 'K2' },
+  { addr: 'A30.2', label: '' },
+  { addr: 'A30.3', label: '' },
+  { addr: 'A30.4', label: '' },
+  { addr: 'A30.5', label: '' },
+  { addr: 'A30.6', label: '' },
+  { addr: 'A30.7', label: '' }
+]
+// LS1
+exports.outputs18 = [
+  { addr: 'A1010.0', label: 'K1' },
+  { addr: 'A1010.1', label: 'K2' },
+  { addr: 'A1010.2', label: 'KBA1' },
+  { addr: 'A1010.3', label: 'KBA2' },
+  { addr: 'A1010.4', label: 'TKKM' },
+  { addr: 'A1010.5', label: 'KXPE' },
+  { addr: 'A1010.6', label: 'KXPA' },
+  { addr: 'A1010.7', label: 'SBK1' }
+]
+// KKM1
+exports.outputs19 = [
+  { addr: 'A1030.0', label: 'K1' },
+  { addr: 'A1030.1', label: 'K2' },
+  { addr: 'A1030.2', label: '' },
+  { addr: 'A1030.3', label: '' },
+  { addr: 'A1030.4', label: '' },
+  { addr: 'A1030.5', label: '' },
+  { addr: 'A1030.6', label: '' },
+  { addr: 'A1030.7', label: '' }
+]
+// LS4
+exports.outputs20 = [
+  { addr: 'A4010.0', label: 'UG_BBL' },
+  { addr: 'A4010.1', label: 'FDBK' },
+  { addr: 'A4010.2', label: 'SA' },
+  { addr: 'A4010.3', label: 'US' },
+  { addr: 'A4010.4', label: 'BBV1' },
+  { addr: 'A4010.5', label: 'BBV2' },
+  { addr: 'A4010.6', label: 'BPS' },
+  { addr: 'A4010.7', label: 'ETLR' }
+]
+// KKP4
+exports.outputs21 = [
+  { addr: 'A4030.0', label: 'K1' },
+  { addr: 'A4030.1', label: 'K2' },
+  { addr: 'A4030.2', label: '' },
+  { addr: 'A4030.3', label: '' },
+  { addr: 'A4030.4', label: '' },
+  { addr: 'A4030.5', label: '' },
+  { addr: 'A4030.6', label: '' },
+  { addr: 'A4030.7', label: '' }
+]
+// SH4
+exports.outputs22 = [
+  { addr: 'A4050.0', label: 'K1' },
+  { addr: 'A4050.1', label: 'K2' },
+  { addr: 'A4050.2', label: '' },
+  { addr: 'A4050.3', label: '' },
+  { addr: 'A4050.4', label: '' },
+  { addr: 'A4050.5', label: '' },
+  { addr: 'A4050.6', label: '' },
+  { addr: 'A4050.7', label: '' }
+]
 
 exports.ALARMS = [
   { id: 1, key: 'al-sil-01', query: {} },

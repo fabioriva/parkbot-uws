@@ -8,10 +8,13 @@ const FILE = 'io.js'
 
 fs.writeFileSync(FILE, '// generate I/O\n')
 
-generate('inputs1', 'E', 0, 7)
-generate('inputs1', 'E', 10, 15)
-generate('outputs1', 'A', 0, 5)
-generate('outputs1', 'A', 10, 13)
+generate('inputs21', 'E', 4000, 4001)
+generate('inputs22', 'E', 4020, 4020)
+generate('inputs23', 'E', 4040, 4040)
+
+generate('outputs20', 'A', 4010, 4010)
+generate('outputs21', 'A', 4030, 4030)
+generate('outputs22', 'A', 4050, 4050)
 
 function generate (exports, type, from, to) {
   fs.appendFileSync(FILE, `exports.${exports} = [\n`)
