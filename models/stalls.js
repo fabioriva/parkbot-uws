@@ -46,16 +46,16 @@ exports.updateStalls = util.promisify(
   }
 )
 
-exports.updateStalls_ = util.promisify(
-  (min, max, buffer, offset, stalls, callback) => {
-    let byte = min === 1 ? 0 : (min - 1) * offset
-    for (let i = min - 1; i < max; i++) {
-      stalls[i].update(buffer.slice(byte, byte + offset))
-      byte += offset
-    }
-    callback(null, stalls)
-  }
-)
+// exports.updateStalls_ = util.promisify(
+//   (min, max, buffer, offset, stalls, callback) => {
+//     let byte = min === 1 ? 0 : (min - 1) * offset
+//     for (let i = min - 1; i < max; i++) {
+//       stalls[i].update(buffer.slice(byte, byte + offset))
+//       byte += offset
+//     }
+//     callback(null, stalls)
+//   }
+// )
 
 exports.occupancy = (size, stalls, stallStatus) => {
   // const occupancy = { free: 0, busy: 0, locked: 0 }
