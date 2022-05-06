@@ -9,6 +9,7 @@
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "chiattone": "nodemon aps/chiattone",
+    "donini": "nodemon aps/donini",
     "ironbank": "nodemon aps/ironbank",
     "knl": "nodemon aps/kn/knl",
     "knr": "nodemon aps/kn/knr",
