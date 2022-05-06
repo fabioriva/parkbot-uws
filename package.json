@@ -23,7 +23,7 @@
     "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
     "wblvd": "nodemon aps/washingtonblvd",
-    "start": "NODE_ENV=production pm2 start aps/spire/index.js --name uws-spire --max-memory-restart 128M"
+    "start": "NODE_ENV=production pm2 start aps/donini/index.js --name aps-donini --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
   "license": "ISC",
