@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const FILE = 'io.js'
+const FILE = 'generated.js'
 
 // const args = process.argv.slice(2)
 
@@ -8,13 +8,14 @@ const FILE = 'io.js'
 
 fs.writeFileSync(FILE, '// generate I/O\n')
 
-generate('inputs1', 'E', 0, 9)
-generate('inputs2', 'E', 10, 17)
-// generate('inputs23', 'E', 4040, 4040)
+// generate('inputs1', 'E', 0, 9)
+// generate('inputs2', 'E', 10, 17)
+// generate('outputs1', 'A', 0, 5)
+// generate('outputs2', 'A', 10, 13)
 
-generate('outputs1', 'A', 0, 5)
-generate('outputs2', 'A', 10, 13)
-// generate('outputs22', 'A', 4050, 4050)
+fs.writeFileSync(FILE, '// generate Alarms\n')
+
+generateAlarms('ALARMS', 1, 128)
 
 function generate (exports, type, from, to) {
   fs.appendFileSync(FILE, `exports.${exports} = [\n`)
@@ -22,6 +23,14 @@ function generate (exports, type, from, to) {
     for (let bit = 0; bit < 8; bit++) {
       fs.appendFileSync(FILE, `{ addr: '${type}${byte}.${bit}', label: '' },\n`)
     }
+  }
+  fs.appendFileSync(FILE, ']\n')
+}
+
+function generateAlarms (exports, from, to) {
+  fs.appendFileSync(FILE, `exports.${exports} = [\n`)
+  for (let al = from; al <= to; al++) {
+      fs.appendFileSync(FILE, `{ id: ${al}, key: '', query: {} },\n`)
   }
   fs.appendFileSync(FILE, ']\n')
 }
