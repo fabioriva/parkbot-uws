@@ -1,9 +1,11 @@
 const { alarms, inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
+const { Position } = require('../../models/positions')
 
-const device = new Device(2, 'E')
+const device = new Device(3, 'U')
 
-const positions = []
+const ENR = new Position(4, 'ENR')
+const positions = [ENR]
 
 const lamps = [
   inputs.find(b => b.addr === 'E7.3'),
@@ -17,7 +19,7 @@ const view = {
   c: lamps,
   d: [],
   e: [],
-  alarms: [] // alarms[0]._active
+  alarms: alarms[2]._active
 }
 
 const inverters = []

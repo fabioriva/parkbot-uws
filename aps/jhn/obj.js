@@ -1,4 +1,4 @@
-const def = require('./defn')
+const def = require('./def')
 const str = require('./str')
 const { Alarms, generateAlarms } = require('../../models/alarms')
 const { generateBits, generateBytes } = require('../../models/bits')

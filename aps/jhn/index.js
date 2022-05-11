@@ -1,14 +1,14 @@
 require('dotenv').config()
 const MongoClient = require('mongodb').MongoClient
 const uWS = require('uWebSockets.js')
-const def = require('./defn')
+const def = require('./def')
 const obj = require('./obj')
 const PLC = require('../../lib/Plc')
 const log = require('../../lib/logs7')
 const routes = require('../../lib/routes')
 const websocket = require('../../lib/websocket')
 
-const PLC_SH = require('./Plc')
+const PLC_SH = require('./PlcSH')
 
 const prefix = '/aps/jhn'
 
@@ -20,7 +20,7 @@ const client = new MongoClient(process.env.MONGODB_URI, {
 const start = async () => {
   try {
     await client.connect()
-    const db = client.db('jh')
+    const db = client.db('jhn')
     const app = uWS.App().listen(def.HTTP, token => {
       if (token) {
         console.log('Listening to port ' + def.HTTP, token)
