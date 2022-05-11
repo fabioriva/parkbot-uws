@@ -9,7 +9,7 @@ exports.PLC = {
   ip: '140.80.15.12',
   rack: 0,
   slot: 2,
-  polling_time: 300
+  polling_time: 600
 }
 
 exports.QUEUE_LEN = 5
@@ -21,7 +21,7 @@ exports.DB_ALARM_LEN = 64 * ALARM_LEN
 exports.DBS_ALARM = [531, 531, 531]
 
 const DB_CARDS = 441
-const CARDS = 292
+const CARDS = 242 // 292
 const CARD_LEN = 10
 exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
