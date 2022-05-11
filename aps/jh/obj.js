@@ -102,27 +102,43 @@ exports.map = {
   levels: [
     {
       nr: 1,
-      label: 'Level 1 (-3)',
+      label: 'Level -7',
       min: 1,
-      max: 40,
-      stalls: stalls.slice(0, 40),
-      elevators: [{ id: 't', label: 'T' }]
+      max: 33,
+      stalls: stalls.slice(0, 33),
+      elevators: [{ id: 'el', label: 'EL' }]
     },
     {
       nr: 2,
-      label: 'Level 2 (-2)',
-      min: 41,
-      max: 78,
-      stalls: stalls.slice(40, 78),
-      elevators: [{ id: 't', label: 'T' }]
+      label: 'Level -6',
+      min: 34,
+      max: 66,
+      stalls: stalls.slice(33, 66),
+      elevators: [{ id: 'el', label: 'EL' }]
     },
     {
       nr: 3,
-      label: 'Level 3 (-1)',
-      min: 79,
-      max: 81,
-      stalls: stalls.slice(78, 81),
-      elevators: [{ id: 't', label: 'T' }, { id: 'el', label: 'EL' }]
+      label: 'Level -5',
+      min: 67,
+      max: 99,
+      stalls: stalls.slice(66, 99),
+      elevators: [{ id: 'el', label: 'EL' }]
+    },
+    {
+      nr: 4,
+      label: 'Level -4',
+      min: 100,
+      max: 131,
+      stalls: stalls.slice(99, 131),
+      elevators: [{ id: 'el', label: 'EL' }]
+    },
+    {
+      nr: 5,
+      label: 'Level -3',
+      min: 132,
+      max: 161,
+      stalls: stalls.slice(131, 161),
+      elevators: [{ id: 'el', label: 'EL' }]
     }
   ],
   occupancy: [
