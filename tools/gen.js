@@ -6,12 +6,16 @@ const FILE = 'generated.js'
 
 // generate(args[0], args[1], args[2], args[3])
 
-fs.writeFileSync(FILE, '// generate I/O\n')
+// fs.writeFileSync(FILE, '// generate I/O\n')
 
-// generate('inputs1', 'E', 0, 9)
-// generate('inputs2', 'E', 10, 17)
-// generate('outputs1', 'A', 0, 5)
-// generate('outputs2', 'A', 10, 13)
+// generate('inputs1', 'E', 0, 11)
+// generate('inputs2', 'E', 24, 25)
+// generate('inputs3', 'E', 0, 3)
+// generate('inputs4', 'E', 4, 4)
+// generate('outputs1', 'A', 4, 11)
+// generate('outputs2', 'A', 24, 25)
+// generate('outputs3', 'A', 0, 1)
+// generate('outputs4', 'A', 4, 4)
 
 fs.writeFileSync(FILE, '// generate Alarms\n')
 
@@ -30,7 +34,7 @@ function generate (exports, type, from, to) {
 function generateAlarms (exports, from, to) {
   fs.appendFileSync(FILE, `exports.${exports} = [\n`)
   for (let al = from; al <= to; al++) {
-      fs.appendFileSync(FILE, `{ id: ${al}, key: '', query: {} },\n`)
+    fs.appendFileSync(FILE, `{ id: ${al}, key: '', query: {} },\n`)
   }
   fs.appendFileSync(FILE, ']\n')
 }

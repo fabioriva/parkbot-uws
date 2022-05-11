@@ -1,4 +1,4 @@
-const def = require('./def')
+const def = require('./defn')
 const str = require('./str')
 const { Alarms, generateAlarms } = require('../../models/alarms')
 const { generateBits, generateBytes } = require('../../models/bits')
@@ -6,23 +6,38 @@ const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
-const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1)
-const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 2)
-exports.alarms = [al01, al02]
+const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)))
+const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)))
+const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)))
+exports.alarms = [al01, al02, al03]
 
-const inputs1 = generateBits('E', 0, 9, str.inputs1)
-const inputs2 = generateBits('E', 10, 17, str.inputs2)
+const inputs1 = generateBits('E', 0, 11, str.inputs1)
+const inputs2 = generateBits('E', 24, 25, str.inputs2)
+const inputs3 = generateBits('E', 0, 3, str.inputs3)
+const inputs4 = generateBits('E', 4, 4, str.inputs4)
 const inputs = inputs1.concat(inputs2)
 exports.inputs = inputs
 const eb = generateBytes(inputs)
 exports.eb = eb
+// shuttle I/O
+const inputsSH = inputs3.concat(inputs4)
+exports.inputsSH = inputsSH
+const ebSH = generateBytes(inputsSH)
+exports.ebSH = ebSH
 
-const outputs1 = generateBits('A', 0, 5, str.outputs1)
-const outputs2 = generateBits('A', 10, 13, str.outputs2)
+const outputs1 = generateBits('A', 4, 11, str.outputs1)
+const outputs2 = generateBits('A', 24, 25, str.outputs2)
+const outputs3 = generateBits('A', 0, 1, str.outputs3)
+const outputs4 = generateBits('A', 4, 4, str.outputs4)
 const outputs = outputs1.concat(outputs2)
 exports.outputs = outputs
 const ab = generateBytes(outputs)
 exports.ab = ab
+// shuttle I/O
+const outputsSH = outputs3.concat(outputs4)
+exports.outputsSH = outputsSH
+const abSH = generateBytes(outputsSH)
+exports.abSH = abSH
 
 const racks = require('./racks')
 exports.racks = racks
@@ -34,22 +49,24 @@ exports.mb = mb
 
 const device1 = require('./device1')
 const device2 = require('./device2')
+const device3 = require('./device3')
 
 const queue = generateQueue(def)
 exports.queue = queue
 
 exports.devices = [
   device1.device,
-  device2.device
+  device2.device,
+  device3.device
 ]
 
-exports.inverters = device1.inverters.concat(device2.inverters)
+exports.inverters = device1.inverters.concat(device2.inverters, device3.inverters)
 
-exports.motors = device1.motors.concat(device2.motors)
+exports.motors = device1.motors.concat(device2.motors, device3.motors)
 
-exports.positions = device1.positions.concat(device2.positions)
+exports.positions = device1.positions.concat(device2.positions, device3.positions)
 
-exports.diagnostic = [device1, device2]
+exports.diagnostic = [device1, device2, device3]
 
 exports.modes = str.MODES
 
@@ -57,7 +74,8 @@ exports.overview = {
   definitions: { cards: def.CARDS, stalls: def.STALLS },
   devices: [
     device1.view,
-    device2.view
+    device2.view,
+    device3.view
   ],
   exitQueue: {
     queueList: queue,
