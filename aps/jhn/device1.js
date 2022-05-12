@@ -13,7 +13,8 @@ const positions = [LV1, LV2, ENH]
 const lamps = [
   inputsSH.find(b => b.addr === 'E3.3'),
   outputsSH.find(b => b.addr === 'A4.7'),
-  outputsSH.find(b => b.addr === 'A4.6')
+  outputsSH.find(b => b.addr === 'A4.6'),
+  inputsSH.find(b => b.addr === 'E2.3')
 ]
 
 const RMV = inputsSH.find(b => b.addr === 'E2.0')

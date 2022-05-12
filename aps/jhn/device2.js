@@ -8,7 +8,8 @@ const positions = []
 const lamps = [
   inputs.find(b => b.addr === 'E7.3'),
   outputs.find(b => b.addr === 'A7.7'),
-  outputs.find(b => b.addr === 'A7.6')
+  outputs.find(b => b.addr === 'A7.6'),
+  inputs.find(b => b.addr === 'E10.4') // FPE
 ]
 
 const view = {
