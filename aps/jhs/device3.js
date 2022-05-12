@@ -1,17 +1,15 @@
 const { alarms, inputs, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
-const { Position } = require('../../models/positions')
 
 const device = new Device(3, 'U')
 
-const ENR = new Position(4, 'ENR')
-const positions = [ENR]
+const positions = []
 
 const lamps = [
   inputs.find(b => b.addr === 'E7.3'),
-  outputs.find(b => b.addr === 'A7.7'),
-  outputs.find(b => b.addr === 'A7.6')
-  // inputs.find(b => b.addr === 'E3.3') // FPA
+  outputs.find(b => b.addr === 'A29.7'),
+  outputs.find(b => b.addr === 'A7.6'),
+  inputs.find(b => b.addr === 'E29.5') // FR
 ]
 
 const view = {

@@ -1,13 +1,13 @@
-exports.APS = 'Jameson House (North)'
-exports.PORT = 49024
+exports.APS = 'Jameson House (South)'
+exports.PORT = 49025
 exports.HOST =
   process.env.NODE_ENV !== 'production'
     ? process.env.DEVELOPMENT_SERVER
     : process.env.PRODUCTION_SERVER
-exports.HTTP = 9019
+exports.HTTP = 9020
 const POLL_TIME = 600
 exports.PLC = {
-  ip: '140.80.15.12',
+  ip: '140.80.15.22',
   rack: 0,
   slot: 2,
   polling_time: POLL_TIME
@@ -28,13 +28,13 @@ exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
 const DB_DATA = 505
-const DB_DATA_LEN = 148
+const DB_DATA_LEN = 152
 exports.DB_DATA_INIT_DEVICE = 32
 exports.DB_DATA_INIT_POS = 80
-exports.DB_DATA_INIT_QUEUE = 96
-exports.DB_DATA_INIT_AB = 116
+exports.DB_DATA_INIT_QUEUE = 92
+exports.DB_DATA_INIT_AB = 112
 exports.DB_DATA_INIT_EB = 126
-exports.DB_DATA_INIT_MB = 140
+exports.DB_DATA_INIT_MB = 144
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -45,7 +45,7 @@ exports.DATA_READ = {
 
 const DB_MAP = 440
 exports.DB_MAP = DB_MAP
-const STALLS = 161
+const STALLS = 81
 const STALL_LEN = 10
 exports.STALLS = STALLS
 exports.STALL_LEN = STALL_LEN
@@ -66,7 +66,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 158,
+  start: 162,
   amount: 4,
   wordLen: 0x02
 }
@@ -80,21 +80,21 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 154,
+  start: 158,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 162,
+  start: 166,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 166,
+  start: 170,
   amount: 2,
   wordLen: 0x02
 }
@@ -104,7 +104,7 @@ exports.REQ_0 = {
  */
 
 exports.PLC_SH = {
-  ip: '140.80.15.13',
+  ip: '140.80.15.23',
   rack: 0,
   slot: 2,
   polling_time: POLL_TIME
