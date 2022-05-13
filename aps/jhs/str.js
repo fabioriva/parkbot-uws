@@ -286,7 +286,7 @@ exports.outputs3 = [
   { addr: 'A26.2', label: 'SBK2' },
   { addr: 'A26.3', label: 'KBA' },
   { addr: 'A26.4', label: 'SMA1' },
-  { addr: 'A26.5', label: 'SMAB1' },
+  { addr: 'A26.5', label: 'SMB1' },
   { addr: 'A26.6', label: 'SMA2' },
   { addr: 'A26.7', label: 'SMB2' },
   { addr: 'A27.0', label: 'TD' },
