@@ -6,6 +6,7 @@
   "scripts": {
     "test": "standard",
     "alumim": "nodemon aps/alumim",
+    "18017K": "nodemon aps/18017K",
     "bmc": "nodemon aps/bmc",
     "chandan": "nodemon aps/chandan",
     "chiattone": "nodemon aps/chiattone",
