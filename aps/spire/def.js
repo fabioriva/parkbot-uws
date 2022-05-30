@@ -117,3 +117,5 @@ exports.DIAG_READ = {
   amount: DB_DIAG_LEN,
   wordLen: 0x02
 }
+
+exports.DSS_READ = { area: 0x84, dbNumber: 540, start: 0, amount: 30, wordLen: 0x02 }

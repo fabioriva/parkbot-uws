@@ -357,3 +357,6 @@ exports.map = {
     { id: 'lock', value: 0 }
   ]
 }
+
+const screens = require('./screens')
+exports.screens = screens
