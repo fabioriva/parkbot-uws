@@ -23,9 +23,9 @@ class Screen {
 const updateScreens = util.promisify(
   (start, buffer, offset, screens, callback) => {
     let byte = start
-    const min = 0
-    const max = buffer.length / offset
-    for (let i = min; i < max; i++) {
+    // const min = 0
+    // const max = buffer.length / offset
+    for (let i = 0; i < screens.length; i++) {
       screens[i].update(buffer.slice(byte, byte + offset))
       byte += offset
     }
