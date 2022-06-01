@@ -1,6 +1,34 @@
 const util = require('util')
 
-class Screen {
+class ExitScreen {
+  constructor (id, name, running = [], waiting = []) {
+    this.id = id
+    this.name = name
+    this.running = running
+    this.waiting = waiting
+  }
+
+  update (devices, queue) {
+    this.running = []
+    devices.forEach(item => {
+      if (item.operation === 3) {
+        this.running.push({
+          garage: item.name,
+          op: item.step === 0 ? 'exit-mesg-1' : 'exit-mesg-2',
+          card: item.card
+        })
+      }
+    })
+    this.waiting = []
+    queue.forEach(item => {
+      if (item.card !== 0) {
+        this.waiting.push({ id: item.id, card: item.card })
+      }
+    })
+  }
+}
+
+class GarageScreen {
   constructor (id, name, L1 = false, L2 = false, L3 = false, L4 = false, L5 = false) {
     this.id = id
     this.name = name
@@ -20,7 +48,7 @@ class Screen {
   }
 }
 
-const updateScreens = util.promisify(
+const updateGarageScreens = util.promisify(
   (start, buffer, offset, screens, callback) => {
     let byte = start
     // const min = 0
@@ -33,4 +61,4 @@ const updateScreens = util.promisify(
   }
 )
 
-module.exports = { Screen, updateScreens }
+module.exports = { ExitScreen, GarageScreen, updateGarageScreens }

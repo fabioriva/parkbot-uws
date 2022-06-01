@@ -5,6 +5,7 @@ const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
+const { ExitScreen, GarageScreen } = require('../../models/screen')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1)
 const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2)
@@ -176,8 +177,17 @@ const device6 = require('./device6')
 const queue = generateQueue(def)
 exports.queue = queue
 
-const screens = require('./screens')
+const screen1 = new GarageScreen(1, 'GARAGE 1')
+const screen2 = new GarageScreen(2, 'GARAGE 2')
+const screen3 = new GarageScreen(3, 'GARAGE 3')
+const screens = [screen1, screen2, screen3]
 exports.screens = screens
+
+exports.exitGarages = [device1.device, device2.device, device3.device]
+const exitScreen = new ExitScreen(4, 'EXIT SCREEN')
+exports.exitScreen = exitScreen
+
+exports.dss = { screens, exitScreen }
 
 exports.devices = [
   device1.device,
