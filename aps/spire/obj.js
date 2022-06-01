@@ -176,6 +176,9 @@ const device6 = require('./device6')
 const queue = generateQueue(def)
 exports.queue = queue
 
+const screens = require('./screens')
+exports.screens = screens
+
 exports.devices = [
   device1.device,
   device2.device,
@@ -357,6 +360,3 @@ exports.map = {
     { id: 'lock', value: 0 }
   ]
 }
-
-const screens = require('./screens')
-exports.screens = screens
