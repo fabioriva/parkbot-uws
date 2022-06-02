@@ -99,7 +99,7 @@ exports.map = {
   levels: [
     {
       nr: 1,
-      label: 'B2 (P1)',
+      label: '2nd basement (P1)',
       min: 1,
       max: 20,
       stalls: stalls.slice(0, 20),
