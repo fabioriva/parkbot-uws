@@ -11,7 +11,7 @@ class ExitScreen {
   update (devices, queue) {
     this.running = []
     devices.forEach(item => {
-      if (item.operation === 3) {
+      if (item.operation === 2) {
         this.running.push({
           garage: item.name,
           op: item.step === 0 ? 'exit-mesg-1' : 'exit-mesg-2',
