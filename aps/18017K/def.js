@@ -13,6 +13,8 @@ exports.PLC = {
 
 exports.QUEUE_LEN = 5
 
+exports.DSS_EXIT_STEP_DONE = 4
+
 const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
 exports.DB_ALARM_INIT = 12

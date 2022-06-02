@@ -5,7 +5,7 @@ const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
-const { ExitScreen, GarageScreen } = require('../../models/screen')
+const { ExitScreen, GarageScreen } = require('../../models/screens')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 1) // EU1
 const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 2) // EU2
@@ -119,7 +119,7 @@ exports.map = {
     },
     {
       nr: 3,
-      label: 'Ground (P3)',
+      label: '3rd floor (P4)',
       min: 41,
       max: 60,
       stalls: stalls.slice(40, 60),
@@ -129,7 +129,7 @@ exports.map = {
     },
     {
       nr: 4,
-      label: '3rd floor (P4)',
+      label: '4th floor (P5)',
       min: 61,
       max: 80,
       stalls: stalls.slice(60, 80),
@@ -139,7 +139,7 @@ exports.map = {
     },
     {
       nr: 5,
-      label: '4th floor (P5)',
+      label: '5th floor (P6)',
       min: 81,
       max: 100,
       stalls: stalls.slice(80, 100),
@@ -149,7 +149,7 @@ exports.map = {
     },
     {
       nr: 6,
-      label: '5th floor (P6)',
+      label: '6th floor (P7)',
       min: 101,
       max: 120,
       stalls: stalls.slice(100, 120),
@@ -170,7 +170,7 @@ const screen2 = new GarageScreen(2, 'GARAGE 2')
 const screens = [screen1, screen2]
 exports.screens = screens
 
-exports.exitGarages = [device1.device, device2.device, device3.device]
+exports.exitGarages = [device1.device, device2.device]
 const exitScreen = new ExitScreen(1, 'EXIT SCREEN')
 exports.exitScreen = exitScreen
 

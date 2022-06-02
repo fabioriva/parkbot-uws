@@ -5,7 +5,7 @@ const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
-const { ExitScreen, GarageScreen } = require('../../models/screen')
+const { ExitScreen, GarageScreen } = require('../../models/screens')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1)
 const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2)
