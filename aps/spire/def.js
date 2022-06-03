@@ -30,7 +30,8 @@ const DB_DATA_LEN = 434
 exports.DB_DATA_INIT_DEVICE = 32
 exports.DB_DATA_INIT_POS = 128
 exports.DB_DATA_INIT_QUEUE = 200
-exports.DB_DATA_INIT_SCREEN = 240
+exports.DB_DATA_INIT_EXITS = 120
+exports.DB_DATA_INIT_SCREENS = 128
 exports.DB_DATA_INIT_AB = 270
 exports.DB_DATA_INIT_EB = 328
 exports.DB_DATA_INIT_MB = 426
@@ -118,5 +119,3 @@ exports.DIAG_READ = {
   amount: DB_DIAG_LEN,
   wordLen: 0x02
 }
-
-// exports.DSS_READ = { area: 0x84, dbNumber: 540, start: 0, amount: 30, wordLen: 0x02 }

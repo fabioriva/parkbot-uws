@@ -8,12 +8,10 @@ exports.PLC = {
   ip: '192.168.76.2',
   rack: 0,
   slot: 1,
-  polling_time: 400
+  polling_time: 500
 }
 
 exports.QUEUE_LEN = 5
-
-exports.DSS_EXIT_STEP_DONE = 4
 
 const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
@@ -27,14 +25,16 @@ exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
 const DB_DATA = 505
-const DB_DATA_LEN = 180
+const DB_DATA_LEN = 206
 exports.DB_DATA_INIT_DEVICE = 32
 exports.DB_DATA_INIT_POS = 80
 exports.DB_DATA_INIT_QUEUE = 100
-exports.DB_DATA_INIT_SCREEN = 120
-exports.DB_DATA_INIT_AB = 140
-exports.DB_DATA_INIT_EB = 154
-exports.DB_DATA_INIT_MB = 172
+exports.DB_DATA_INIT_EXITS = 120
+exports.DB_DATA_INIT_SCREENS = 128
+exports.DB_DATA_INIT_OCCUPANCY = 148
+exports.DB_DATA_INIT_AB = 166
+exports.DB_DATA_INIT_EB = 180
+exports.DB_DATA_INIT_MB = 198
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -59,7 +59,7 @@ exports.STALL_STATUS = {
 exports.ACTIVATE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 179 * 8 + 6, // Offset 179.6 (M7.6)
+  start: 205 * 8 + 6, // Offset 205.6 (M7.6)
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
@@ -73,7 +73,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 184,
+  start: 210,
   amount: 4,
   wordLen: 0x02
 }
@@ -87,21 +87,21 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 180,
+  start: 206,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 188,
+  start: 214,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 182,
+  start: 218,
   amount: 2,
   wordLen: 0x02
 }
