@@ -26,15 +26,15 @@ exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
 const DB_DATA = 505
-const DB_DATA_LEN = 434
+const DB_DATA_LEN = 446
 exports.DB_DATA_INIT_DEVICE = 32
 exports.DB_DATA_INIT_POS = 128
 exports.DB_DATA_INIT_QUEUE = 200
-exports.DB_DATA_INIT_EXITS = 120
-exports.DB_DATA_INIT_SCREENS = 128
-exports.DB_DATA_INIT_AB = 270
-exports.DB_DATA_INIT_EB = 328
-exports.DB_DATA_INIT_MB = 426
+exports.DB_DATA_INIT_EXITS = 240
+exports.DB_DATA_INIT_SCREENS = 252
+exports.DB_DATA_INIT_AB = 282
+exports.DB_DATA_INIT_EB = 340
+exports.DB_DATA_INIT_MB = 438
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -59,7 +59,7 @@ exports.STALL_STATUS = {
 exports.ACTIVATE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 433 * 8 + 6, // Offset 433.6 (M7.6)
+  start: 445 * 8 + 6, // Offset 445.6 (M7.6)
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
@@ -74,7 +74,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 438,
+  start: 450,
   amount: 4,
   wordLen: 0x02
 }
@@ -88,21 +88,21 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 434,
+  start: 446,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 442,
+  start: 454,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 446,
+  start: 458,
   amount: 2,
   wordLen: 0x02
 }

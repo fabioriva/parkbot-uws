@@ -5,7 +5,7 @@ const { generateBits, generateBytes } = require('../../models/bits')
 const { generateCards } = require('../../models/cards')
 const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
-const { ExitScreen, GarageScreen } = require('../../models/screens')
+const { Exit, ExitScreen, GarageScreen } = require('../../models/screens')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1)
 const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2)
@@ -359,14 +359,19 @@ exports.map = {
   ]
 }
 
-const screen1 = new GarageScreen(1, 'GARAGE 1')
-const screen2 = new GarageScreen(2, 'GARAGE 2')
-const screen3 = new GarageScreen(3, 'GARAGE 3')
-const screens = [screen1, screen2, screen3]
-exports.screens = screens
+const exit1 = new Exit(1, 'EXIT 1')
+const exit2 = new Exit(2, 'EXIT 2')
+const exit3 = new Exit(2, 'EXIT 3')
+const exits = [exit1, exit2, exit3]
+exports.exits = exits
 
-exports.exitGarages = [device1.device, device2.device, device3.device]
 const exitScreen = new ExitScreen(1, 'EXIT SCREEN')
 exports.exitScreen = exitScreen
+
+const screen1 = new GarageScreen(1, 'GARAGE 1')
+const screen2 = new GarageScreen(2, 'GARAGE 2')
+const screen3 = new GarageScreen(2, 'GARAGE 3')
+const screens = [screen1, screen2, screen3]
+exports.screens = screens
 
 exports.dss = { screens, exitScreen }
