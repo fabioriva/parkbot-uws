@@ -400,7 +400,7 @@ exports.ALARMS = [
   { id: 53, key: '', query: {} },
   { id: 54, key: '', query: {} },
   { id: 55, key: '', query: {} },
-  { id: 56, key: '', query: {} },
+  { id: 56, key: 'al-th', query: { name: 'SHUTTLE' } },
   { id: 57, key: '', query: {} },
   { id: 58, key: '', query: {} },
   { id: 59, key: '', query: {} },
