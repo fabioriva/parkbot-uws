@@ -8,7 +8,7 @@ const { generateStalls } = require('../../models/stalls')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)))
 const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)))
-const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)))
+const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(128, 192)))
 exports.alarms = [al01, al02, al03]
 
 const inputs1 = generateBits('E', 0, 11, str.inputs1)
