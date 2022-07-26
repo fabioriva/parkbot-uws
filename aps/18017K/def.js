@@ -15,7 +15,7 @@ exports.QUEUE_LEN = 5
 
 const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
-exports.DB_ALARM_INIT = 12
+exports.DB_ALARM_INIT = 6
 exports.DB_ALARM_LEN = 64 * ALARM_LEN
 exports.DBS_ALARM = [531, 532, 533] // EU1, EU2, EL
 
