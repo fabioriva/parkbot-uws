@@ -7,9 +7,9 @@ const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 const { Exit, ExitScreen, GarageScreen, Occupancy } = require('../../models/screens')
 
-const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 1) // EU1
-const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 2) // EU2
-const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 3) // EL
+const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1) // EU1
+const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2) // EU2
+const al03 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 3) // EL
 exports.alarms = [al01, al02, al03]
 
 const inputs1 = generateBits('E', 0, 17, str.inputs1)
