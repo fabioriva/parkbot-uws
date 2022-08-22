@@ -1,4 +1,5 @@
-const { alarms, inputs, outputs } = require('./obj')
+const def = require('./def')
+const { alarms, inputs, merkers, outputs } = require('./obj')
 const { Device } = require('../../models/devices')
 
 const device = new Device(1, 'EU1')
@@ -12,11 +13,17 @@ const lamps = [
 //   inputs.find(b => b.addr === 'E4.3') // FPE
 ]
 
+const A0 = {
+  conn: def.REQ_1,
+  enable: merkers.find(b => b.addr === 'M3.1'),
+  key: 'action-entry'
+}
+
 const view = {
   a: device,
   b: positions,
   c: lamps,
-  d: [],
+  d: [A0],
   e: [],
   alarms: alarms[0]._active
 }

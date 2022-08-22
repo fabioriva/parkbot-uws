@@ -105,3 +105,17 @@ exports.REQ_0 = {
   amount: 2,
   wordLen: 0x02
 }
+exports.REQ_1 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 220,
+  amount: 2,
+  wordLen: 0x02
+}
+exports.REQ_2 = {
+  area: 0x84,
+  dbNumber: DB_DATA,
+  start: 222,
+  amount: 2,
+  wordLen: 0x02
+}
