@@ -11,6 +11,7 @@
     "chandan": "nodemon aps/chandan",
     "chiattone": "nodemon aps/chiattone",
     "donini": "nodemon aps/donini",
+    "hdante": "nodemon aps/hdante",
     "ironbank": "nodemon aps/ironbank",
     "jhn": "nodemon aps/jhn",
     "jhs": "nodemon aps/jhs",
@@ -26,7 +27,7 @@
     "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
     "wblvd": "nodemon aps/washingtonblvd",
-    "start": "NODE_ENV=production pm2 start aps/18017K/index.js --name aps-18017K --max-memory-restart 128M"
+    "start": "NODE_ENV=production pm2 start aps/18017K/index.js --name aps-hdante --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
   "license": "ISC",
