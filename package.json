@@ -20,6 +20,7 @@
     "muse": "nodemon aps/muse",
     "nhidcl": "nodemon aps/nhidcl",
     "nyu": "nodemon aps/nyu",
+    "parshvnath": "nodemon aps/parshvnath",
     "qihe1": "nodemon aps/qihe/qihe1",
     "qihe2": "nodemon aps/qihe/qihe2",
     "spire": "nodemon aps/spire",
@@ -27,7 +28,7 @@
     "trumpeldor": "nodemon aps/trumpeldor",
     "vl": "nodemon aps/vl",
     "wblvd": "nodemon aps/washingtonblvd",
-    "start": "NODE_ENV=production pm2 start aps/hdante/index.js --name aps-hdante-uws --max-memory-restart 128M"
+    "start": "NODE_ENV=production pm2 start aps/parshvnath/index.js --name aps-parshvnath --max-memory-restart 128M"
   },
   "author": "f.riva@sotefin.ch",
   "license": "ISC",
