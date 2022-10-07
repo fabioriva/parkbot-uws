@@ -11,8 +11,8 @@ const positions = [LV1, LV2]
 
 const lamps = [
   inputs.find(b => b.addr === 'E101.3'),
-  outputs.find(b => b.addr === 'A101.6'),
-  outputs.find(b => b.addr === 'A101.7')
+  outputs.find(b => b.addr === 'A101.7'),
+  outputs.find(b => b.addr === 'A101.6')
 ]
 
 const silomat = [
