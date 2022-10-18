@@ -198,6 +198,32 @@ exports.outputs3 = [
   { addr: 'A25.7', label: '' }
 ]
 exports.outputs4 = [
+  { addr: 'A0.0', label: 'KBA' },
+  { addr: 'A0.1', label: 'TCRE' },
+  { addr: 'A0.2', label: 'TCVE' },
+  { addr: 'A0.3', label: '' },
+  { addr: 'A0.4', label: '' },
+  { addr: 'A0.5', label: 'T10F' },
+  { addr: 'A0.6', label: 'LA' },
+  { addr: 'A0.7', label: 'LC' },
+  { addr: 'A1.0', label: 'A' },
+  { addr: 'A1.1', label: 'B' },
+  { addr: 'A1.2', label: 'C' },
+  { addr: 'A1.3', label: 'D' },
+  { addr: 'A1.4', label: 'AD1' },
+  { addr: 'A1.5', label: 'AD2' },
+  { addr: 'A1.6', label: 'AD3' },
+  { addr: 'A1.7', label: 'STR' },
+  { addr: 'A2.0', label: 'T10' },
+  { addr: 'A2.1', label: 'T2' },
+  { addr: 'A2.2', label: 'TRA' },
+  { addr: 'A2.3', label: 'TRB' },
+  { addr: 'A2.4', label: 'KCS' },
+  { addr: 'A2.5', label: 'KCV' },
+  { addr: 'A2.6', label: 'KCH' },
+  { addr: 'A2.7', label: 'TCR' }
+]
+exports.ALARMS = [
   { id: 1, key: 'al-v-to', query: {} },
   { id: 2, key: 'al-lv', query: {} },
   { id: 3, key: 'al-fc', query: { fc1: 'EFA', fc2: 'EFB' } },

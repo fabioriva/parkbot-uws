@@ -9,7 +9,8 @@ const FILE = 'generated.js'
 fs.writeFileSync(FILE, '// generate I/O\n')
 
 generate('inputs1', 'E', 0, 1)
-generate('inputs2', 'E', 100, 103)
+generate('inputs1', 'E', 10, 11)
+generate('inputs2', 'E', 100, 105)
 generate('inputs3', 'E', 110, 115)
 generate('inputs4', 'E', 120, 125)
 generate('inputs5', 'E', 200, 203)
