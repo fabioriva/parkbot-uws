@@ -7,8 +7,7 @@ exports.HOST =
 exports.HTTP = 9024
 // change following
 exports.PLC = {
-  // ip: '192.168.63.2',
-  ip: '192.168.20.55',
+  ip: '192.168.70.2',
   rack: 0,
   slot: 1,
   polling_time: 500
