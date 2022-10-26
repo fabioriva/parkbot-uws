@@ -15,6 +15,7 @@
     "ironbank": "nodemon aps/ironbank",
     "jhn": "nodemon aps/jhn",
     "jhs": "nodemon aps/jhs",
+    "kg": "nodemon aps/kg",
     "knl": "nodemon aps/kn/knl",
     "knr": "nodemon aps/kn/knr",
     "muse": "nodemon aps/muse",

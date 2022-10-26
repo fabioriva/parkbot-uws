@@ -7,7 +7,8 @@ exports.HOST =
 exports.HTTP = 9024
 // change following
 exports.PLC = {
-  ip: '192.168.63.2',
+  // ip: '192.168.63.2',
+  ip: '192.168.20.55',
   rack: 0,
   slot: 1,
   polling_time: 500
@@ -19,7 +20,7 @@ const ALARM_LEN = 8
 exports.ALARM_LEN = ALARM_LEN
 exports.DB_ALARM_INIT = 6
 exports.DB_ALARM_LEN = 64 * ALARM_LEN
-exports.DBS_ALARM = [531, 532, 533, 534, 535, 536]
+exports.DBS_ALARM = [531, 532]
 
 const CARDS = 39
 const CARD_LEN = 10
@@ -27,13 +28,13 @@ exports.CARDS = CARDS
 exports.CARD_LEN = CARD_LEN
 
 const DB_DATA = 505
-const DB_DATA_LEN = 298
+const DB_DATA_LEN = 172
 exports.DB_DATA_INIT_DEVICE = 32
-exports.DB_DATA_INIT_POS = 128
-exports.DB_DATA_INIT_QUEUE = 188
-exports.DB_DATA_INIT_AB = 208
-exports.DB_DATA_INIT_EB = 240
-exports.DB_DATA_INIT_MB = 290
+exports.DB_DATA_INIT_POS = 64
+exports.DB_DATA_INIT_QUEUE = 84
+exports.DB_DATA_INIT_AB = 104
+exports.DB_DATA_INIT_EB = 126
+exports.DB_DATA_INIT_MB = 164
 exports.DATA_READ = {
   area: 0x84,
   dbNumber: DB_DATA,
@@ -65,7 +66,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 314,
+  start: 180,
   amount: 4,
   wordLen: 0x02
 }
@@ -79,21 +80,21 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 310,
+  start: 176,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 318,
+  start: 184,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 322,
+  start: 188,
   amount: 2,
   wordLen: 0x02
 }
