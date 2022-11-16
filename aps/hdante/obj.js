@@ -7,7 +7,7 @@ const { generateQueue } = require('../../models/queue')
 const { generateStalls } = require('../../models/stalls')
 
 const al01 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 1) // EL
-const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(0, 64)), 2) // EU
+const al02 = new Alarms(generateAlarms(1, 64, str.ALARMS.slice(64, 128)), 2) // EU
 exports.alarms = [al01, al02]
 
 const inputs1 = generateBits('E', 4, 11, str.inputs1)
@@ -143,7 +143,7 @@ exports.map = {
       ]
     },
     {
-      nr: 1,
+      nr: 6,
       label: 'Pano +2 (P7)',
       min: 44,
       max: 52,
