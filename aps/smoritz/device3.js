@@ -19,7 +19,7 @@ const view = {
   c: lamps,
   d: [],
   e: [],
-  alarms: alarms[1]._active
+  alarms: alarms[2]._active
 }
 
 const inverters = []

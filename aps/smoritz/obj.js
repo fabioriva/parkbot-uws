@@ -86,21 +86,10 @@ exports.map = {
   levels: [
     {
       nr: 1,
-      label: 'Pano -2 (P1)',
+      label: 'Pano -1 / -2',
       min: 1,
-      max: 4,
-      stalls: stalls.slice(0, 4),
-      elevators: [
-        { id: 'el-l', label: '(L)' },
-        { id: 'el-r', label: '(R)' }
-      ]
-    },
-    {
-      nr: 2,
-      label: 'Pano -1 (P2)',
-      min: 5,
-      max: 8,
-      stalls: stalls.slice(4, 8),
+      max: 10,
+      stalls: stalls.slice(0, 10),
       elevators: [
         { id: 'el-l', label: '(L)' },
         { id: 'el-r', label: '(R)' }
