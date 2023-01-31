@@ -4,7 +4,7 @@
   "description": "parkbot backend",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon aps/smoritz",
+    "dev": "nodemon aps/donini",
     "start": "NODE_ENV=production pm2 start aps/smoritz/index.js --name aps-smoritz --max-memory-restart 128M",
     "test": "standard"
   },
@@ -12,13 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.29.3",
-    "date-fns-tz": "^1.3.7",
+    "date-fns-tz": "^2.0.0",
     "dotenv": "^16.0.3",
-    "mongodb": "^4.11.0",
+    "mongodb": "^4.13.0",
     "node-fetch": "^2.6.1",
     "node-snap7": "^1.0.6",
-    "pino": "^8.7.0",
-    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.10.0"
+    "pino": "^8.8.0",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.19.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",

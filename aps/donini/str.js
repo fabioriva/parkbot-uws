@@ -133,7 +133,7 @@ exports.inputs2 = [
   { addr: 'E16.0', label: 'FTC1' },
   { addr: 'E16.1', label: 'FTC2' },
   { addr: 'E16.2', label: 'FTC3' },
-  { addr: 'E16.3', label: '' },
+  { addr: 'E16.3', label: 'FTM' },
   { addr: 'E16.4', label: 'EXT' },
   { addr: 'E16.5', label: '' },
   { addr: 'E16.6', label: '' },
