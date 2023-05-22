@@ -399,7 +399,8 @@ exports.DEVICES = [
   { id: 0, key: 'operator' },
   { id: 1, key: 'EL' },
   { id: 2, key: 'E' },
-  { id: 3, key: 'U' }
+  { id: 3, key: 'U' },
+  { id: 100, key: 'HMI' }
 ]
 
 exports.MODES = [
