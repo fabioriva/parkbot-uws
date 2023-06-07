@@ -20,8 +20,8 @@ const eb = generateBytes(inputs)
 exports.eb = eb
 
 const outputs1 = generateBits('A', 0, 7, str.outputs1)
-const outputs2 = generateBits('A', 12, 13, str.outputs2)
-const outputs3 = generateBits('A', 14, 17, str.outputs3)
+const outputs2 = generateBits('A', 8, 9, str.outputs2)
+const outputs3 = generateBits('A', 10, 13, str.outputs3)
 const outputs = outputs1.concat(outputs2, outputs3)
 exports.outputs = outputs
 const ab = generateBytes(outputs)
