@@ -5,7 +5,7 @@ const { Position } = require('../../models/positions')
 
 const device = new Device(1, 'EU1')
 
-const ENR = new Position(5, 'ENR')
+const ENR = new Position(1, 'ENR')
 const positions = [ENR]
 
 const lamps = [

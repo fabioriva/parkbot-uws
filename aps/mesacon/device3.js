@@ -4,10 +4,10 @@ const { Position } = require('../../models/positions')
 
 const device = new Device(3, 'EL')
 
-const LV1 = new Position(1, 'LV1')
-const LV2 = new Position(2, 'LV2')
-const LH1 = new Position(3, 'LH1')
-const LH2 = new Position(3, 'LH2')
+const LV1 = new Position(2, 'LV1')
+const LV2 = new Position(3, 'LV2')
+const LH1 = new Position(4, 'LH1')
+const LH2 = new Position(5, 'LH2')
 const positions = [LV1, LV2, LH1, LH2]
 
 const lamps = [
