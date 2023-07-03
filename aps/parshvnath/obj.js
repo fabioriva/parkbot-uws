@@ -105,25 +105,25 @@ exports.map = {
       nr: 1,
       label: '4th basement (B1)',
       min: 1,
-      max: 6,
+      max: 81,
       stalls: stalls.slice(0, 81),
-      elevators: [{ id: 'el', label: 'EL' }]
+      elevators: [{ id: 'el-1', label: 'EL1' }, { id: 'el-2', label: 'EL2' }, { id: 'el-3', label: 'EL3' }]
     },
     {
       nr: 2,
       label: '3rd basement (B2)',
-      min: 7,
-      max: 12,
+      min: 82,
+      max: 152,
       stalls: stalls.slice(81, 152),
-      elevators: [{ id: 'el', label: 'EL' }]
+      elevators: [{ id: 'el-1', label: 'EL1' }, { id: 'el-2', label: 'EL2' }, { id: 'el-3', label: 'EL3' }]
     },
     {
       nr: 3,
       label: '1st basement (B3)',
-      min: 13,
-      max: 18,
+      min: 153,
+      max: 218,
       stalls: stalls.slice(152, 218),
-      elevators: [{ id: 'el', label: 'EL' }]
+      elevators: [{ id: 'el-1', label: 'EL1' }, { id: 'el-2', label: 'EL2' }, { id: 'el-3', label: 'EL3' }]
     }
   ],
   occupancy: [

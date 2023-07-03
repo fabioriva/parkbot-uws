@@ -144,6 +144,10 @@ exports.map = {
       label: 'G26',
       min: 201,
       max: 208,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(200, 208)
     },
     {
@@ -151,6 +155,10 @@ exports.map = {
       label: 'G25',
       min: 193,
       max: 200,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(192, 200)
     },
     {
@@ -158,6 +166,10 @@ exports.map = {
       label: 'G24',
       min: 185,
       max: 192,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(184, 192)
     },
     {
@@ -165,6 +177,10 @@ exports.map = {
       label: 'G23',
       min: 177,
       max: 184,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(176, 184)
     },
     {
@@ -172,6 +188,10 @@ exports.map = {
       label: 'G22',
       min: 169,
       max: 176,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(168, 176)
     },
     {
@@ -179,6 +199,10 @@ exports.map = {
       label: 'G21',
       min: 161,
       max: 168,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(160, 168)
     },
     {
@@ -186,6 +210,10 @@ exports.map = {
       label: 'G20',
       min: 153,
       max: 160,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(152, 160)
     },
     {
@@ -193,6 +221,10 @@ exports.map = {
       label: 'G19',
       min: 145,
       max: 152,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(144, 152)
     },
     {
@@ -200,6 +232,10 @@ exports.map = {
       label: 'G18',
       min: 137,
       max: 144,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(136, 144)
     },
     {
@@ -207,6 +243,10 @@ exports.map = {
       label: 'G17',
       min: 129,
       max: 136,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(128, 136)
     },
     {
@@ -214,6 +254,10 @@ exports.map = {
       label: 'G16',
       min: 121,
       max: 128,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(120, 128)
     },
     {
@@ -221,6 +265,10 @@ exports.map = {
       label: 'G15',
       min: 113,
       max: 120,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(112, 120)
     },
     {
@@ -228,6 +276,10 @@ exports.map = {
       label: 'G14',
       min: 105,
       max: 112,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(104, 112)
     },
     {
@@ -235,6 +287,10 @@ exports.map = {
       label: 'G13',
       min: 97,
       max: 104,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(96, 104)
     },
     {
@@ -242,6 +298,10 @@ exports.map = {
       label: 'G12',
       min: 89,
       max: 96,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(88, 96)
     },
     {
@@ -249,6 +309,10 @@ exports.map = {
       label: 'G11',
       min: 81,
       max: 88,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(80, 88)
     },
     {
@@ -256,6 +320,10 @@ exports.map = {
       label: 'G10',
       min: 73,
       max: 80,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(72, 80)
     },
     {
@@ -263,6 +331,10 @@ exports.map = {
       label: 'G9',
       min: 65,
       max: 72,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(64, 72)
     },
     {
@@ -270,6 +342,10 @@ exports.map = {
       label: 'G8',
       min: 57,
       max: 64,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(56, 64)
     },
     {
@@ -277,6 +353,10 @@ exports.map = {
       label: 'G7',
       min: 49,
       max: 56,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(48, 56)
     },
     {
@@ -284,6 +364,10 @@ exports.map = {
       label: 'G6',
       min: 41,
       max: 48,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(40, 48)
     },
     {
@@ -291,6 +375,10 @@ exports.map = {
       label: 'G5',
       min: 33,
       max: 40,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(32, 40)
     },
     {
@@ -298,6 +386,10 @@ exports.map = {
       label: 'G4',
       min: 25,
       max: 32,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(24, 32)
     },
     {
@@ -305,6 +397,10 @@ exports.map = {
       label: 'G3',
       min: 17,
       max: 24,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(16, 24)
     },
     {
@@ -312,6 +408,10 @@ exports.map = {
       label: 'G2',
       min: 9,
       max: 16,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(8, 16)
     },
     {
@@ -319,6 +419,10 @@ exports.map = {
       label: 'G1',
       min: 1,
       max: 8,
+      elevators: [
+        { id: 'el-3', label: 'EL3' },
+        { id: 'el-4', label: 'EL4' }
+      ],
       stalls: stalls.slice(0, 8)
     }
   ],
