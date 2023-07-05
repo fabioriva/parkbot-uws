@@ -72,7 +72,7 @@ exports.CARD_READ = {
 exports.CARD_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 410,
+  start: 490,
   amount: 4,
   wordLen: 0x02
 }
@@ -86,35 +86,35 @@ exports.MAP_READ = {
 exports.MAP_EDIT = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 406,
+  start: 486,
   amount: 4,
   wordLen: 0x02
 }
 exports.QUEUE_DELETE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 414,
+  start: 494,
   amount: 4,
   wordLen: 0x02
 }
 exports.REQ_0 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 418,
+  start: 498,
   amount: 2,
   wordLen: 0x02
 }
 exports.ROLLBACK_EL3 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 184 * 8 + 4, // Offset 184.4 (M4.4)
+  start: 264 * 8 + 4, // Offset 184.4 (M4.4)
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
 exports.ROLLBACK_EL4 = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 184 * 8 + 5, // Offset 184.5 (M4.5)
+  start: 264 * 8 + 5, // Offset 184.5 (M4.5)
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
