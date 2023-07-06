@@ -58,7 +58,7 @@ exports.STALL_STATUS = {
 exports.ACTIVATE = {
   area: 0x84,
   dbNumber: DB_DATA,
-  start: 187 * 8 + 6, // Offset 187.6 (M7.6)
+  start: 267 * 8 + 6, // Offset 267.6 (M7.6)
   amount: 1,
   wordLen: 0x01 // Bit (inside a word)
 }
