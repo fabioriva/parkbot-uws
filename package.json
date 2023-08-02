@@ -4,8 +4,8 @@
   "description": "parkbot backend",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon aps/mesacon",
-    "start": "NODE_ENV=production pm2 start aps/mesacon/index.js --name aps-mesacon --max-memory-restart 128M",
+    "dev": "nodemon aps/boi",
+    "start": "NODE_ENV=production pm2 start aps/boi/index.js --name aps-boi --max-memory-restart 128M",
     "test": "standard"
   },
   "author": "f.riva@sotefin.ch",
